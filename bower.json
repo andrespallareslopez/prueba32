@@ -1,0 +1,47 @@
+{
+  "name": "prueba31",
+  "description": "",
+  "main": "",
+  "authors": [
+    "andres pallares lopez"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.12.4",
+    "handlebars": "^4.0.5",
+    "x-tag-core": "^1.5.11",
+    "components-font-awesome": "^4.7.0",
+    "director": "^1.2.8",
+    "hammerjs": "^2.0.8",
+    "fastclick": "^1.0.6",
+    "promise-polyfill": "^6.0.2",
+    "linqjs": "^3.0.5",
+    "mousetrap": "^1.6.0",
+    "requirejs": "^2.3.3",
+    "require-css": "^0.1.10",
+    "text": "requirejs-text#^2.0.15",
+    "requirejs-plugins": "^1.0.3",
+    "jshashtable": "3.0.0",
+    "fontfaceobserver": "^2.0.9",
+    "MutationObserver-shim": "^0.3.2",
+    "es5-shim": "^4.5.9",
+    "html5shiv": "^3.7.3",
+    "respond": "Respond#^1.4.2",
+    "inputmask": "^3.3.6",
+    "is_js": "^0.9.0",
+    "css3-mediaqueries-js": "^1.0.0"
+  },
+  "devDependencies": {
+    "webshim": "^1.16.0",
+    "bootstrap": "^3.3.7"
+  }
+}

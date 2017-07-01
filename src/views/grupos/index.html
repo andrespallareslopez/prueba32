@@ -1,0 +1,36 @@
+<div data-yield-for="header01"  >
+    <form class="form-search push-float-right" 
+    data-behavior="searchbuttonsactions01" 
+    data-action="searchaction01"  
+    id="frmsearch01" >
+                            <button id="btn-form-search" class="nav-mobile btn-search ripple" >
+                            <span class="fa fa-search fa-2x" ></span>
+                            </button>
+                             <button class="nav-mobile btn-progress" >
+                               <span class="fa fa-circle-o-notch fa-spin fa-2x fa-fw"></span>
+                            </button>
+                            <input id="input-search" placeholder="Search..." class="input-search" type="text" />
+                            <button id="btn-form-close" class="nav-mobile btn-search btn-search-close" >
+                            <span class="fa fa-times fa-2x" ></span>
+                            </button>
+                        </form>
+</div>
+ <ul class="list-collection cf"  >
+    {{#each grupos}}
+         <li>
+            <div class="el-left" >
+            <!--<img src="src/img/64.svg" >-->
+            </div>
+                <div class="el-content" >
+                  <h2>{{Descripcion}}</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et quidem facilis nisi soluta dicta, asperiores, fugiat enim ab adipisci doloribus quaerat at saepe suscipit labore. Sit ipsa esse illo reprehenderit?</p>
+                </div>
+                <a class="list-element el-right" href="#/grupos/grupobyid/{{CodGrupo}}" >
+                    <span class="fa fa-chevron-right center" ></span>
+                </a>
+         </li>
+    {{/each}}
+ </ul>
+<div data-yield-for="footer01" >
+  <p><p>
+</div>

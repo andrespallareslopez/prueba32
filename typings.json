@@ -1,0 +1,8 @@
+{
+  "name": "prueba31",
+  "dependencies": {},
+  "globalDependencies": {
+    "handlebars": "registry:dt/handlebars#4.0.5+20160810231743",
+    "jquery": "registry:dt/jquery#1.10.0+20161119044246"
+  }
+}
