@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/index.d.ts" />
+/// <reference path="./main.d.ts" />
 
 ;(function(ns,values,$){
        var slidesp;
@@ -201,7 +201,7 @@
     }
     var clickElementAccordion=function(options){
         var self=this;
-         console.log("estoy dentro de click element");
+        console.log("estoy dentro de click element");
         //console.log(self.options.containerComponent);
         //console.log(self.options.nameid+self.options.item);
         $(self.options.nameid+self.config.item).click(function(event){

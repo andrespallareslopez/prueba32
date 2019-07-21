@@ -1,4 +1,3 @@
-/// <reference path="../../typings/index.d.ts" />
 
 
 ;(function(ns,values,$){
@@ -12,11 +11,8 @@
           event.preventDefault();
           console.log("estoy en boton horizontal");
           $(".actions").find(".menu-horizontal").toggleClass("navbars-open");
-       });
-
+       });   
      }
-     
-     
      
      ns.searchbuttonsactions01=function(){
           $("#btn-form-search").on("click",function(evt){
@@ -35,11 +31,9 @@
          $("#btn-form-close").off("click");
      }
      
-     
-     
      ns.navbuttonsactionsroot01=function(){
          //Estos botones estan preparados para otro layout
-
+       
          
           //console.log("estoy dentro de navbuttonsactions");
           $("#btn-toggle-right").click(function(event){
@@ -81,8 +75,8 @@
      };
       ns.navbuttonsactionsroot02=function(){
          //Estos botones estan preparados para otro layout
-
-         
+      
+          
           //console.log("estoy dentro de navbuttonsactions");
           $("#btn-toggle-right").click(function(event){
             event.preventDefault();
@@ -441,6 +435,7 @@
             event.preventDefault();
             $(this).parent().parent().find(".gr").toggleClass("expand");   
          });
+         
          /*
          $(document).on("click",".menu-horizontal>.element.parent>.element-link",function(event){
            //console.log("estoy en click horizontal");

@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/index.d.ts" />
+
 
 ;(function(ns,util,behaviors,Handlebars,$){
    
@@ -339,15 +339,15 @@ return match;
      
  };
  var removeContainer=function(containerview){
-     var self=this;
+      var self=this;
       console.log("estoy dentro de removeContainer");
-     console.log(containerview)
+      console.log(containerview)
         //Tratar de borrar elementos de esta manera y sus eventos
-     recreateNode(document.querySelector(containerview),true);     
-     
-     //limpiar el area antes de inyectar el codigo html
-     $(containerview).empty();
-  
+      recreateNode(document.querySelector(containerview),true);     
+      
+      //limpiar el area antes de inyectar el codigo html
+      $(containerview).empty();
+      
  };
 
 })(this.components=this.components||{},this.util,this.behaviors,Handlebars,jQuery);  //podriamos poner simplemente this, y no definir components

@@ -1,4 +1,5 @@
-/// <reference path="../../../typings/index.d.ts" />
+/// <reference path="./main.d.ts" />
+
 
 $(document).ready(function(){
     //var container=".container .pages";

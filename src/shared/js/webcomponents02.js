@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/index.d.ts" />
+/// <reference path="./main.d.ts" />
 
 (function(){
    xtag.register("ux-content-for",{

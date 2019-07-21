@@ -1,10 +1,10 @@
-/// <reference path="../../typings/index.d.ts" />
+
 
 
 ;(function(ns,values,$){
     
     ns.navButtons03layout02=function(){
-         //console.log("estoy dentro de navbuttonsactions");
+          //console.log("estoy dentro de navbuttonsactions");
           $("#btn-toggle-right").click(function(event){
             event.preventDefault();
             $(".menu-horizontal").toggleClass("navbars-open");    

@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/index.d.ts" />
+/// <reference path="./main.d.ts" />
 
 $(document).ready(function () {
     //var container=".container .pages";
@@ -14,7 +14,7 @@ $(document).ready(function () {
     });
     */
     //webshims.activeLang("es");
-
+     
     //webshims.polyfill('forms forms-ext');
     FastClick.attach(document.body);
     //Este helper de handlebars se utiliza para paginacion   
@@ -26,15 +26,15 @@ $(document).ready(function () {
 
 
     if ($(".container .pages").data("root")) {
-
+        
         var container = new components["container"]({
             container: ".container .pages",
             pathTemplate: "src/shared/templ/",
             nametemplate: $(".container .pages").data("root")
         });
-
+        
         container.promise.then(function (mutation) {
-
+            
             behaviors["navbuttonsactionsroot02"]();
             behaviors["menuhorizontal01"]({});
             behaviors["menuvertical01"]({
@@ -46,7 +46,7 @@ $(document).ready(function () {
                 containerComponent: ".menu-vertical01"
             });
             scrollmenu.initevent();
-
+             
             /*
             var scrollPanel=new components.panelScroll({
                nameid:"#root ",
@@ -128,7 +128,7 @@ $(document).ready(function () {
             //var dateobject=pikadayResponsive(document.getElementById("fecha"));
             //console.dir(dateobject);
             var field = document.getElementById("fecha");
-
+             
             var picker = new Pikaday({
                 field: document.getElementById("fecha"),
                 trigger: document.getElementById("btn-fecha"),

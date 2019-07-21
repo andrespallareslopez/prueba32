@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/index.d.ts" />
+/// <reference path="./main.d.ts" />
 
 $(document).ready(function(){
     //var container=".container .pages";
@@ -46,7 +46,7 @@ Handlebars.registerHelper('isSelected', function (index, value) {
                    containerComponent:".menu-vertical01"
                 });
             scrollmenu.initevent();
-
+            
             /*
             var scrollPanel=new components.panelScroll({
                nameid:"#root ",

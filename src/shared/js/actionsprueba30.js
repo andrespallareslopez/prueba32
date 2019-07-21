@@ -7,7 +7,7 @@
       nametemplate: $('.container .pages').data('template')  // root29
     })
     container.promise.then(function (mutation) {
-      
+       
     })
   }
   ns.layout02 = function () {
@@ -135,6 +135,6 @@
     var formKey = new components.FormKey({
       nameid: '#form01'
     })
-
+    
   }
-})(this.actions||(this.actions={}),this.values,jQuery
+})(this.actions||(this.actions={}),this.values,jQuery)

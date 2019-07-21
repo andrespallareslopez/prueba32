@@ -1,5 +1,15 @@
-/// <reference path="../../../typings/index.d.ts" />
+/// <reference path="./main.d.ts" />
 
+/**
+ * JavaScript Decorators: What They Are and When to Use Them
+ * https://www.sitepoint.com/javascript-decorators-what-they-are/
+ * 
+ * 
+ * Exploring EcmaScript Decorators
+ * https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841
+ * 
+ * 
+ */
 $(()=>{
     
     const autorize=function(target,name,descriptor){

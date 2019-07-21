@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/index.d.ts" />
+/// <reference path="./main.d.ts" />
 
 ;(function(ns,commponents,transformations,values){
    
@@ -20,8 +20,6 @@
            behaviors[$(".main-body .wrapper.page.root .nav nav").data("behavior")]();
        };
        layout.create(function(options){
-           
-           
            
            var menuhorizontal=new components.container({
                container:".container .pages .nav nav",

@@ -1,28 +1,28 @@
 
 require('font-awesome')
-require('layout')
-require('transition')
+//require('layout')
+//require('transition')
 require('header01')
-require('buttons')
-require('menu-horizontal')
-require('menu-vertical')
-require('form-login')
-require('form-login-01')
-require('ripple')
-require('panel01')
-require('panel02')
-require('list-collection')
-require('search')
-require('form-fix-basic-01')
-require('pikadaycss')
-require('tethercss')
-require('uxdatalistcss')
+//require('buttons')
+//require('menu-horizontal')
+//require('menu-vertical')
+//require('form-login')
+//require('form-login-01')
+//require('ripple')
+//require('panel01')
+//require('panel02')
+//require('list-collection')
+//require('search')
+//require('form-fix-basic-01')
+//require('pikadaycss')
+//require('tethercss')
+//require('uxdatalistcss')
 var $ = require('jquery')
-var util = require('util01')
+//var util = require('util01')
 // var behaviors = require('behaviors')
-var actions = {}
+//var actions = {}
 
-util.addNameSpace(actions, require('actions'))
+//util.addNameSpace(actions, require('actions'))
 
 // var components = require('components')
 
@@ -31,8 +31,8 @@ util.addNameSpace(actions, require('actions'))
 
 $(function () {
   if ($('.container .pages').data('template')) {
-    var nameaction = $('.container .pages').data('action')
-    actions[nameaction]()
+    //var nameaction = $('.container .pages').data('action')
+    //actions[nameaction]()
     
     /*
     var container = new components.Container({
