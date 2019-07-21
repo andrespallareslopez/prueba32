@@ -4,6 +4,10 @@
 .list-collection{
     list-style: none;
     width:100%;
+    @media (min-width:768px){
+        width:calc(100% - 196px);
+    }
+
     li {
      position:relative;
      height:65px;

@@ -1,4 +1,4 @@
-/// <reference path="../../typings/index.d.ts" />
+
 
 ;(function(ns,$){
 
@@ -134,8 +134,8 @@
                
                // console.log($holder[0].scrollTop);
                 //console.log(delta);
-
-              
+               
+               
                self.calcularAltura.apply(self,[]);
                
                //hemos puesto el doclick porque al cargar en otro panel de datos,al hacer click, con mas de un slide
@@ -208,7 +208,7 @@
                   self.$holder[0].scrollTop=self.scrolltop;
                   self.doclick=false;
               }
-            
+              
               self.touchmovey=cn*self.menuHeightItem;
               self.movey=(self.touchmovey);
               self.movesum+=self.movey;

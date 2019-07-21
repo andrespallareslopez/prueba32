@@ -80,8 +80,17 @@
          min-height:calc(100vh - #{$headerHeight} - #{$footer} - #{$nav} - 20px);   
          height:calc(100vh - #{$headerHeight} - #{$footer} - #{$nav} - 20px);  
        }   
-       
-      
+       &.fix-panel-scroll-content-tab{
+        height:calc(100vh - #{$nav} - #{$footer} - 45px);
+        min-height:calc(100vh - #{$nav} - #{$footer} - 45px);
+         @media screen and (min-width:321px){
+                 min-height: 250px;
+             }
+        @media (min-width:768px){   
+          min-height:calc(100vh - #{$headerHeight} - #{$footer} - #{$nav} - 45px);   
+          height:calc(100vh - #{$headerHeight} - #{$footer} - #{$nav} - 45px); 
+       }
+      }
     .panel-scroll-item{
                /*
           nota importante: si no establecemos height y ponemos overflow:hidden, la altura se estable por el total

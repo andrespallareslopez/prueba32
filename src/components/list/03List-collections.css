@@ -1,6 +1,9 @@
 .list-collection {
   list-style: none;
   width: 100%; }
+  @media (min-width: 768px) {
+    .list-collection {
+      width: calc(100% - 196px); } }
   .list-collection li {
     position: relative;
     height: 65px;

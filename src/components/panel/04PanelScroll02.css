@@ -69,6 +69,16 @@
       .panel-scroll-01 .panel-scroll-content {
         min-height: calc(100vh - 15vh - 47px - 47px - 20px);
         height: calc(100vh - 15vh - 47px - 47px - 20px); } }
+    .panel-scroll-01 .panel-scroll-content.fix-panel-scroll-content-tab {
+      height: calc(100vh - 47px - 47px - 45px);
+      min-height: calc(100vh - 47px - 47px - 45px); }
+      @media screen and (min-width: 321px) {
+        .panel-scroll-01 .panel-scroll-content.fix-panel-scroll-content-tab {
+          min-height: 250px; } }
+      @media (min-width: 768px) {
+        .panel-scroll-01 .panel-scroll-content.fix-panel-scroll-content-tab {
+          min-height: calc(100vh - 15vh - 47px - 47px - 45px);
+          height: calc(100vh - 15vh - 47px - 47px - 45px); } }
     .panel-scroll-01 .panel-scroll-content .panel-scroll-item {
       /*
  nota importante: si no establecemos height y ponemos overflow:hidden, la altura se estable por el total
