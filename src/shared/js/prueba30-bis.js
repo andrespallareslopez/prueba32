@@ -158,8 +158,7 @@ $(document).ready(function(){
        }
        return descriptor
     };
-    
-    class Controller {
+        class Controller {
        constructor(){
          console.log("estoy en constructor")
        }
@@ -175,8 +174,7 @@ $(document).ready(function(){
     }; 
        
     const controller=new Controller();
-    
-    controller.action01();
+        controller.action01();
     coneotroller.action02();
     */
     window.controls = {};
@@ -813,7 +811,7 @@ $(document).ready(function(){
             pathTemplate: "src/shared/templ/",
             nametemplate: (0, _jquery2.default)(".container .pages").data("template"),
             cssUrls: ['src/components/layouts/03layout02/03layout02.css', 'src/components/menu-horizontal/03menu-horizontal01.css', 'src/components/menu-vertical/03Menu-vertical01/03Menu-vertical01.css', 'src/components/layouts/03layout02/03transition02.css'],
-            importsUrl: ["bower/mousetrap/mousetrap.min.js", "bower/Inputmask/dist/inputmask/inputmask.js", "bower/hammerjs/hammer.min.js", "src/shared/js/behaviors03layout02.js"]
+            importsUrl: ["bower/mousetrap/mousetrap.min.js", "node_modules/inputmask/dist/inputmask/inputmask.js", "bower/hammerjs/hammer.min.js", "src/shared/js/behaviors03layout02.js"]
         });
 
         //Este ejemplo tiene clearContainer.

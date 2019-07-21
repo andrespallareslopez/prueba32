@@ -891,7 +891,7 @@ $(()=>{
           ],
           importsUrl:[    
           "bower/mousetrap/mousetrap.min.js",
-          "bower/Inputmask/dist/inputmask/inputmask.js",
+          "node_modules/inputmask/dist/inputmask/inputmask.js",
           "bower/hammerjs/hammer.min.js",
           "src/shared/js/behaviors03layout02.js"
        
