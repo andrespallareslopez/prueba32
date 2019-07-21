@@ -1,11 +1,6 @@
 @import "../../shared/scss/variables";
 @import "03form-mixins-basic-01";
- .datalist{
-         width:200px;
-         height: 150px;
-         background:$c400;
-         z-index:999;
-     }
+ 
 .form-fix-basic-01{
      position:relative;
      /*importante para que se centre */
@@ -129,6 +124,7 @@
             padding:4px;
             margin:0px;
             border:none;
+            vertical-align: top;
             
             &:focus{
              background-color:$c50;

@@ -38,10 +38,14 @@
     "respond": "Respond#^1.4.2",
     "inputmask": "^3.3.6",
     "is_js": "^0.9.0",
-    "css3-mediaqueries-js": "^1.0.0"
+    "css3-mediaqueries-js": "^1.0.0",
+    "jsgrid": "js-grid#^1.5.3"
   },
   "devDependencies": {
     "webshim": "^1.16.0",
-    "bootstrap": "^3.3.7"
+    "bootstrap": "^3.3.7",
+    "moment": "momentjs#^2.22.2",
+    "tether": "^1.4.4",
+    "MutationObserver-shim": "^0.3.2"
   }
 }

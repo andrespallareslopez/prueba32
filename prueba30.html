@@ -10,38 +10,191 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     
     <title>Prueba30</title>
+    
     <link rel="stylesheet" href="bower/components-font-awesome/css/font-awesome.min.css" type="text/css" > 
-    <link href="dist/minify/bundlecss.css" rel="stylesheet" type="text/css" >
-    <style>
-    </style>
+    <link rel="stylesheet" href="src/components/loaders/loaders02/04loader-progress-01.css" type="text/css" >
+    <link rel="stylesheet" href="src/components/loaders/loaders01/04logospinners.css" type="text/css" >
+    <link rel="stylesheet" href="src/components/loaders/loaders03/spinner.css" type="text/css" >
+    <link rel="stylesheet" href="src/components/loaders/loaders04/spinner.css" type="text/css" >
+    <link rel="stylesheet" href="src/components/loaders/loaders05/spinner.css" type="text/css" >
+    <!--<link href="dist/minify/bundlecss.css" rel="stylesheet" type="text/css" >-->
+   
 </head>
 <body>
     <div id="container" class="container lyt03layout02"  >
          
-       <div class="pages" data-template="root30" data-action="layout02bootstrap">
-               
+       <div class="pages" data-template="webroot30" data-action="layout02bootstrap">
+            <div id="loader02" class="loader-progress-01 splash" >
+
+            <div class="loading">
+                            <div class="finger finger-1">
+                              <div class="finger-item">
+                                <span></span><i></i>
+                              </div>
+                            </div>
+                            <div class="finger finger-2">
+                              <div class="finger-item">
+                                <span></span><i></i>
+                              </div>
+                            </div>
+                                        <div class="finger finger-3">
+                              <div class="finger-item">
+                                <span></span><i></i>
+                              </div>
+                            </div>
+                                        <div class="finger finger-4">
+                              <div class="finger-item">
+                                <span></span><i></i>
+                              </div>
+                            </div>
+                                        <div class="last-finger">
+                              <div class="last-finger-item"><i></i></div>
+                            </div>
+            </div>
+                <!--
+                    <div class="lds-roller">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                -->
+                <!--
+                    <div class="lds-spinner">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                -->                    
+                <!--
+                    <div class="icon-loader sk-fading-circle">
+                        <div class="sk-circle1 sk-circle"></div>
+                        <div class="sk-circle2 sk-circle"></div>
+                        <div class="sk-circle3 sk-circle"></div>
+                        <div class="sk-circle4 sk-circle"></div>
+                        <div class="sk-circle5 sk-circle"></div>
+                        <div class="sk-circle6 sk-circle"></div>
+                        <div class="sk-circle7 sk-circle"></div>
+                        <div class="sk-circle8 sk-circle"></div>
+                        <div class="sk-circle9 sk-circle"></div>
+                        <div class="sk-circle10 sk-circle"></div>
+                        <div class="sk-circle11 sk-circle"></div>
+                        <div class="sk-circle12 sk-circle"></div>
+                    </div>
+                    -->
+                    <!--
+                    <div class="icon-loader" >
+                        <i class="wf-no-active fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    -->
+                </div>   
+        <!-- <my-layout></my-layout> -->
        </div>
        
     </div>
-    <script src="bower/jquery/dist/jquery.min.js"></script>
-    <script src="bower/mousetrap/mousetrap.min.js" ></script>
-    <script src="bower/handlebars/handlebars.min.js" ></script>
-    <script src="bower/momentjs/moment.js" ></script>
-    <script src="bower/pikaday/pikaday.js" ></script>
-    <script src="src/shared/js/util01.js" ></script>
-    <script src="src/shared/js/values.js" ></script>
-    <script src="src/shared/js/behaviors.js" ></script>
-    <script src="src/shared/js/behaviors03layout02.js" ></script>
-    <script src="src/shared/js/components01.js" ></script>
-    <script src="src/components/panel/componentspanel01.js" ></script>
+    <script src="node_modules/handlebars/dist/handlebars.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script >
+      
+SystemJS.config({
+    baseURL: './',
+    defaultExtension: 'js',
+    babelOptions:{
+        stage1:true,
+        modularRuntime: true,
+            //presets:['es2015'],
+           // plugins:["transform-decorators"]
+        },
+    map:{
+        jquery:"bower/jquery/dist/jquery.min.js",
+        react:'node_modules/react/umd/react.development.js',
+        'react-dom':'node_modules/react-dom/umd/react-dom.development.js',
+        handlebars:"node_modules/handlebars/dist/handlebars.js",
+        hammer:"bower/hammerjs/hammer.min.js",
+        director:"bower/director/build/director.min.js",
+        hashtable:"bower/jshashtable/hashtable.js",
+        values:"src/shared/js/values.js",
+        util01:"src/componentsImports/util01.js",
+        keyform:"src/componentsImports/keyform.js",
+        component:"src/componentsImports/components01.js",
+        componentscroll:"src/components/menu-vertical/componentsMenuVerticalScroll01.js",
+        mousetrap:"bower/mousetrap/mousetrap.min.js",
+        inputmask:"bower/Inputmask/dist/inputmask/inputmask.js",
+        inputmaskdeplib:"bower/Inputmask/dist/inputmask/inputmask.dependencyLib.js",
+        inputmaskdate:"bower/Inputmask/dist/inputmask/inputmask.date.extensions.js", 
+        inputmaskext:"bower/Inputmask/dist/inputmask/inputmask.extensions.js",
+        inputmasknum:"bower/Inputmask/dist/inputmask/inputmask.numeric.extensions.js",
+        inputmaskphone:"bower/Inputmask/dist/inputmask/inputmask.phone.extensions.js",
+        inputmaskregex:"bower/Inputmask/dist/inputmask/inputmask.regex.extensions.js",
+        table:"src/components/Table/table01.js",
+        behaviors:"src/shared/js/behaviors.js",
+        behaviors03layout02:"src/shared/js/behaviors03layout02.js",
+        css: 'node_modules/systemjs-plugin-css/css.js',
+        text: 'src/shared/js/text.js',
+        
+        'plugin-babel': 'node_modules/systemjs-plugin-babel/plugin-babel.js',
+        'systemjs-babel-build':'node_modules/systemjs-plugin-babel/systemjs-babel-browser.js'
+        
+    },
+    packages:{
+        /*
+        'transform-decorators-legacy':{
+            
+            format: 'cjs',
+            defaultExtension: 'js',
+           meta:{
+               'node_modules/*':{
+                defaultExtension: 'js',
+                   format:'cjs'
+               }
+           }
+            
+        }
+        */
+    },
+    meta: {
+        '*.css': { loader: 'css' },
+        'src/shared/templ/*.html': {loader: 'text'},
+        'src/shared/js/prueba30.js': {
+        
+         
+        },
+        'plugin-babel':{
+          
+        },
+        'node_modules/systemjs-plugin-babel/systemjs-babel-browser.js':{
+           
+        },
+        'node_modules/babel-plugin-transform-decorators/lib/index.js':{
+      
+        },
+        /*
+               'node_modules/*':{
+                defaultExtension: 'js',
+                   format:'cjs'
+               }
+           
+        */
+    }
+    ,transpiler: 'plugin-babel'
+    })
     
-    <script src="src/components/menu-vertical/componentsMenuVerticalScroll01.js" ></script> 
-    <script src="src/shared/js/viewsComponents.js" ></script>
-    <script src="src/shared/js/viewsComponents03layout02.js" ></script>
-    <script src="src/shared/js/actions.js" ></script>
-    <script src="src/shared/js/actionsprueba05.js" ></script>
+    SystemJS.import('src/shared/js/prueba30-bis.js');
     
-    
-    <script src="src/shared/js/prueba30.js" ></script>
+    </script>
 </body>
 </html>

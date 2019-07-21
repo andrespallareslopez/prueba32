@@ -1,0 +1,15 @@
+@startuml
+class Options{
+    String containerView
+    Object data
+    
+}
+class BindComponent{
+    
+    +BindComponent(Options options)
+    void findAttrBinding()
+    void parseAttrBinding()
+    void Bind()
+    
+}
+@enduml

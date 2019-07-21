@@ -1,9 +1,3 @@
-.datalist {
-  width: 200px;
-  height: 150px;
-  background: #5C6BC0;
-  z-index: 999; }
-
 .form-fix-basic-01 {
   position: relative;
   /*importante para que se centre */
@@ -97,7 +91,8 @@
         color: #303F9F;
         padding: 4px;
         margin: 0px;
-        border: none; }
+        border: none;
+        vertical-align: top; }
         .form-fix-basic-01 .group .label-input .input:focus {
           background-color: #E8EAF6;
           border: 1px solid #7986CB; }

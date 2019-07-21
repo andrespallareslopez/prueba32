@@ -186,9 +186,12 @@ html, body {
   @media screen and (min-width: 768px) {
     .lyt03layout02 .content-no-nav {
       height: calc(100vh - 15vh - 47px); } }
+/*
 .lyt03layout02 .right {
   display: none;
-  width: 200px; }
+  width: 200px; 
+}
+*/
 .lyt03layout02 .footer {
   position: relative;
   display: block;
