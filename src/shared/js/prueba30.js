@@ -42,6 +42,16 @@ import cadenatemplatepanel from 'src/components/panel/templatepanelactions.html!
 import cadenatemplatescroll from 'src/components/panel/templatepanelscroll.html!text'
 import cadenatemplatescrollbind from 'src/components/panel/templatepanelscrollbind.html!text'
 
+import {datos,mesas,categorias,articulos} from 'src/shared/js/listInMemory.js'
+
+import {Component} from 'src/componentsImports/componentDecorator.js'
+
+import { appendToContainer,recreateNode,removeContainer } from "src/componentsImports/utilContainer.js";
+
+import {Nav} from 'src/lib/myNav.js'
+
+import {mycalendar} from 'src/lib/myCalendar.js'
+
 //import 'src/components/layouts/03layout02/03layout02.css'
 
 //import 'src/components/menu-horizontal/03menu-horizontal01.css'
@@ -102,6 +112,7 @@ $(()=>{
     coneotroller.action02();
     */
     window.controls={}
+    /*
     const Component=function(options){
         
         return function(target){
@@ -137,7 +148,8 @@ $(()=>{
             
         }
     } 
-    
+    */
+    /*
     var appendToContainer=function(html,containerview){
        
         console.log("estoy dentro de appendToContainer");
@@ -147,11 +159,12 @@ $(()=>{
         $(html).appendTo(containerview);
         
     };
+    */
     /*
         removeContainer(self.options.containerView); 
         appendToContainer.apply(self,[html,self.options.containerView]); 
     */
-    
+    /*
     function recreateNode(el, withChildren) {
         if (withChildren) {
           el.parentNode.replaceChild(el.cloneNode(true), el);
@@ -161,6 +174,8 @@ $(()=>{
           el.parentNode.replaceChild(newEl, el);
         }
     };
+    */
+    /*
     var removeContainer=function(containerview){
         var self=this;
         console.log("estoy dentro de removeContainer");
@@ -174,6 +189,7 @@ $(()=>{
 
         
     };
+    */
     if ($(".container .pages").data("template")){
         /*
             var container = new components.container({
@@ -182,7 +198,7 @@ $(()=>{
              nametemplate: $('.container .pages').data('template')
             })
         */
-        
+        /*
         @Component({
            selector:'my-nav',
            textTemplate:cadenanav,
@@ -197,6 +213,8 @@ $(()=>{
                 window.behaviors.navButtons03layout02()
             }
         }
+        */
+        /*
         var datos=
             [{codgrupo:1,description:"Bebida"},
                     {codgrupo:2,description:"Pan"},
@@ -279,6 +297,7 @@ $(()=>{
             {"codigo":"49","descripcion":"MESA 49","estaso":"0"},
             {"codigo":"50","descripcion":"MESA 50","estaso":"0"}
         ]
+        
         var categorias=[{"codigo":"02","categoria":"REFRESCOS","ingredientes":"S"},
         {"codigo":"03","categoria":"CERVEZAS","ingredientes":"N"},
         {"codigo":"04","categoria":"CAF\u00C9S","ingredientes":"N"},
@@ -303,6 +322,7 @@ $(()=>{
         {"codigo":"33","categoria":"ITALIANO","ingredientes":"S"},
         {"codigo":"34","categoria":"SOPAS","ingredientes":"S"}
         ]
+        
         var articulos=[
             {"codigo":"2","descripcion":"COCA-COLA","categoria":"02"},
             {"codigo":"3","descripcion":"COCA-COLA LIGHT","categoria":"02"},
@@ -324,6 +344,7 @@ $(()=>{
             {"codigo":"26","descripcion":"AGUA VICHY","categoria":"02"},
             {"codigo":"293","descripcion":"ZUMO NARANJA NATURAL","categoria":"02"}
         ]
+        */
         var mymenuvertical01=new components.container({
             selector:'my-menu-vertical-01',
             textTemplate:cadenamenuvertical01,
@@ -486,6 +507,7 @@ $(()=>{
             }
            })
         }
+        /*
         var mycalendar=new components.container({
             selector:'my-calendar',
             textTemplate:cadenacalendar,
@@ -503,6 +525,7 @@ $(()=>{
                 id:id
               })
         }
+        */
         var mysearch=new components.container({
             selector: 'my-search',
             textTemplate:cadenabusqueda
