@@ -24,19 +24,18 @@ import cadenascroll04 from 'src/shared/templ/scroll04.html!text'
 import cadenascroll05 from 'src/shared/templ/scroll05.html!text'
 
 import cadenaform from 'src/shared/templ/myform01.html!text'
-import cadenainput from 'src/shared/templ/input01.html!text'
-import cadenacalendar from 'src/shared/templ/inputcalendar01.html!text'
+//import cadenainput from 'src/shared/templ/input01.html!text'
+//import cadenacalendar from 'src/shared/templ/inputcalendar01.html!text'
 import cadenabusqueda from 'src/shared/templ/inputbusqueda01.html!text'
-import cadenacombo from 'src/shared/templ/inputcombo01.html!text'
-import cadenanav from 'src/shared/templ/nav01.html!text'
+//import cadenacombo from 'src/shared/templ/inputcombo01.html!text'
+//import cadenanav from 'src/shared/templ/nav01.html!text'
 import cadenaslide from 'src/components/slides/slide01.html!text'
 import cadenaSlidePerspective from 'src/components/slides/slide04perspective.html!text'
 import cadenaSlidePanel from 'src/components/slides/slide01.html!text'
 import cadenaSlidePanelDetail from 'src/components/slides/slide03.html!text'
 import cadenaTabs01 from 'src/shared/templ/Tabs01.html!text'
 import cadenadatalist from 'src/shared/templ/datalist02.html!text'
-import cadenadatamesas from 'src/shared/templ/datalistmesas.html!text'
-import cadenadataarticulos from 'src/shared/templ/datalistarticulos.html!text'
+
 import cadenamenuvertical01 from 'src/components/menu-vertical/tmplverticalmenu01.html!text'
 import cadenatemplatepanel from 'src/components/panel/templatepanelactions.html!text'
 import cadenatemplatescroll from 'src/components/panel/templatepanelscroll.html!text'
@@ -52,6 +51,9 @@ import {Nav} from 'src/lib/myNav.js'
 
 import {mycalendar} from 'src/lib/myCalendar.js'
 
+import {mycombo} from 'src/lib/myCombo.js'
+
+import {myinput} from 'src/lib/myInput.js'
 //import 'src/components/layouts/03layout02/03layout02.css'
 
 //import 'src/components/menu-horizontal/03menu-horizontal01.css'
@@ -530,6 +532,7 @@ $(()=>{
             selector: 'my-search',
             textTemplate:cadenabusqueda
         })
+        /*
         var mycombo=new components.container({
             selector:'my-combo',
             textTemplate:cadenacombo,
@@ -549,22 +552,7 @@ $(()=>{
             datalist=new controls.UXDataList({
                 id:id,
                 clearContainer:true,
-                /*
-                data:(function(id){
-                 if (id=="combo01")    
-                  return   {articulos:articulos}
-                 else if(id=="combo02")
-                   return {mesas:mesas}
-                })(id),
-                */
-                /*
-                textTemplate:(function(id){
-                   if (id=="combo01")
-                     return cadenadataarticulos
-                   else if (id=="combo02")
-                     return cadenadatamesas
-                })(id),
-                */
+              
                 onButtonClick:function(options){
                     if (id=="combo01")    
                       datalist.setData({articulos:articulos},id,cadenadataarticulos)
@@ -587,11 +575,14 @@ $(()=>{
                 }
             })
         }
+        */
         //console.log(cadenainput)
+        /*
         var myinput=new components.container({
             selector:'my-input',
             textTemplate:cadenainput
         })
+        */
         var mypanelscrollcontent=new components.container({
             selector:'my-panel-scroll-content',
             textTemplate:cadenascroll,

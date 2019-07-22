@@ -44,25 +44,9 @@ var _myform = require('src/shared/templ/myform01.html!text');
 
 var _myform2 = _interopRequireDefault(_myform);
 
-var _input = require('src/shared/templ/input01.html!text');
-
-var _input2 = _interopRequireDefault(_input);
-
-var _inputcalendar = require('src/shared/templ/inputcalendar01.html!text');
-
-var _inputcalendar2 = _interopRequireDefault(_inputcalendar);
-
 var _inputbusqueda = require('src/shared/templ/inputbusqueda01.html!text');
 
 var _inputbusqueda2 = _interopRequireDefault(_inputbusqueda);
-
-var _inputcombo = require('src/shared/templ/inputcombo01.html!text');
-
-var _inputcombo2 = _interopRequireDefault(_inputcombo);
-
-var _nav = require('src/shared/templ/nav01.html!text');
-
-var _nav2 = _interopRequireDefault(_nav);
 
 var _slide = require('src/components/slides/slide01.html!text');
 
@@ -83,14 +67,6 @@ var _Tabs2 = _interopRequireDefault(_Tabs);
 var _datalist = require('src/shared/templ/datalist02.html!text');
 
 var _datalist2 = _interopRequireDefault(_datalist);
-
-var _datalistmesas = require('src/shared/templ/datalistmesas.html!text');
-
-var _datalistmesas2 = _interopRequireDefault(_datalistmesas);
-
-var _datalistarticulos = require('src/shared/templ/datalistarticulos.html!text');
-
-var _datalistarticulos2 = _interopRequireDefault(_datalistarticulos);
 
 var _tmplverticalmenu = require('src/components/menu-vertical/tmplverticalmenu01.html!text');
 
@@ -118,6 +94,10 @@ var _myNav = require('src/lib/myNav.js');
 
 var _myCalendar = require('src/lib/myCalendar.js');
 
+var _myCombo = require('src/lib/myCombo.js');
+
+var _myInput = require('src/lib/myInput.js');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //import 'src/components/layouts/03layout02/03layout02.css'
@@ -144,6 +124,9 @@ $(document).ready(function(){
  * 
  * 
  */
+
+//import cadenainput from 'src/shared/templ/input01.html!text'
+//import cadenacalendar from 'src/shared/templ/inputcalendar01.html!text'
 
 
 //import {keyform} from 'keyform'
@@ -654,59 +637,57 @@ $(document).ready(function(){
             selector: 'my-search',
             textTemplate: _inputbusqueda2.default
         });
-        var mycombo = new _component.components.container({
-            selector: 'my-combo',
-            textTemplate: _inputcombo2.default,
-            cssUrls: ['bower/tether/dist/css/tether.css', 'src/components/panel/04PanelScroll01.css', 'src/components/list/03datalist01.css'],
-            importsUrl: ['bower/tether/dist/js/tether.js', { url: 'src/componentsImports/UXDataList.js', typemodule: 'module' }, { url: 'src/componentsImports/UXButtonScroll.js', typemodule: 'module' }]
-        });
-        mycombo.initevent = function (options, id) {
+        /*
+        var mycombo=new components.container({
+            selector:'my-combo',
+            textTemplate:cadenacombo,
+            cssUrls:['bower/tether/dist/css/tether.css',
+            'src/components/panel/04PanelScroll01.css',
+            'src/components/list/03datalist01.css'
+            ],
+            importsUrl:['bower/tether/dist/js/tether.js',
+            {url:'src/componentsImports/UXDataList.js',typemodule:'module'},
+            {url:'src/componentsImports/UXButtonScroll.js',typemodule:'module'}
+            ]
+        })
+        mycombo.initevent=function(options,id){
             var scroll;
             var datalist;
             //console.log(id);
-            datalist = new controls.UXDataList({
-                id: id,
-                clearContainer: true,
-                /*
-                data:(function(id){
-                 if (id=="combo01")    
-                  return   {articulos:articulos}
-                 else if(id=="combo02")
-                   return {mesas:mesas}
-                })(id),
-                */
-                /*
-                textTemplate:(function(id){
-                   if (id=="combo01")
-                     return cadenadataarticulos
-                   else if (id=="combo02")
-                     return cadenadatamesas
-                })(id),
-                */
-                onButtonClick: function onButtonClick(options) {
-                    if (id == "combo01") datalist.setData({ articulos: _listInMemory.articulos }, id, _datalistarticulos2.default);else if (id == "combo02") datalist.setData({ mesas: _listInMemory.mesas }, id, _datalistmesas2.default);
-
-                    scroll = new controls.UXButtonScroll({
-                        id: id + 'datalist',
-                        onItemClick: function onItemClick(value, target) {
-                            console.dir(target);
+            datalist=new controls.UXDataList({
+                id:id,
+                clearContainer:true,
+              
+                onButtonClick:function(options){
+                    if (id=="combo01")    
+                      datalist.setData({articulos:articulos},id,cadenadataarticulos)
+                    else if(id=="combo02")
+                      datalist.setData({mesas:mesas},id,cadenadatamesas)
+                       
+                    scroll=new controls.UXButtonScroll({
+                        id:id+'datalist',
+                        onItemClick:function(value,target){
+                            console.dir(target)
                             //console.log("estoy dentro de onItemClick")
                             datalist.$inputText.val(value);
                             datalist.toggle();
                             scroll.destroy();
                         }
-                    });
+                    })
                 },
-                onClose: function onClose() {
-                    scroll.destroy();
+                onClose:function(){
+                   scroll.destroy();
                 }
-            });
-        };
+            })
+        }
+        */
         //console.log(cadenainput)
-        var myinput = new _component.components.container({
-            selector: 'my-input',
-            textTemplate: _input2.default
-        });
+        /*
+        var myinput=new components.container({
+            selector:'my-input',
+            textTemplate:cadenainput
+        })
+        */
         var mypanelscrollcontent = new _component.components.container({
             selector: 'my-panel-scroll-content',
             textTemplate: _scroll2.default,
@@ -988,3 +969,5 @@ $(document).ready(function(){
         ;
     }
 });
+//import cadenacombo from 'src/shared/templ/inputcombo01.html!text'
+//import cadenanav from 'src/shared/templ/nav01.html!text'
