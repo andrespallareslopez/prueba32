@@ -24,24 +24,36 @@ import cadenascroll04 from 'src/shared/templ/scroll04.html!text'
 import cadenascroll05 from 'src/shared/templ/scroll05.html!text'
 
 import cadenaform from 'src/shared/templ/myform01.html!text'
-import cadenainput from 'src/shared/templ/input01.html!text'
-import cadenacalendar from 'src/shared/templ/inputcalendar01.html!text'
+//import cadenainput from 'src/shared/templ/input01.html!text'
+//import cadenacalendar from 'src/shared/templ/inputcalendar01.html!text'
 import cadenabusqueda from 'src/shared/templ/inputbusqueda01.html!text'
-import cadenacombo from 'src/shared/templ/inputcombo01.html!text'
-import cadenanav from 'src/shared/templ/nav01.html!text'
+//import cadenacombo from 'src/shared/templ/inputcombo01.html!text'
+//import cadenanav from 'src/shared/templ/nav01.html!text'
 import cadenaslide from 'src/components/slides/slide01.html!text'
 import cadenaSlidePerspective from 'src/components/slides/slide04perspective.html!text'
 import cadenaSlidePanel from 'src/components/slides/slide01.html!text'
 import cadenaSlidePanelDetail from 'src/components/slides/slide03.html!text'
 import cadenaTabs01 from 'src/shared/templ/Tabs01.html!text'
 import cadenadatalist from 'src/shared/templ/datalist02.html!text'
-import cadenadatamesas from 'src/shared/templ/datalistmesas.html!text'
-import cadenadataarticulos from 'src/shared/templ/datalistarticulos.html!text'
+
 import cadenamenuvertical01 from 'src/components/menu-vertical/tmplverticalmenu01.html!text'
 import cadenatemplatepanel from 'src/components/panel/templatepanelactions.html!text'
 import cadenatemplatescroll from 'src/components/panel/templatepanelscroll.html!text'
 import cadenatemplatescrollbind from 'src/components/panel/templatepanelscrollbind.html!text'
 
+import {datos,mesas,categorias,articulos} from 'src/shared/js/listInMemory.js'
+
+import {Component} from 'src/componentsImports/componentDecorator.js'
+
+import { appendToContainer,recreateNode,removeContainer } from "src/componentsImports/utilContainer.js";
+
+import {Nav} from 'src/lib/myNav.js'
+
+import {mycalendar} from 'src/lib/myCalendar.js'
+
+import {mycombo} from 'src/lib/myCombo.js'
+
+import {myinput} from 'src/lib/myInput.js'
 //import 'src/components/layouts/03layout02/03layout02.css'
 
 //import 'src/components/menu-horizontal/03menu-horizontal01.css'
@@ -102,6 +114,7 @@ $(()=>{
     coneotroller.action02();
     */
     window.controls={}
+    /*
     const Component=function(options){
         
         return function(target){
@@ -137,7 +150,8 @@ $(()=>{
             
         }
     } 
-    
+    */
+    /*
     var appendToContainer=function(html,containerview){
        
         console.log("estoy dentro de appendToContainer");
@@ -147,11 +161,12 @@ $(()=>{
         $(html).appendTo(containerview);
         
     };
+    */
     /*
         removeContainer(self.options.containerView); 
         appendToContainer.apply(self,[html,self.options.containerView]); 
     */
-    
+    /*
     function recreateNode(el, withChildren) {
         if (withChildren) {
           el.parentNode.replaceChild(el.cloneNode(true), el);
@@ -161,6 +176,8 @@ $(()=>{
           el.parentNode.replaceChild(newEl, el);
         }
     };
+    */
+    /*
     var removeContainer=function(containerview){
         var self=this;
         console.log("estoy dentro de removeContainer");
@@ -174,6 +191,7 @@ $(()=>{
 
         
     };
+    */
     if ($(".container .pages").data("template")){
         /*
             var container = new components.container({
@@ -182,7 +200,7 @@ $(()=>{
              nametemplate: $('.container .pages').data('template')
             })
         */
-        
+        /*
         @Component({
            selector:'my-nav',
            textTemplate:cadenanav,
@@ -197,6 +215,8 @@ $(()=>{
                 window.behaviors.navButtons03layout02()
             }
         }
+        */
+        /*
         var datos=
             [{codgrupo:1,description:"Bebida"},
                     {codgrupo:2,description:"Pan"},
@@ -279,6 +299,7 @@ $(()=>{
             {"codigo":"49","descripcion":"MESA 49","estaso":"0"},
             {"codigo":"50","descripcion":"MESA 50","estaso":"0"}
         ]
+        
         var categorias=[{"codigo":"02","categoria":"REFRESCOS","ingredientes":"S"},
         {"codigo":"03","categoria":"CERVEZAS","ingredientes":"N"},
         {"codigo":"04","categoria":"CAF\u00C9S","ingredientes":"N"},
@@ -303,6 +324,7 @@ $(()=>{
         {"codigo":"33","categoria":"ITALIANO","ingredientes":"S"},
         {"codigo":"34","categoria":"SOPAS","ingredientes":"S"}
         ]
+        
         var articulos=[
             {"codigo":"2","descripcion":"COCA-COLA","categoria":"02"},
             {"codigo":"3","descripcion":"COCA-COLA LIGHT","categoria":"02"},
@@ -324,6 +346,7 @@ $(()=>{
             {"codigo":"26","descripcion":"AGUA VICHY","categoria":"02"},
             {"codigo":"293","descripcion":"ZUMO NARANJA NATURAL","categoria":"02"}
         ]
+        */
         var mymenuvertical01=new components.container({
             selector:'my-menu-vertical-01',
             textTemplate:cadenamenuvertical01,
@@ -486,6 +509,7 @@ $(()=>{
             }
            })
         }
+        /*
         var mycalendar=new components.container({
             selector:'my-calendar',
             textTemplate:cadenacalendar,
@@ -503,10 +527,12 @@ $(()=>{
                 id:id
               })
         }
+        */
         var mysearch=new components.container({
             selector: 'my-search',
             textTemplate:cadenabusqueda
         })
+        /*
         var mycombo=new components.container({
             selector:'my-combo',
             textTemplate:cadenacombo,
@@ -526,22 +552,7 @@ $(()=>{
             datalist=new controls.UXDataList({
                 id:id,
                 clearContainer:true,
-                /*
-                data:(function(id){
-                 if (id=="combo01")    
-                  return   {articulos:articulos}
-                 else if(id=="combo02")
-                   return {mesas:mesas}
-                })(id),
-                */
-                /*
-                textTemplate:(function(id){
-                   if (id=="combo01")
-                     return cadenadataarticulos
-                   else if (id=="combo02")
-                     return cadenadatamesas
-                })(id),
-                */
+              
                 onButtonClick:function(options){
                     if (id=="combo01")    
                       datalist.setData({articulos:articulos},id,cadenadataarticulos)
@@ -564,11 +575,14 @@ $(()=>{
                 }
             })
         }
+        */
         //console.log(cadenainput)
+        /*
         var myinput=new components.container({
             selector:'my-input',
             textTemplate:cadenainput
         })
+        */
         var mypanelscrollcontent=new components.container({
             selector:'my-panel-scroll-content',
             textTemplate:cadenascroll,
@@ -891,7 +905,7 @@ $(()=>{
           ],
           importsUrl:[    
           "bower/mousetrap/mousetrap.min.js",
-          "bower/Inputmask/dist/inputmask/inputmask.js",
+          "node_modules/inputmask/dist/inputmask/inputmask.js",
           "bower/hammerjs/hammer.min.js",
           "src/shared/js/behaviors03layout02.js"
        
