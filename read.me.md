@@ -864,5 +864,7 @@ ___
 
 ___
 
+## Proxy Reflections Decoradores
 
+[Qué son y cómo funcionan los proxies de ECMAScript 5 (ES2015)](https://uniwebsidad.com/tutoriales/que-son-y-como-funcionan-los-proxies-de-ecmascript-5-es2015)
 
