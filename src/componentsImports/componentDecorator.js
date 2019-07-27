@@ -18,11 +18,11 @@ export const Component=function(options){
         //console.dir(targetInstance) 
         targetInstance.init(options)
         if ('initevent' in targetInstance){
-            //console.log("estoy dentro de target initevent")
+            console.log("estoy dentro de target initevent")
             //container.prototype.initevent=targetInstance.initevent
         }
-
-       
+         
+        
         //console.dir(targetInstance)
         //targetInstance.prototype=new components.container()
         //var component=new targetInstance(options)

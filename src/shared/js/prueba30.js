@@ -26,7 +26,7 @@ import cadenascroll05 from 'src/shared/templ/scroll05.html!text'
 import cadenaform from 'src/shared/templ/myform01.html!text'
 //import cadenainput from 'src/shared/templ/input01.html!text'
 //import cadenacalendar from 'src/shared/templ/inputcalendar01.html!text'
-import cadenabusqueda from 'src/shared/templ/inputbusqueda01.html!text'
+//import cadenabusqueda from 'src/shared/templ/inputbusqueda01.html!text'
 //import cadenacombo from 'src/shared/templ/inputcombo01.html!text'
 //import cadenanav from 'src/shared/templ/nav01.html!text'
 import cadenaslide from 'src/components/slides/slide01.html!text'
@@ -36,16 +36,15 @@ import cadenaSlidePanelDetail from 'src/components/slides/slide03.html!text'
 import cadenaTabs01 from 'src/shared/templ/Tabs01.html!text'
 import cadenadatalist from 'src/shared/templ/datalist02.html!text'
 
-import cadenamenuvertical01 from 'src/components/menu-vertical/tmplverticalmenu01.html!text'
+//import cadenamenuvertical01 from 'src/components/menu-vertical/tmplverticalmenu01.html!text'
 import cadenatemplatepanel from 'src/components/panel/templatepanelactions.html!text'
 import cadenatemplatescroll from 'src/components/panel/templatepanelscroll.html!text'
-import cadenatemplatescrollbind from 'src/components/panel/templatepanelscrollbind.html!text'
+
 
 import {datos,mesas,categorias,articulos} from 'src/shared/js/listInMemory.js'
 
-import {Component} from 'src/componentsImports/componentDecorator.js'
+//import {Component} from 'src/componentsImports/componentDecorator.js'
 
-import { appendToContainer,recreateNode,removeContainer } from "src/componentsImports/utilContainer.js";
 
 import {Nav} from 'src/lib/myNav.js'
 
@@ -54,6 +53,11 @@ import {mycalendar} from 'src/lib/myCalendar.js'
 import {mycombo} from 'src/lib/myCombo.js'
 
 import {myinput} from 'src/lib/myInput.js'
+
+import {mysearch} from 'src/lib/mySearch.js'
+
+import {mymenuvertical01} from 'src/lib/myMenuVertical01.js'
+
 //import 'src/components/layouts/03layout02/03layout02.css'
 
 //import 'src/components/menu-horizontal/03menu-horizontal01.css'
@@ -347,6 +351,7 @@ $(()=>{
             {"codigo":"293","descripcion":"ZUMO NARANJA NATURAL","categoria":"02"}
         ]
         */
+        /*
         var mymenuvertical01=new components.container({
             selector:'my-menu-vertical-01',
             textTemplate:cadenamenuvertical01,
@@ -364,24 +369,7 @@ $(()=>{
                 {url:'src/componentsImports/bindComponent.js',typemodule:'module'}]
         })
         mymenuvertical01.initevent=function(options,id){
-            /* 
-            new controls.UXButtonScroll({
-                id:id,
-                containerComponent:".menu-vertical01",
-                items:".items",
-                scroll:".container-menu-scroll",
-                item:".gr"
-            })
-            */
-            /*
-            new controls.UXScroll({
-                id:id,
-                containerComponent:".menu-vertical01",
-                items:".items",
-                scroll:".container-menu-scroll",
-                item:".gr" 
-            })
-            */
+           
            new controls.UXScrollV({
             id:id
            })    
@@ -394,19 +382,11 @@ $(()=>{
                var id=$(e.target).data("panel-id")
                
                var template=cadenatemplatescrollbind
-               /*
-               var html=util.buildtemplate({
-                   source:template,
-                   data:{id:id},
-                   typeInsertHTML:components.enumInsertHTML.customElement
-               })
-               */
+              
             
                //console.dir(html)
                
-               /*
-               removeContainer(self.options.containerView); 
-               */
+               
                
                //var $containerChild=$(".wrapper.page.child")
                var containerView=".main-body"
@@ -481,34 +461,15 @@ $(()=>{
                  panelControl.onClick=function(e){
                     console.log("estoy dentro de panelControl Click")
                  }
-                  /*
-                  var templateChild=new components.container({
-                     container:containerView
-                  })
-                  templateChild.promise.then(function(){
-                      console.dir("estoy dentro de template child")
-                      var timer=setTimeout(function(){
-                        changeAnimation.apply(self,[])
-                        clearTimeout(timer)
-                      },350)
-                      
-                       
-                      onClick()  
-                  });
-                  
-                  appendToContainer.apply(self,[html,containerView]);
-                  */
+                 
                }
-               /*else{
-                changeAnimation.apply(self,[])
-                
-               }
-               */
+              
             
              
             }
            })
         }
+        */
         /*
         var mycalendar=new components.container({
             selector:'my-calendar',
@@ -528,10 +489,12 @@ $(()=>{
               })
         }
         */
+       /*
         var mysearch=new components.container({
             selector: 'my-search',
             textTemplate:cadenabusqueda
         })
+        */
         /*
         var mycombo=new components.container({
             selector:'my-combo',
@@ -583,6 +546,7 @@ $(()=>{
             textTemplate:cadenainput
         })
         */
+       
         var mypanelscrollcontent=new components.container({
             selector:'my-panel-scroll-content',
             textTemplate:cadenascroll,

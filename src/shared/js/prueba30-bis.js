@@ -44,10 +44,6 @@ var _myform = require('src/shared/templ/myform01.html!text');
 
 var _myform2 = _interopRequireDefault(_myform);
 
-var _inputbusqueda = require('src/shared/templ/inputbusqueda01.html!text');
-
-var _inputbusqueda2 = _interopRequireDefault(_inputbusqueda);
-
 var _slide = require('src/components/slides/slide01.html!text');
 
 var _slide2 = _interopRequireDefault(_slide);
@@ -68,10 +64,6 @@ var _datalist = require('src/shared/templ/datalist02.html!text');
 
 var _datalist2 = _interopRequireDefault(_datalist);
 
-var _tmplverticalmenu = require('src/components/menu-vertical/tmplverticalmenu01.html!text');
-
-var _tmplverticalmenu2 = _interopRequireDefault(_tmplverticalmenu);
-
 var _templatepanelactions = require('src/components/panel/templatepanelactions.html!text');
 
 var _templatepanelactions2 = _interopRequireDefault(_templatepanelactions);
@@ -80,15 +72,7 @@ var _templatepanelscroll = require('src/components/panel/templatepanelscroll.htm
 
 var _templatepanelscroll2 = _interopRequireDefault(_templatepanelscroll);
 
-var _templatepanelscrollbind = require('src/components/panel/templatepanelscrollbind.html!text');
-
-var _templatepanelscrollbind2 = _interopRequireDefault(_templatepanelscrollbind);
-
 var _listInMemory = require('src/shared/js/listInMemory.js');
-
-var _componentDecorator = require('src/componentsImports/componentDecorator.js');
-
-var _utilContainer = require('src/componentsImports/utilContainer.js');
 
 var _myNav = require('src/lib/myNav.js');
 
@@ -97,6 +81,10 @@ var _myCalendar = require('src/lib/myCalendar.js');
 var _myCombo = require('src/lib/myCombo.js');
 
 var _myInput = require('src/lib/myInput.js');
+
+var _mySearch = require('src/lib/mySearch.js');
+
+var _myMenuVertical = require('src/lib/myMenuVertical01.js');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -125,16 +113,10 @@ $(document).ready(function(){
  * 
  */
 
-//import cadenainput from 'src/shared/templ/input01.html!text'
-//import cadenacalendar from 'src/shared/templ/inputcalendar01.html!text'
+
+//import {Component} from 'src/componentsImports/componentDecorator.js'
 
 
-//import {keyform} from 'keyform'
-
-/// <reference path="./main.d.ts" />
-//importar una libreria polyfill para webcomponentes por si no esta.
-//import React from '../../../node_modules/react/umd/react.production.min.js'
-//import ReactDOM from '../../../node_modules/react-dom/umd/react-dom.production.min.js'
 (0, _jquery2.default)(function () {
     //console.log("estoy dentro del ready")
     /*
@@ -473,147 +455,125 @@ $(document).ready(function(){
             {"codigo":"293","descripcion":"ZUMO NARANJA NATURAL","categoria":"02"}
         ]
         */
-        var mymenuvertical01 = new _component.components.container({
-            selector: 'my-menu-vertical-01',
-            textTemplate: _tmplverticalmenu2.default,
-            cssUrls: ['src/components/menu-vertical/03Menu-vertical01/03Menu-vertical01.css', 'src/components/list/03List-collections.css'],
-            importsUrl: [{ url: 'src/componentsImports/UXScroll.js', typemodule: 'module' }, { url: 'src/componentsImports/UXScrollV.js', typemodule: 'module' }, { url: 'src/componentsImports/UXAccordeon.js', typemodule: 'module' }, { url: 'src/componentsImports/bindOn.js', typemodule: 'module' }, { url: 'src/componentsImports/bindElement.js', typemodule: 'module' }, { url: 'src/componentsImports/bindComponent.js', typemodule: 'module' }]
-        });
-        mymenuvertical01.initevent = function (options, id) {
-            /* 
-            new controls.UXButtonScroll({
-                id:id,
-                containerComponent:".menu-vertical01",
-                items:".items",
-                scroll:".container-menu-scroll",
-                item:".gr"
-            })
-            */
-            /*
-            new controls.UXScroll({
-                id:id,
-                containerComponent:".menu-vertical01",
-                items:".items",
-                scroll:".container-menu-scroll",
-                item:".gr" 
-            })
-            */
-            new controls.UXScrollV({
-                id: id
-            });
-            new controls.UXAccordeon({
-                id: id,
-                onClickMenu: function onClickMenu(e) {
-                    //console.dir(e)
-                    console.log((0, _jquery2.default)(e.target).data("panel-id"));
-                    console.log("estoy dentro de onclickmenu personalizada");
-                    var id = (0, _jquery2.default)(e.target).data("panel-id");
-
-                    var template = _templatepanelscrollbind2.default;
-                    /*
-                    var html=util.buildtemplate({
-                        source:template,
-                        data:{id:id},
-                        typeInsertHTML:components.enumInsertHTML.customElement
-                    })
-                    */
-
-                    //console.dir(html)
-
-                    /*
-                    removeContainer(self.options.containerView); 
-                    */
-
-                    //var $containerChild=$(".wrapper.page.child")
-                    var containerView = ".main-body";
-                    var $template = (0, _jquery2.default)('#' + id + '.wrapper.page.child');
-                    var $buttonBack;
-
-                    //console.dir($template)
-                    if ($template.length == 0 && id) {
-
-                        var panelControl = new _component.components.container({
-                            container: containerView,
-                            textTemplate: template,
-                            data: { id: id }
-                        });
-                        panelControl.initevent = function (options) {
-                            console.log('estoy dentro de initeent de panelControl');
-                            var timer = setTimeout(function () {
-                                changeAnimation();
-                                clearTimeout(timer);
-                            }, 350);
-
-                            onClick();
-
-                            function onClick() {
-                                console.log("estoy en onClick");
-                                $buttonBack = (0, _jquery2.default)('#' + id + ' ' + '#btn-toggle-back-3');
-                                //console.dir($buttonBack)
-                                $buttonBack.on("click", function (e) {
-                                    console.log("estoy dentro de click");
-                                    changeAnimation(true);
-                                });
-                            }
-                            function changeAnimation(remove) {
-                                console.log("estoy dentro de changeAnimation");
-                                //console.dir($template)
-                                $template = (0, _jquery2.default)('#' + id + '.wrapper.page.child');
-                                if ($template.hasClass("animation")) {
-                                    $template.removeClass("animation");
-                                    if (remove) {
-                                        var timer = setTimeout(function () {
-                                            (0, _utilContainer.removeContainer)('#' + id + '.wrapper.page.child');
-                                            clearTimeout(timer);
-                                        }, 350);
-                                    }
-                                } else {
-                                    $template.addClass("animation");
-                                }
-                            }
-
-                            function onDestroy() {}
-                        };
-
-                        panelControl.bind = function (options) {
-                            var self = this;
-                            console.log("estoy en function bind");
-                            console.dir(self);
-
-                            var bind = new controls.BindComponent({
-                                containerView: '#' + id,
-                                target: self
-                            });
-                        };
-                        panelControl.onClick = function (e) {
-                            console.log("estoy dentro de panelControl Click");
-                        };
-                        /*
-                        var templateChild=new components.container({
-                           container:containerView
+        /*
+        var mymenuvertical01=new components.container({
+            selector:'my-menu-vertical-01',
+            textTemplate:cadenamenuvertical01,
+            cssUrls:[
+                'src/components/menu-vertical/03Menu-vertical01/03Menu-vertical01.css',
+                'src/components/list/03List-collections.css'
+            
+            ],
+            importsUrl:[ 
+                {url:'src/componentsImports/UXScroll.js',typemodule:'module'},
+                {url:'src/componentsImports/UXScrollV.js',typemodule:'module'},
+                {url:'src/componentsImports/UXAccordeon.js',typemodule:'module'},
+                {url:'src/componentsImports/bindOn.js',typemodule:'module'},
+                {url:'src/componentsImports/bindElement.js',typemodule:'module'},
+                {url:'src/componentsImports/bindComponent.js',typemodule:'module'}]
+        })
+        mymenuvertical01.initevent=function(options,id){
+           
+           new controls.UXScrollV({
+            id:id
+           })    
+           new controls.UXAccordeon({
+            id:id,
+            onClickMenu:function(e){
+               //console.dir(e)
+               console.log($(e.target).data("panel-id"))
+               console.log("estoy dentro de onclickmenu personalizada")
+               var id=$(e.target).data("panel-id")
+               
+               var template=cadenatemplatescrollbind
+              
+            
+               //console.dir(html)
+               
+               
+               
+               //var $containerChild=$(".wrapper.page.child")
+               var containerView=".main-body"
+               var $template=$('#'+id+'.wrapper.page.child');
+               var $buttonBack
+               
+               //console.dir($template)
+               if ($template.length==0 && id){
+                  
+                 var panelControl=new components.container({
+                    container:containerView,
+                    textTemplate:template,
+                    data:{id:id}
+                 })
+                 panelControl.initevent=function(options){
+                     console.log('estoy dentro de initeent de panelControl')
+                     var timer=setTimeout(function(){
+                        changeAnimation()
+                        clearTimeout(timer)
+                     },350)
+                      
+                       
+                     onClick()  
+                     
+                     
+                     function onClick(){
+                        console.log("estoy en onClick")
+                        $buttonBack=$('#'+id+' '+'#btn-toggle-back-3')
+                        //console.dir($buttonBack)
+                        $buttonBack.on("click",function(e){
+                          console.log("estoy dentro de click")
+                          changeAnimation(true) 
+                          
+                          
                         })
-                        templateChild.promise.then(function(){
-                            console.dir("estoy dentro de template child")
-                            var timer=setTimeout(function(){
-                              changeAnimation.apply(self,[])
-                              clearTimeout(timer)
-                            },350)
-                            
-                             
-                            onClick()  
-                        });
-                        
-                        appendToContainer.apply(self,[html,containerView]);
-                        */
                     }
-                    /*else{
-                     changeAnimation.apply(self,[])
+                    function changeAnimation(remove){
+                        console.log("estoy dentro de changeAnimation")
+                        //console.dir($template)
+                        $template=$('#'+id+'.wrapper.page.child');
+                        if ($template.hasClass("animation")){
+                         $template.removeClass("animation")
+                         if (remove){
+                             var timer=setTimeout(function(){
+                                 removeContainer('#'+id+'.wrapper.page.child')
+                                 clearTimeout(timer)
+                             },350)
+                             
+                             
+                         }
+                        }else{
+                         $template.addClass("animation")
+                        }
+                    }
+                    
+                    function onDestroy(){
                      
                     }
-                    */
-                }
-            });
-        };
+                 }
+                 
+                 panelControl.bind=function(options){
+                     var self=this;
+                     console.log("estoy en function bind")
+                     console.dir(self)
+                     
+                     var bind=new controls.BindComponent({
+                         containerView:'#'+id,
+                         target:self
+                     })
+                     
+                 }
+                 panelControl.onClick=function(e){
+                    console.log("estoy dentro de panelControl Click")
+                 }
+                 
+               }
+              
+            
+             
+            }
+           })
+        }
+        */
         /*
         var mycalendar=new components.container({
             selector:'my-calendar',
@@ -633,10 +593,12 @@ $(document).ready(function(){
               })
         }
         */
-        var mysearch = new _component.components.container({
-            selector: 'my-search',
-            textTemplate: _inputbusqueda2.default
-        });
+        /*
+         var mysearch=new components.container({
+             selector: 'my-search',
+             textTemplate:cadenabusqueda
+         })
+         */
         /*
         var mycombo=new components.container({
             selector:'my-combo',
@@ -688,6 +650,7 @@ $(document).ready(function(){
             textTemplate:cadenainput
         })
         */
+
         var mypanelscrollcontent = new _component.components.container({
             selector: 'my-panel-scroll-content',
             textTemplate: _scroll2.default,
@@ -969,5 +932,19 @@ $(document).ready(function(){
         ;
     }
 });
+
+//import cadenamenuvertical01 from 'src/components/menu-vertical/tmplverticalmenu01.html!text'
+
+//import cadenainput from 'src/shared/templ/input01.html!text'
+//import cadenacalendar from 'src/shared/templ/inputcalendar01.html!text'
+//import cadenabusqueda from 'src/shared/templ/inputbusqueda01.html!text'
 //import cadenacombo from 'src/shared/templ/inputcombo01.html!text'
 //import cadenanav from 'src/shared/templ/nav01.html!text'
+
+
+//import {keyform} from 'keyform'
+
+/// <reference path="./main.d.ts" />
+//importar una libreria polyfill para webcomponentes por si no esta.
+//import React from '../../../node_modules/react/umd/react.production.min.js'
+//import ReactDOM from '../../../node_modules/react-dom/umd/react-dom.production.min.js'
