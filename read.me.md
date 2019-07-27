@@ -502,23 +502,24 @@ document.querySelectorAll('[data-foo="value"]');
  -bind-on="onClick:function"
 
 **Eventos en un elemento del DOM**
-onblur
-onchange
-onclick
-ondblclick
-onfocus
-onkeydown
-onkeypress
-onkeyup
-onload
-onmouseout
-onmouseover
-onmouseup
-onreset
-onresize
-onselect
-onsubmit
-onunload
+- onblur
+- onchange
+- onclick
+- ondblclick
+- onfocus
+- onkeydown
+- onkeypress
+- onkeyup
+- onload
+- onmouseout
+- onmouseover
+- onmouseup
+- onreset
+- onresize
+- onselect
+- onsubmit
+- onunload
+
 
 **Manejar Eventos**
 ~~~
@@ -867,4 +868,130 @@ ___
 ## Proxy Reflections Decoradores
 
 [Qué son y cómo funcionan los proxies de ECMAScript 5 (ES2015)](https://uniwebsidad.com/tutoriales/que-son-y-como-funcionan-los-proxies-de-ecmascript-5-es2015)
+
+[JavaScript Shinies: Decorators](https://medium.com/@mattburgess/javascript-shinies-decorators-4fa005638022)
+
+~~~
+const debug = debugName => {
+  return function(target, name, descriptor){
+    const method = descriptor.value;
+    descriptor.value = function(...args){
+      console.group(debugName);
+      console.log(`Calling ${name} with arguments: %o`, args);
+      let result = method.apply(this, args);
+      console.log(`result is %o`, result);
+      console.groupEnd();
+      return result;
+    };
+  }
+}
+~~~
+
+[Intercepting method calls via ES6 Proxies](https://2ality.com/2015/10/intercepting-method-calls.html)
+
+
+~~~
+function traceMethodCalls(obj) {
+    let handler = {
+        get(target, propKey, receiver) {
+            const origMethod = target[propKey];
+            return function (...args) {
+                let result = origMethod.apply(this, args);
+                console.log(propKey + JSON.stringify(args)
+                    + ' -> ' + JSON.stringify(result));
+                return result;
+            };
+        }
+    };
+    return new Proxy(obj, handler);
+}
+~~~
+
+
+~~~
+let obj = {
+    multiply(x, y) {
+        return x * y;
+    },
+    squared(x) {
+        return this.multiply(x, x);
+    },
+};
+~~~
+
+~~~
+> let tracedObj = traceMethodCalls(obj);
+> tracedObj.multiply(2,7)
+multiply[2,7] -> 14
+14
+> tracedObj.squared(9)
+multiply[9,9] -> 81
+squared[9] -> 81
+81
+~~~
+
+
+[JavaScript Decorators: What They Are and When to Use Them](https://www.sitepoint.com/javascript-decorators-what-they-are/)
+
+~~~
+function log(target, name, descriptor) {
+  const original = descriptor.value;
+  if (typeof original === 'function') {
+    descriptor.value = function(...args) {
+      console.log(`Arguments: ${args}`);
+      try {
+        const result = original.apply(this, args);
+        console.log(`Result: ${result}`);
+        return result;
+      } catch (e) {
+        console.log(`Error: ${e}`);
+        throw e;
+      }
+    }
+  }
+  return descriptor;
+}
+~~~
+
+[Exploring EcmaScript Decorators](https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841)
+
+~~~
+
+~~~
+
+
+[Create and Test Decorators in JavaScript](https://netbasal.com/create-and-test-decorators-in-javascript-85e8d5cf879c)
+
+- Class Decorators
+
+- Method Decorators
+
+- Property Decorators
+
+~~~
+function logProperty(target: any, key: string) {
+ 
+  let value;
+ 
+  const getter = function() {
+    console.log(`Get => ${key}`);
+    return value;
+  };
+ 
+  const setter = function(newVal) {
+    console.log(`Set: ${key} => ${newVal}`);
+    value = newVal;
+  };
+ 
+  Object.defineProperty(target, key, {
+    get: getter,
+    set: setter,
+    enumerable: true,
+    configurable: true
+  });
+}
+~~~
+
+
+
 
