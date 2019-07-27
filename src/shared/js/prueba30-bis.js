@@ -86,6 +86,8 @@ var _mySearch = require('src/lib/mySearch.js');
 
 var _myMenuVertical = require('src/lib/myMenuVertical01.js');
 
+var _myListGrpButtons = require('src/lib/myListGrpButtons.js');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //import 'src/components/layouts/03layout02/03layout02.css'
@@ -114,9 +116,21 @@ $(document).ready(function(){
  */
 
 
-//import {Component} from 'src/componentsImports/componentDecorator.js'
+//import cadenamenuvertical01 from 'src/components/menu-vertical/tmplverticalmenu01.html!text'
+
+//import cadenainput from 'src/shared/templ/input01.html!text'
+//import cadenacalendar from 'src/shared/templ/inputcalendar01.html!text'
+//import cadenabusqueda from 'src/shared/templ/inputbusqueda01.html!text'
+//import cadenacombo from 'src/shared/templ/inputcombo01.html!text'
+//import cadenanav from 'src/shared/templ/nav01.html!text'
 
 
+//import {keyform} from 'keyform'
+
+/// <reference path="./main.d.ts" />
+//importar una libreria polyfill para webcomponentes por si no esta.
+//import React from '../../../node_modules/react/umd/react.production.min.js'
+//import ReactDOM from '../../../node_modules/react-dom/umd/react-dom.production.min.js'
 (0, _jquery2.default)(function () {
     //console.log("estoy dentro del ready")
     /*
@@ -300,6 +314,45 @@ $(document).ready(function(){
                 });
             });
         };
+        /*
+        var scrollPanelContentReact=function(data,nameDescripcion){
+            return   <div className="list-grp-buttons space-top-1x">
+                     {
+                        data.map(function(value,index){
+                            return (
+                                <a className="list-grp-button box-shadow-3" href="#" key={index} >
+                                  <div className="list-grp-content-top" >
+                                   <span className="list-grp-content-text list-grp-context-text-center" >{value[nameDescripcion]}</span>
+                                  </div>  
+                                </a>
+                               );
+                        })
+                     } 
+                     </div>
+         }
+        */
+        /*
+        var mylistgrpbuttons = new components.container({
+            selector: 'my-list-grp-buttons',
+            ReactDOM:ReactDOM,
+            //data:mesas,
+            nameDescription:"descripcion",
+            templateReact: scrollPanelContentReact,
+            cssUrls:[ 'src/components/list/03List-group-buttons.css']
+            
+        })
+        mylistgrpbuttons.initevent=function(options,id){
+            //console.log("Estoy en list grp buttons")
+            //console.log(id)
+            
+        }
+        mylistgrpbuttons.reloaddata=function(options,id){
+            //console.log("estoy en reload list grp buttons")
+            //console.log(id)
+        }
+        */
+        /************************************************* */
+
 
         /*
             var container = new components.container({
@@ -673,7 +726,9 @@ $(document).ready(function(){
                     //console.log("estoy en Panel mesas")
                     //console.log("panelMesas Id:"+id)
                     //mylistgrpbuttons.options.data=mesas
-                    mylistgrpbuttons.setData(_listInMemory.mesas, 'list-panel-mesas');
+                    var $list = (0, _jquery2.default)("#list-panel-mesas")[0];
+                    console.dir($list.render);
+                    _myListGrpButtons.mylistgrpbuttons.setData(_listInMemory.mesas, 'list-panel-mesas');
                     //$('#list-panel-mesas')[0].render(mylistgrpbuttons.options.templateReact,mesas)
                 };
 
@@ -698,7 +753,8 @@ $(document).ready(function(){
                     //console.log("estoy en panel Articulos")
                     //console.log("panelArticulos Id:"+id)
                     //mylistgrpbuttons.options.data=articulos
-                    mylistgrpbuttons.setData(_listInMemory.articulos, 'list-panel-articulos');
+                    //console.dir(mylistgrpbuttons)
+                    _myListGrpButtons.mylistgrpbuttons.setData(_listInMemory.articulos, 'list-panel-articulos');
                     //$('#list-panel-articulos')[0].render(mylistgrpbuttons.options.templateReact,articulos)
                     //console.dir(mylistgrpbuttons)
                 };
@@ -856,48 +912,7 @@ $(document).ready(function(){
                 }, 350);
             }
         };
-
-        var scrollPanelContentReact = function scrollPanelContentReact(data, nameDescripcion) {
-            return _react2.default.createElement(
-                'div',
-                { className: 'list-grp-buttons space-top-1x' },
-                data.map(function (value, index) {
-                    return _react2.default.createElement(
-                        'a',
-                        { className: 'list-grp-button box-shadow-3', href: '#', key: index },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'list-grp-content-top' },
-                            _react2.default.createElement(
-                                'span',
-                                { className: 'list-grp-content-text list-grp-context-text-center' },
-                                value[nameDescripcion]
-                            )
-                        )
-                    );
-                })
-            );
-        };
-        var mylistgrpbuttons = new _component.components.container({
-            selector: 'my-list-grp-buttons',
-            ReactDOM: _reactDom2.default,
-            //data:mesas,
-            nameDescription: "descripcion",
-            templateReact: scrollPanelContentReact,
-            cssUrls: ['src/components/list/03List-group-buttons.css']
-
-        });
-        mylistgrpbuttons.initevent = function (options, id) {
-            //console.log("Estoy en list grp buttons")
-            //console.log(id)
-
-        };
-        mylistgrpbuttons.reloaddata = function (options, id) {}
-        //console.log("estoy en reload list grp buttons")
-        //console.log(id)
-
-        /************************************************* */
-        ;var weblayout = new _component.components.container({
+        var weblayout = new _component.components.container({
             //container:".container .pages",
             selector: 'my-layout',
             pathTemplate: "src/shared/templ/",
@@ -933,18 +948,4 @@ $(document).ready(function(){
     }
 });
 
-//import cadenamenuvertical01 from 'src/components/menu-vertical/tmplverticalmenu01.html!text'
-
-//import cadenainput from 'src/shared/templ/input01.html!text'
-//import cadenacalendar from 'src/shared/templ/inputcalendar01.html!text'
-//import cadenabusqueda from 'src/shared/templ/inputbusqueda01.html!text'
-//import cadenacombo from 'src/shared/templ/inputcombo01.html!text'
-//import cadenanav from 'src/shared/templ/nav01.html!text'
-
-
-//import {keyform} from 'keyform'
-
-/// <reference path="./main.d.ts" />
-//importar una libreria polyfill para webcomponentes por si no esta.
-//import React from '../../../node_modules/react/umd/react.production.min.js'
-//import ReactDOM from '../../../node_modules/react-dom/umd/react-dom.production.min.js'
+//import {Component} from 'src/componentsImports/componentDecorator.js'

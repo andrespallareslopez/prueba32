@@ -58,6 +58,8 @@ import {mysearch} from 'src/lib/mySearch.js'
 
 import {mymenuvertical01} from 'src/lib/myMenuVertical01.js'
 
+import {mylistgrpbuttons} from 'src/lib/myListGrpButtons.js'
+
 //import 'src/components/layouts/03layout02/03layout02.css'
 
 //import 'src/components/menu-horizontal/03menu-horizontal01.css'
@@ -573,6 +575,8 @@ $(()=>{
                   //console.log("estoy en Panel mesas")
                   //console.log("panelMesas Id:"+id)
                   //mylistgrpbuttons.options.data=mesas
+                  var $list=$("#list-panel-mesas")[0]
+                  console.dir($list.render)
                   mylistgrpbuttons.setData(mesas,'list-panel-mesas')
                   //$('#list-panel-mesas')[0].render(mylistgrpbuttons.options.templateReact,mesas)
                }
@@ -602,6 +606,7 @@ $(()=>{
                     //console.log("estoy en panel Articulos")
                     //console.log("panelArticulos Id:"+id)
                     //mylistgrpbuttons.options.data=articulos
+                    //console.dir(mylistgrpbuttons)
                     mylistgrpbuttons.setData(articulos,'list-panel-articulos')                                       
                     //$('#list-panel-articulos')[0].render(mylistgrpbuttons.options.templateReact,articulos)
                     //console.dir(mylistgrpbuttons)
@@ -822,6 +827,7 @@ $(()=>{
                })
                
         }
+        /*
         var scrollPanelContentReact=function(data,nameDescripcion){
             return   <div className="list-grp-buttons space-top-1x">
                      {
@@ -838,6 +844,8 @@ $(()=>{
                      </div>
 
         }
+        */
+        /*
         var mylistgrpbuttons = new components.container({
             selector: 'my-list-grp-buttons',
             ReactDOM:ReactDOM,
@@ -856,6 +864,7 @@ $(()=>{
             //console.log("estoy en reload list grp buttons")
             //console.log(id)
         }
+        */
         /************************************************* */
         var weblayout=new components.container({
           //container:".container .pages",

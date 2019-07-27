@@ -3,6 +3,7 @@
 import {util} from './util01.js'
 
 var components
+var Container
 ;(function(ns,util){
      "use strict";
      
@@ -519,8 +520,18 @@ var components
                     //console.log(that.id)
                     self.options.id=that.id  
                     if ("initevent" in self){
-                        
+                        if (self.options.selector=='my-nav'){
+                            //console.log("estoy dentro de lanzador de initevent")
+                        }
+                        //console.log("estoy dentro de lanzador de initevent")
                         self.initevent.apply(self,[self.options,that.id]);
+                    }
+                    if ("afterinit" in self){
+                        if (self.options.selector=='my-nav'){
+                           //console.log("tiene afterinit "+self.options.selector)
+                           //console.dir(self.afterinit)
+                        }
+                        self.afterinit.apply(self,[self.options,that.id])
                     }
                      
                 }); 
@@ -562,7 +573,6 @@ var components
            }
 
         }
-        
         this.myElement= document.registerElement(self.options.selector,{
             prototype: this.mycustom
         });
@@ -630,8 +640,9 @@ var components
      
 })(components=components||{},util);  //podriamos poner simplemente this, y no definir components
 
+Container = components.container
 
-export {components}
+export {components,Container}
 if (!window.components)
     window.components={};
 util.addNameSpace(window.components,components);
