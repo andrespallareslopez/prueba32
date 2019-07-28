@@ -342,7 +342,11 @@ var controls;
          //$(this.config.container+" "+this.config.items+" "+"li"+" "+".list-grp-buttons").css({"top":(alturali/2)+"px"});
          // $(this.config.container+" "+this.config.items+" "+"li"+" "+".list-grp-buttons").css({"margin-top":(-alturaparcial/2)+"px"});
         $(self.config.containerComponent+" "+self.config.items+" "+"li"+" "+".list-grp-buttons").css({height:self.alturaparcial+"px"});
-         
+        mytimer1=setTimeout(function() {
+          $(self.config.containerComponent+" "+self.config.items+" ul").css({visibility:"hidden"}); 
+          clearTimeout(mytimer1);
+         }, 350);
+    
       };
       //*********************************************************************
       var avance=function(){

@@ -35,34 +35,7 @@
       $(container+" "+ctrlnav).find("a").eq(index).addClass("current");
     };
      //****************************************************************
-     /*
-     var avance=function(){
-         ii=ii-1;  
-          if ((ii-1>=0)){
-              $(container+" "+btnright).css({visibility:"visible"});
-          }else{
-              $(container+" "+btnleft).css({visibility:"hidden"});
-              ii=0;
-          }
-          $(container+" "+items+" ul").css({transform:"translateX("+ii*(-delta)+"%)"});
-          $(container+" "+items+" ul").find("li"+item).eq(ii).css({height:altura});
-          currentSelector(ii);
-     };
-     */
-     /*
-    var atras=function(){
-        ii=ii+1;
-          if (ii<cntli-1){
-              $(container+" "+btnleft).css({visibility:"visible"})
-          }else{
-              $(container+" "+btnright).css({visibility:"hidden"});
-              ii=cntli-1;
-          }
-          $(container+" "+items+" ul").css({transform:"translateX("+ii*(-delta)+"%)"}); 
-          $(container+" "+items+" ul").find("li").eq(ii).css({height:altura});
-          currentSelector(ii);  
-    };
-    */
+   
     ns.tab.prototype.init=function(options){
         var self=this;
         //console.log("estoy dentro de init en Tab")

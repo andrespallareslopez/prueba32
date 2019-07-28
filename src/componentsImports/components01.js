@@ -574,11 +574,15 @@ var Container
 
         }
         this.mycustom.setData=function(data, id,Template){
-            self.setData(data,id,Template)
-            
-    
+            if (self.setData){
+                self.setData(data,id,Template)
+            }
         }
-
+        this.mycustom.resize=function(options,id){
+            if ('resize' in self){
+                self.resize(options,id)
+            }
+        }
         this.myElement= document.registerElement(self.options.selector,{
             prototype: this.mycustom
         });

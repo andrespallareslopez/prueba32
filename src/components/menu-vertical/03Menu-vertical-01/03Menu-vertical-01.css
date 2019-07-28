@@ -75,8 +75,8 @@
     width: 200px;
     height: 100%;
    /*
-   height:calc(100vh - 47px - 47px);
-  min-height:calc(100vh - 47px - 47px);
+   height:calc(100vh - 51px - 51px);
+  min-height:calc(100vh - 51px - 51px);
    */
     overflow: hidden;
     overflow-y: auto;

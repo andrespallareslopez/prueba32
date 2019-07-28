@@ -109,7 +109,7 @@ html, body {
 .lyt03layout02 nav {
   display: block;
   width: 100%;
-  height: 47px;
+  height: 51px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#673ab7+0,9575cd+100 */
   background: #3F51B5;
   /* Old browsers */
@@ -143,13 +143,13 @@ html, body {
   position: relative;
   padding: 10px;
   width: 100%;
-  height: calc(100vh - 47px);
+  height: calc(100vh - 51px);
   min-height: 100%;
   min-width: 320px;
   background: transparent; }
   @media screen and (min-width: 768px) {
     .lyt03layout02 .content-no-footer {
-      height: calc(100vh - 15vh - 47px); } }
+      height: calc(100vh - 15vh - 51px); } }
 .lyt03layout02 .content-no-nav-no-footer {
   display: block;
   position: relative;
@@ -165,33 +165,30 @@ html, body {
 .lyt03layout02 .content {
   display: block;
   position: relative;
-  padding: 10px;
+  padding: 5px;
   width: 100%;
   min-height: 100%;
-  min-height: calc(100vh - 47px - 47px);
+  min-height: calc(100vh - 51px - 51px);
   min-width: 320px;
   background: transparent; }
   @media screen and (min-width: 768px) {
     .lyt03layout02 .content {
-      min-height: calc(100vh - 15vh - 47px - 47px); } }
+      min-height: calc(100vh - 15vh - 51px - 51px); } }
 .lyt03layout02 .content-no-nav {
   display: block;
   position: relative;
   padding: 10px;
   width: 100%;
-  height: calc(100vh - 47px);
+  height: calc(100vh - 51px);
   min-height: 250px;
   min-width: 320px;
   background: transparent; }
   @media screen and (min-width: 768px) {
     .lyt03layout02 .content-no-nav {
-      height: calc(100vh - 15vh - 47px); } }
-/*
+      height: calc(100vh - 15vh - 51px); } }
 .lyt03layout02 .right {
   display: none;
-  width: 200px; 
-}
-*/
+  width: 200px; }
 .lyt03layout02 .footer {
   position: relative;
   display: block;
@@ -199,7 +196,7 @@ html, body {
 .lyt03layout02 footer {
   width: 100%;
   display: block;
-  height: 47px;
+  height: 51px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#673ab7+0,9575cd+100 */
   background: #3F51B5;
   /* Old browsers */

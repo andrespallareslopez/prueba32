@@ -95,7 +95,7 @@ html, body {
   display: block;
   position: relative;
   width: 100%;
-  height: 47px;
+  height: 51px;
   padding: 0 10px;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#673ab7+0,9575cd+100 */
   background: #3F51B5;
@@ -116,20 +116,20 @@ html, body {
   display: block;
   position: relative;
   width: 100%;
-  min-height: calc(100vh - 47px - 47px);
+  min-height: calc(100vh - 51px - 51px);
   background: #E8EAF6;
   border: 0; }
 .lyt0404 .content {
   display: block;
   position: relative;
   width: 100%;
-  min-height: calc(100vh - 47px - 47px);
+  min-height: calc(100vh - 51px - 51px);
   padding: 7px; }
 .lyt0404 footer {
   display: block;
   position: relative;
   width: 100%;
-  height: 47px;
+  height: 51px;
   background: #E8EAF6;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#673ab7+0,9575cd+100 */
   background: #3F51B5;
@@ -157,12 +157,12 @@ html, body {
     left: 0; }
   .lyt0404 main,
   .lyt0404 .content {
-    min-height: calc(100vh - 47px - 47px); }
+    min-height: calc(100vh - 51px - 51px); }
   .lyt0404 header ~ ux-layout main,
   .lyt0404 header ~ ux-layout .content,
   .lyt0404 header ~ .wrapper main,
   .lyt0404 header ~ .wrapper .content {
-    min-height: calc(100vh - 15vh - 47px - 47px); }
+    min-height: calc(100vh - 15vh - 51px - 51px); }
   .lyt0404 main, .lyt0404 footer, .lyt0404 nav.actions {
     width: calc(100% - 200px); }
   .lyt0404 .wrapper {

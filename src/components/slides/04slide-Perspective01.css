@@ -1,9 +1,10 @@
 .slide-container-perspective {
   position: relative;
   width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
   border: 1px solid gray; }
+  @media (min-width: 768px) {
+    .slide-container-perspective {
+      width: calc(100% - 180px); } }
   .slide-container-perspective .slide-wrapper {
     position: relative;
     margin: 0 auto;
@@ -19,14 +20,14 @@
       overflow: hidden;
       touch-action: none; }
       .slide-container-perspective .slide-wrapper .slide-items .el {
-        height: calc(100vh - 47px - 47px - 20px);
-        min-height: calc(100vh - 47px - 47px - 20px);
+        height: calc(100vh - 51px - 51px - 20px);
+        min-height: calc(100vh - 51px - 51px - 20px);
         width: 25%;
         float: left; }
         @media (min-width: 768px) {
           .slide-container-perspective .slide-wrapper .slide-items .el {
-            height: calc(100vh - 15vh - 47px - 47px - 20px);
-            min-height: calc(100vh - 15vh - 47px - 47px - 20px); } }
+            height: calc(100vh - 15vh - 51px - 51px - 20px);
+            min-height: calc(100vh - 15vh - 51px - 51px - 20px); } }
       .slide-container-perspective .slide-wrapper .slide-items .border {
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset; }
         .slide-container-perspective .slide-wrapper .slide-items .border:before, .slide-container-perspective .slide-wrapper .slide-items .border:after {

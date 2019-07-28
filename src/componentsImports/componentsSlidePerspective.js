@@ -7,12 +7,12 @@
           
            if (!options)
                options={}
-           console.dir("nameid" in options)
+           //console.dir("nameid" in options)
 
            if (!("nameid" in options))
                 options.nameid="";
 
-           console.dir(options.nameid)
+           //console.dir(options.nameid)
 
            if (options && !options.nameid){
                 options.nameid="";
@@ -21,7 +21,7 @@
            if (!config){
                config={};
            }
-           console.dir(options);
+           //console.dir(options);
           
            
            ;(function(config){
@@ -120,15 +120,17 @@
       $(self.options.nameid+self.config.containerComponent+" "+self.config.btnleft).click(function(event){
          atras.apply(self,[]);
       });
-      
-      self.$holder[0].addEventListener("wheel",function(ev){
-           //console.log("estoy en mousewheel");
-         if (ev.deltaY>0){
-           avance.apply(self,[]);
-         }else{
-           atras.apply(self,[]);
-         }
-      });
+      if (self.$holder[0]){
+        self.$holder[0].addEventListener("wheel",function(ev){
+            //console.log("estoy en mousewheel");
+          if (ev.deltaY>0){
+            avance.apply(self,[]);
+          }else{
+            atras.apply(self,[]);
+          }
+        });
+      }
+     
       
       
       

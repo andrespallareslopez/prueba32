@@ -40,7 +40,7 @@ var slideReact = _react2.default.createElement(
     { className: 'slide-items' },
     _react2.default.createElement(
       'ul',
-      { 'class': 'cf' },
+      { className: 'cf' },
       _react2.default.createElement(
         'li',
         null,
@@ -92,6 +92,11 @@ var myslide = exports.myslide = (_dec = (0, _componentDecorator.Component)({
       //oculto hasta que no inicializemos
       //el slide.
       var slide = new controls.slide();
+    }
+  }, {
+    key: 'resize',
+    value: function resize() {
+      console.log("Estoy en resize de mySlide");
     }
   }]);
 

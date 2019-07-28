@@ -992,6 +992,32 @@ function logProperty(target: any, key: string) {
 }
 ~~~
 
+## Ejemplos de knockout.js
+
+Aplicar modelos y applyBindigns por Id elements:
+
+~~~
+<div id="one">
+  <input data-bind="value: name" />
+</div>
+
+<div id="two">
+  <input data-bind="value: name" />
+</div>
+
+<script type="text/javascript">
+  var viewModelA = {
+     name: ko.observable("Bob")
+  };
+
+  var viewModelB = {
+     name: ko.observable("Ted")
+  };
+
+  ko.applyBindings(viewModelA, document.getElementById("one"));
+  ko.applyBindings(viewModelB, document.getElementById("two"));
+</script>
+~~~
 
 
 

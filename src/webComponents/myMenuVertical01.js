@@ -9,6 +9,47 @@ import { appendToContainer,recreateNode,removeContainer } from "src/componentsIm
 import cadenamenuvertical01 from 'src/components/menu-vertical/tmplverticalmenu01.html!text'
 
 import cadenatemplatescrollbind from 'src/components/panel/templatepanelscrollbind.html!text'
+import cadenatemplatescrollbind01 from 'src/components/panel/templatepanelscrollbind-01.html!text'
+import cadenatemplatescrollbind02 from 'src/components/panel/templatepanelscrollbind-02.html!text'
+import cadenatemplatescrollbind03 from 'src/components/panel/templatepanelscrollbind-03.html!text'
+import cadenatemplatescrollbind04 from 'src/components/panel/templatepanelscrollbind-04.html!text'
+import cadenatemplatescrollbind05 from 'src/components/panel/templatepanelscrollbind-05.html!text'
+
+
+
+
+
+
+
+
+
+const cadenatemplatescrollbindstring=`
+
+<div id={{id}} class="wrapper page child" >
+    <div class="nav" data-bind-html="content:onLoadContent">
+        <nav  >
+           <button type="button" id="btn-toggle-back-3" class="nav-mobile push-float-left" data-bind-style="display:cadena" data-bind-on="click:onClick" >
+             <span class="fa fa-chevron-left" ></span>
+             <span class="texto-btn" data-bind-to="text:labelback" > Back</span>
+           </button>
+        </nav>
+    </div>  
+    <div class="main" >
+       <main>
+          <div class="box content" data-bind-html='include:src/shared/templ/list-collection.html' >
+                
+          </div>
+       </main>
+    </div>
+    <div class="footer">
+        <footer  data-bind-html='property:textTemplate'>
+            
+        </footer>
+    </div>
+</div>
+`
+
+
 
 const cadenamenuverticalstring=`
 
@@ -67,7 +108,6 @@ const cadenamenuverticalstring=`
 
 `
 
-
 @Component({
     selector:'my-menu-vertical-01',
     textTemplate:cadenamenuverticalstring,
@@ -115,8 +155,28 @@ export class mymenuvertical01{
        console.log($(e.target).data("panel-id"))
        console.log("estoy dentro de onclickmenu personalizada")
        var id=$(e.target).data("panel-id")
-       
-       var template=cadenatemplatescrollbind
+       var template;
+       switch(id){
+          case 'template01':
+            console.log("estoy en "+id)
+            template = cadenatemplatescrollbindstring
+          break;
+          case 'template02':
+            console.log("estoy en "+id)
+            template = cadenatemplatescrollbind01
+          break;
+          case 'template03':
+            template = cadenatemplatescrollbind02
+          break;
+          case 'template04':
+            template = cadenatemplatescrollbind03 
+          break;
+          case 'template05':
+            template = cadenatemplatescrollbind04
+          break;
+
+       }
+       //template = cadenatemplatescrollbindstring
        /*
        var html=util.buildtemplate({
            source:template,
@@ -176,7 +236,7 @@ export class mymenuvertical01{
                      var timer=setTimeout(function(){
                          removeContainer('#'+id+'.wrapper.page.child')
                          clearTimeout(timer)
-                     },350)
+                     },400)
                      
                      
                  }
@@ -233,6 +293,4 @@ export class mymenuvertical01{
    })
   }
 }
-
-
 

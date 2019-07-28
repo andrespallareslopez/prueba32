@@ -92,7 +92,7 @@ nav.actions {
   display: block;
   position: relative;
   width: 100%;
-  height: 47px;
+  height: 51px;
   padding: 0 10px;
   /*
   background:#673AB7;
@@ -120,7 +120,7 @@ main {
   display: block;
   position: relative;
   width: 100%;
-  min-height: calc(100vh - 47px - 47px);
+  min-height: calc(100vh - 51px - 51px);
   background: #E8EAF6;
   border: 0; }
 
@@ -128,7 +128,7 @@ main {
   display: block;
   position: relative;
   width: 100%;
-  min-height: calc(100vh - 47px - 47px);
+  min-height: calc(100vh - 51px - 51px);
   border: 1;
   padding: 7px; }
 
@@ -136,7 +136,7 @@ footer {
   display: block;
   position: relative;
   width: 100%;
-  height: 47px;
+  height: 51px;
   background: #E8EAF6;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#673ab7+0,9575cd+100 */
   background: #3F51B5;
@@ -167,7 +167,7 @@ footer {
     left: 0; }
 
   main, .content {
-    min-height: calc(100vh - 15vh - 47px - 47px); }
+    min-height: calc(100vh - 15vh - 51px - 51px); }
 
   main, footer, header, nav.actions {
     width: calc(100% - 200px); }

@@ -11,7 +11,7 @@ const slideReact=(
          <i className="fa fa-chevron-left fa-2x" ></i>
        </button>
        <div className="slide-items">
-         <ul class="cf" >
+         <ul className="cf" >
            <li>1</li>
            <li>2</li>
            <li>3</li>
@@ -44,5 +44,9 @@ export class myslide{
         //oculto hasta que no inicializemos
         //el slide.
         var slide=new controls.slide() 
+    }
+    resize(){
+      console.log("Estoy en resize de mySlide")
+      
     }
 }

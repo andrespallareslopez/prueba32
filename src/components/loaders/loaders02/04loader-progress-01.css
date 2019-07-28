@@ -11,12 +11,12 @@
   margin: 0 auto;
   background: #E8EAF6; }
   .loader-progress-01.content {
-    min-height: calc(100vh - 47px - 47px - 20px);
-    height: calc(100vh - 47px - 47px - 20px); }
+    min-height: calc(100vh - 51px - 51px - 20px);
+    height: calc(100vh - 51px - 51px - 20px); }
     @media (min-width: 768px) {
       .loader-progress-01.content {
-        min-height: calc(100vh - 15vh - 47px - 47px - 20px);
-        height: calc(100vh - 15vh - 47px - 47px - 20px); } }
+        min-height: calc(100vh - 15vh - 51px - 51px - 20px);
+        height: calc(100vh - 15vh - 51px - 51px - 20px); } }
   .loader-progress-01.splash-text {
     height: calc(100vh - 19px); }
   .loader-progress-01.splash {
