@@ -66,7 +66,7 @@ var mypanelscrollcontent = exports.mypanelscrollcontent = (_dec = (0, _component
 
                 myPanelMesas.create = function () {
                     //console.log(id)
-                    console.log("estoy en panelMesas create");
+                    //console.log("estoy en panelMesas create")
 
                     var panel = new controls.UXPanelScroll({
                         id: id,
@@ -93,7 +93,7 @@ var mypanelscrollcontent = exports.mypanelscrollcontent = (_dec = (0, _component
                     //console.dir(mylistgrpbuttons)
                 };
                 myPanelArticulos.create = function () {
-                    console.log("estoy en panelArticulos create");
+                    //console.log("estoy en panelArticulos create")
 
                     var panel = new controls.UXPanelScroll({
                         id: id,

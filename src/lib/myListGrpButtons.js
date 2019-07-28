@@ -63,14 +63,15 @@ var mylistgrpbuttons = exports.mylistgrpbuttons = (_dec = (0, _componentDecorato
   _createClass(mylistgrpbuttons, [{
     key: 'initevent',
     value: function initevent(options, id) {
-      console.log("Estoy en list grp buttons");
+      //console.log("Estoy en list grp buttons")
       //console.dir(this.setData)
       //console.log(id)
+
     }
   }, {
     key: 'reloaddata',
     value: function reloaddata(options, id) {
-      console.log("estoy en reload list grp buttons");
+      //console.log("estoy en reload list grp buttons")
       //console.log(id)
     }
   }]);

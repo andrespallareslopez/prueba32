@@ -34,14 +34,14 @@ const scrollPanelContentReact=function(data,nameDescripcion){
 export class mylistgrpbuttons {
   
   initevent(options,id){
-    console.log("Estoy en list grp buttons")
+    //console.log("Estoy en list grp buttons")
     //console.dir(this.setData)
     //console.log(id)
     
   }
 
   reloaddata(options,id){
-    console.log("estoy en reload list grp buttons")
+    //console.log("estoy en reload list grp buttons")
     //console.log(id)
   }
   

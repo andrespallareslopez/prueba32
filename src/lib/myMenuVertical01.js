@@ -9,6 +9,14 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _dec, _class;
 
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
 var _componentDecorator = require('src/componentsImports/componentDecorator.js');
 
 var _utilContainer = require('src/componentsImports/utilContainer.js');
@@ -25,9 +33,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var cadenamenuverticalstring = '\n\n<div class="menu-vertical01"  >\n <div class="container-menu-scroll" >\n                <ul class="items " >\n                    <li class="parent element pr"><a class="element-link gr" href="#" >Link 1<span class="fa fa-chevron-right push-float-right" ></span></a>\n                         <div class="sub-menu sb" >\n                           <a class="element-link el" href="#/plantilla1" data-panel-id="template01" >SubLink 1</a>\n                           <a class="element-link el" href="#/plantilla2" data-panel-id="template02">SubLink 2</a>\n                           <a class="element-link el" href="#/plantilla3" data-panel-id="template03">SubLink 3</a>\n                           <a class="element-link el" href="#/plantilla4" data-panel-id="template04">SubLink 4</a>\n                           <a class="element-link el" href="#/plantilla5" data-panel-id="template05">SubLink 5</a>\n                         </div>\n                    </li>\n                    <li class="parent element pr" ><a class="element-link gr" href="#">Link 2<span class="fa fa-chevron-right push-float-right" ></span></a>\n                         <div class="sub-menu sb" >\n                           <a class="element-link el" href="#/plantilla7" >SubLink 1</a>\n                           <a class="element-link el" href="#/plantilla8" >SubLink 2</a>\n                           <a class="element-link el" href="#/plantilla9" >SubLink 3</a>\n                           <a class="element-link el" href="#/plantilla10" >SubLink 4</a>\n                           <a class="element-link el" href="#/plantilla11" >SubLink 5</a>\n                         </div>\n                    </li>\n                    <li class="element item itm" ><a class="element-link el" href="#/plantilla6">Link 3\n                        <!--\n                        <span class="fa-fix-chevron-right push-float-right" ></span>\n                        -->\n                    </a>\n                    \n                    </li>\n                    <li class="parent element pr" ><a class="element-link gr" href="#">Link 4<span class="fa fa-chevron-right push-float-right" ></span></a>\n                       <div class="sub-menu sb" >\n                           <a class="element-link el" href="#" >SubLink 1</a>\n                           <a class="element-link el" href="#" >SubLink 2</a>\n                           <a class="element-link el" href="#" >SubLink 3</a>\n                           <a class="element-link el" href="#" >SubLink 4</a>\n                           <a class="element-link el" href="#" >SubLink 5</a>\n                       </div>\n                    </li>\n                     <li class="parent element pr" ><a class="element-link gr" href="#">Link 5<span class="fa fa-chevron-right push-float-right" ></span></a>\n                       <div class="sub-menu sb" >\n                           <a class="element-link el" href="#" >SubLink 1</a>\n                           <a class="element-link el" href="#" >SubLink 2</a>\n                           <a class="element-link el" href="#" >SubLink 3</a>\n                           <a class="element-link el" href="#" >SubLink 4</a>\n                           <a class="element-link el" href="#" >SubLink 5</a>\n                       </div>\n                    </li>\n                </ul>\n              </div>\n              <button id="btn-slide-up" class="slide-button top" ><i class="fa fa-chevron-up fa-2x"></i></button>\n              <button id="btn-slide-down" class="slide-button bottom" ><i class="fa fa-chevron-down fa-2x"></i></button>\n      \n    </div>  \n\n';
+
 var mymenuvertical01 = exports.mymenuvertical01 = (_dec = (0, _componentDecorator.Component)({
     selector: 'my-menu-vertical-01',
-    textTemplate: _tmplverticalmenu2.default,
+    textTemplate: cadenamenuverticalstring,
     cssUrls: ['src/components/menu-vertical/03Menu-vertical01/03Menu-vertical01.css', 'src/components/list/03List-collections.css'],
     importsUrl: [{ url: 'src/componentsImports/UXScroll.js', typemodule: 'module' }, { url: 'src/componentsImports/UXScrollV.js', typemodule: 'module' }, { url: 'src/componentsImports/UXAccordeon.js', typemodule: 'module' }, { url: 'src/componentsImports/bindOn.js', typemodule: 'module' }, { url: 'src/componentsImports/bindElement.js', typemodule: 'module' }, { url: 'src/componentsImports/bindComponent.js', typemodule: 'module' }]
 }), _dec(_class = function () {

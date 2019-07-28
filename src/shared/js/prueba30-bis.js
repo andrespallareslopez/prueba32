@@ -16,37 +16,23 @@ var _jquery = require('jquery');
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _util = require('util01');
-
 var _component = require('component');
 
 var _scroll = require('src/shared/templ/scroll02.html!text');
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
-var _scroll3 = require('src/shared/templ/scroll03.html!text');
+var _scroll3 = require('src/shared/templ/scroll04.html!text');
 
 var _scroll4 = _interopRequireDefault(_scroll3);
 
-var _scroll5 = require('src/shared/templ/scroll04.html!text');
+var _scroll5 = require('src/shared/templ/scroll05.html!text');
 
 var _scroll6 = _interopRequireDefault(_scroll5);
 
-var _scroll7 = require('src/shared/templ/scroll05.html!text');
-
-var _scroll8 = _interopRequireDefault(_scroll7);
-
-var _slide = require('src/components/slides/slide01.html!text');
+var _slide = require('src/components/slides/slide03.html!text');
 
 var _slide2 = _interopRequireDefault(_slide);
-
-var _slide04perspective = require('src/components/slides/slide04perspective.html!text');
-
-var _slide04perspective2 = _interopRequireDefault(_slide04perspective);
-
-var _slide3 = require('src/components/slides/slide03.html!text');
-
-var _slide4 = _interopRequireDefault(_slide3);
 
 var _datalist = require('src/shared/templ/datalist02.html!text');
 
@@ -59,8 +45,6 @@ var _templatepanelactions2 = _interopRequireDefault(_templatepanelactions);
 var _templatepanelscroll = require('src/components/panel/templatepanelscroll.html!text');
 
 var _templatepanelscroll2 = _interopRequireDefault(_templatepanelscroll);
-
-var _listInMemory = require('src/shared/js/listInMemory.js');
 
 var _myNav = require('src/lib/myNav.js');
 
@@ -83,6 +67,14 @@ var _myForm = require('src/lib/myForm.js');
 var _myWebLayout = require('src/lib/myWebLayout.js');
 
 var _myPanelScrollContent = require('src/lib/myPanelScrollContent.js');
+
+var _mySlidePanel = require('src/lib/mySlidePanel.js');
+
+var _myScroll = require('src/lib/myScroll.js');
+
+var _mySlide = require('src/lib/mySlide.js');
+
+var _mySlidePerspective = require('src/lib/mySlidePerspective.js');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -111,8 +103,12 @@ $(document).ready(function(){
  * 
  */
 
+//import cadenaTabs01 from 'src/shared/templ/Tabs01.html!text'
 
-//import cadenamenuvertical01 from 'src/components/menu-vertical/tmplverticalmenu01.html!text'
+
+//import {keyform} from 'keyform'
+
+//import cadenascroll from 'src/shared/templ/scroll01.html!text'  
 (0, _jquery2.default)(function () {
     //console.log("estoy dentro del ready")
     /*
@@ -224,138 +220,6 @@ $(document).ready(function(){
     };
     */
     if ((0, _jquery2.default)(".container .pages").data("template")) {
-        var DrawPanelReactDetail = function DrawPanelReactDetail(nameDescription, self, datos, id) {
-            var slidePanelDetailReact = function slidePanelDetailReact(self, nameDescripcion) {
-                //console.log(nameDescripcion)
-                return _react2.default.createElement(
-                    'ul',
-                    { className: 'slide-container-items' },
-                    self.sizes.pages.map(function (page, index) {
-                        return _react2.default.createElement(
-                            'li',
-                            { className: 'slide-item', key: index },
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'list-grp-buttons list-center' },
-                                page.slides.map(function (slide, index) {
-                                    //console.dir(slide);
-                                    return _react2.default.createElement(
-                                        'a',
-                                        { className: 'list-grp-button box-shadow-3', key: index, 'data-codigo': slide.codigo, href: '#' },
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'list-grp-content-top' },
-                                            _react2.default.createElement(
-                                                'span',
-                                                { className: 'list-grp-content-text list-grp-context-text-center' },
-                                                slide[nameDescripcion]
-                                            )
-                                        )
-                                    );
-                                })
-                            )
-                        );
-                    })
-                );
-            };
-
-            var myslidePanelDetail = new controls.slidePanels({
-                container: ".slide-container .slide-items",
-                ReactDOM: _reactDom2.default,
-                nameDescription: nameDescription,
-                data: datos,
-                templateReact: slidePanelDetailReact
-                //textTemplate:cadenaSlidePanelDetail
-            });
-            //no podemos utilizar en el slidePaneld el initevent, ya 
-            //se utiliza internamente, si lo ponemos sobreescribiremos
-            //el que hay y el componente dejara de funcionar
-            myslidePanelDetail.create(function (options) {
-                var self = this;
-                //console.log("estoy dentro de slide panel detail")
-                //console.log(id)
-                //en jquery hay que poner el # delante para detectar el id element
-                (0, _jquery2.default)("#" + id + " a.list-grp-button").on("click", function (e) {
-                    e.preventDefault();
-                    //console.dir(this)
-                    //console.dir(e.target)
-                    console.log((0, _jquery2.default)(this).data("codigo"));
-                    var codigo = (0, _jquery2.default)(this).data("codigo");
-                    var url = 'http://185.194.60.156:8085/datasnap/rest/TServerMethods1/GetArticulos/' + codigo;
-
-                    _jquery2.default.ajax({
-                        url: url
-                    }).done(function (result) {
-                        //console.dir(result)
-                        var result = JSON.parse(result);
-                        var articulos = result.items;
-                        console.dir(articulos);
-                    }).fail(function (e) {
-                        console.dir(e.error);
-                    }).always(function () {});
-                });
-            });
-        };
-        /*
-        var scrollPanelContentReact=function(data,nameDescripcion){
-            return   <div className="list-grp-buttons space-top-1x">
-                     {
-                        data.map(function(value,index){
-                            return (
-                                <a className="list-grp-button box-shadow-3" href="#" key={index} >
-                                  <div className="list-grp-content-top" >
-                                   <span className="list-grp-content-text list-grp-context-text-center" >{value[nameDescripcion]}</span>
-                                  </div>  
-                                </a>
-                               );
-                        })
-                     } 
-                     </div>
-         }
-        */
-        /*
-        var mylistgrpbuttons = new components.container({
-            selector: 'my-list-grp-buttons',
-            ReactDOM:ReactDOM,
-            //data:mesas,
-            nameDescription:"descripcion",
-            templateReact: scrollPanelContentReact,
-            cssUrls:[ 'src/components/list/03List-group-buttons.css']
-            
-        })
-        mylistgrpbuttons.initevent=function(options,id){
-            //console.log("Estoy en list grp buttons")
-            //console.log(id)
-            
-        }
-        mylistgrpbuttons.reloaddata=function(options,id){
-            //console.log("estoy en reload list grp buttons")
-            //console.log(id)
-        }
-        */
-        /************************************************* */
-        /*
-        var weblayout=new components.container({
-          //container:".container .pages",
-          selector:'my-layout',
-          pathTemplate:"src/shared/templ/",
-          nametemplate:$(".container .pages").data("template"),
-          cssUrls:[ 'src/components/layouts/03layout02/03layout02.css',
-                    'src/components/menu-horizontal/03menu-horizontal01.css',
-                    'src/components/menu-vertical/03Menu-vertical01/03Menu-vertical01.css',
-                    'src/components/layouts/03layout02/03transition02.css'          
-          ],
-          importsUrl:[    
-          "bower/mousetrap/mousetrap.min.js",
-          "node_modules/inputmask/dist/inputmask/inputmask.js",
-          "bower/hammerjs/hammer.min.js",
-          "src/shared/js/behaviors03layout02.js"
-          
-          ]  
-        });
-        */
-        //Este ejemplo tiene clearContainer.
-
         /*
             var container = new components.container({
              container: '.container .pages',
@@ -792,78 +656,67 @@ $(document).ready(function(){
         });
         */
         var cadenaScroll03React = _react2.default.createElement('my-slide', { id: 'slide01' });
-        var cadenaScroll05React = _react2.default.createElement('my-slide-panel', null);
-        var cadenaScroll06React = _react2.default.createElement('my-tab', null);
-        var webscroll = new _component.components.container({
-            selector: 'my-scroll',
-            ReactDOM: _reactDom2.default,
-            templateReact: cadenaScroll06React
-            //textTemplate: cadenascroll03,
-            //cssUrls:['src/components/panel/04PanelScroll02.css']
-        });
-        webscroll.initevent = function () {
-            console.log("estoy en webscroll");
-        };
-        var slideReact = _react2.default.createElement(
-            'div',
-            { className: 'slide-container' },
-            _react2.default.createElement(
-                'button',
-                { className: 'slide-button left' },
-                _react2.default.createElement('i', { className: 'fa fa-chevron-left fa-2x' })
-            ),
-            _react2.default.createElement(
-                'div',
-                { className: 'slide-items' },
-                _react2.default.createElement(
-                    'ul',
-                    { 'class': 'cf' },
-                    _react2.default.createElement(
-                        'li',
-                        null,
-                        '1'
-                    ),
-                    _react2.default.createElement(
-                        'li',
-                        null,
-                        '2'
-                    ),
-                    _react2.default.createElement(
-                        'li',
-                        null,
-                        '3'
-                    ),
-                    _react2.default.createElement(
-                        'li',
-                        null,
-                        '4'
-                    )
-                )
-            ),
-            _react2.default.createElement(
-                'button',
-                { className: 'slide-button right' },
-                _react2.default.createElement('i', { className: 'fa fa-chevron-right fa-2x' })
-            ),
-            _react2.default.createElement('div', { className: 'slide-controls' })
-        );
-        var myslide = new _component.components.container({
-            selector: 'my-slide',
-            ReactDOM: _reactDom2.default,
-            templateReact: slideReact,
-            //textTemplate:cadenaslide,
-            cssUrls: ['src/components/slides/04slide-container.css', 'src/components/list/03List-group-buttons.css'],
-            importsUrl: ['bower/hammerjs/hammer.min.js', 'src/componentsImports/componentsslidecontainer.js']
-        });
-        myslide.initevent = function (options, id) {
 
+        var cadenaScroll05React = _react2.default.createElement('my-slide-panel', null);
+
+        /*
+        const cadenaScroll06React=(
+            <my-tab></my-tab>
+        )
+        var webscroll=new components.container({
+           selector:'my-scroll',
+           ReactDOM:ReactDOM,
+           templateReact:cadenaScroll06React
+           //textTemplate: cadenascroll03,
+           //cssUrls:['src/components/panel/04PanelScroll02.css']
+        });
+        webscroll.initevent=function(){
+            console.log("estoy en webscroll")
+           
+        }
+        */
+        /*
+        const slideReact=(
+            <div className="slide-container">
+               <button className="slide-button left">
+                 <i className="fa fa-chevron-left fa-2x" ></i>
+               </button>
+               <div className="slide-items">
+                 <ul class="cf" >
+                   <li>1</li>
+                   <li>2</li>
+                   <li>3</li>
+                   <li>4</li>
+                 </ul>
+               </div>
+               <button className="slide-button right">
+                 <i className="fa fa-chevron-right fa-2x"></i>
+               </button>
+               <div className="slide-controls"></div>
+            </div>
+        )
+        var myslide=new components.container({
+           selector:'my-slide',
+           ReactDOM:ReactDOM,
+           templateReact:slideReact,
+           //textTemplate:cadenaslide,
+           cssUrls:['src/components/slides/04slide-container.css',
+           'src/components/list/03List-group-buttons.css'],
+           importsUrl:['bower/hammerjs/hammer.min.js',
+                       'src/componentsImports/componentsslidecontainer.js'
+           ]
+        })  
+        myslide.initevent=function(options,id){
+        
             //Si no definimos esto no saldra el panel
             //dibujado sus elementos li porque
             //hemos puesto por defecto que salga
             //oculto hasta que no inicializemos
             //el slide.
-            var slide = new controls.slide();
-        };
+            var slide=new controls.slide()
+               
+        }
+        */
         /**************************************************** */
         /*
         var myTabs01=new components.container({
@@ -880,57 +733,195 @@ $(document).ready(function(){
          */
 
         /****************************************************** */
-        var myslidePerspective = new _component.components.container({
-            selector: 'my-slide-perspective',
-            textTemplate: _slide04perspective2.default,
-            cssUrls: ['src/components/slides/04slide-Perspective01.css'],
-            importsUrl: ['src/componentsImports/componentsSlidePerspective.js']
-        });
-        myslidePerspective.initevent = function (options, id) {
-            var slidep = new controls.slidePerspective();
-        };
+        /*
+        var myslidePerspective=new components.container({
+           selector:'my-slide-perspective',
+           textTemplate:cadenaSlidePerspective,
+           cssUrls:['src/components/slides/04slide-Perspective01.css'] ,
+           importsUrl:['src/componentsImports/componentsSlidePerspective.js']
+        })
+        myslidePerspective.initevent=function(options,id){
+            var slidep=new controls.slidePerspective()
+        
+        }
+        */
         /*************************************** */
-        var slidePanelContainerReact = _react2.default.createElement(
-            'div',
-            { className: 'slide-container' },
-            _react2.default.createElement(
-                'button',
-                { className: 'slide-button left' },
-                _react2.default.createElement('i', { className: 'fa fa-chevron-left fa-2x' })
-            ),
-            _react2.default.createElement('div', { className: 'slide-items' }),
-            _react2.default.createElement(
-                'button',
-                { className: 'slide-button right' },
-                _react2.default.createElement('i', { className: 'fa fa-chevron-right fa-2x' })
-            )
-        );
+        /*
+        const slidePanelContainerReact=(
+           <div className="slide-container">
+              <button className="slide-button left">
+                <i className="fa fa-chevron-left fa-2x" ></i>
+              </button>
+              <div className="slide-items">
+               
+              </div>
+              <button className="slide-button right">
+                <i className="fa fa-chevron-right fa-2x"></i>
+              </button>
+             
+           </div>
+        )
+        */
         //si no cargarmos el componente
         //el template se dibujara como vacio,
         //ya que esta su propiedad css visibility hide
         //o algo parecido.
-        var mySlidePanel = new _component.components.container({
-            selector: "my-slide-panel",
-            ReactDOM: _reactDom2.default,
-            templateReact: slidePanelContainerReact,
-            //textTemplate:cadenaSlidePanel,
-            cssUrls: ['src/components/slides/04slide-container.css', 'src/components/list/03List-group-buttons.css'],
-            importsUrl: ['bower/hammerjs/hammer.min.js', { url: 'src/componentsImports/componentsslidePanels.js', typemodule: 'module' }]
-        });
-
-        mySlidePanel.initevent = function (options, id) {
+        /*
+        var mySlidePanel=new components.container({
+           selector:"my-slide-panel",
+           ReactDOM:ReactDOM,
+           templateReact:slidePanelContainerReact,
+           //textTemplate:cadenaSlidePanel,
+           cssUrls:['src/components/slides/04slide-container.css',
+           'src/components/list/03List-group-buttons.css'
+             ],
+           importsUrl:['bower/hammerjs/hammer.min.js',
+               {url:'src/componentsImports/componentsslidePanels.js',typemodule:'module'}]  
+        })
+        */
+        /*
+        mySlidePanel.initevent=function(options,id){
             //console.log("estoy dentro de slidepanel")
+            
+            var self=this
+            if (id=="panelCategorias"){
+              
+              var mytimer=setTimeout(function(){
+                DrawPanelReactDetail("categoria",self,categorias,id);
+              },350)
+            }   
+        }
+        */
+        /*
+        function DrawPanelReactDetail(nameDescription,self,datos,id){
+            var slidePanelDetailReact=function(self,nameDescripcion){
+                //console.log(nameDescripcion)
+                return  (<ul className="slide-container-items">
+                       {
+                       self.sizes.pages.map(function(page,index){     
+                         return  <li className="slide-item" key={index}>
+                               <div className="list-grp-buttons list-center">
+                               {
+                                   page.slides.map(function(slide,index){                                 
+                                   //console.dir(slide);
+                                   return (
+                                    <a className="list-grp-button box-shadow-3" key={index}  data-codigo={slide.codigo} href="#"  >
+                                     <div className="list-grp-content-top" >
+                                      <span className="list-grp-content-text list-grp-context-text-center" >{slide[nameDescripcion]}</span>
+                                     </div>  
+                                    </a>
+                                      );
+                                   })
+                               }
+                           </div>
+                           </li>
+                          })
+                       } 
+                   </ul>);
+               }
+               
+               var myslidePanelDetail=new controls.slidePanels({
+                   container:".slide-container .slide-items",
+                   ReactDOM:ReactDOM,
+                   nameDescription:nameDescription,
+                   data:datos,
+                   templateReact:slidePanelDetailReact
+                   //textTemplate:cadenaSlidePanelDetail
+               })
+               //no podemos utilizar en el slidePaneld el initevent, ya 
+               //se utiliza internamente, si lo ponemos sobreescribiremos
+               //el que hay y el componente dejara de funcionar
+               myslidePanelDetail.create(function(options){
+                var self=this   
+                //console.log("estoy dentro de slide panel detail")
+                //console.log(id)
+                //en jquery hay que poner el # delante para detectar el id element
+                   $("#"+id+" a.list-grp-button").on("click",function(e){
+                       e.preventDefault()
+                       //console.dir(this)
+                       //console.dir(e.target)
+                       console.log($(this).data("codigo"))
+                       var codigo=$(this).data("codigo")
+                       var url='http://185.194.60.156:8085/datasnap/rest/TServerMethods1/GetArticulos/'+codigo
+                       
+                       $.ajax({
+                           url:url
+                        }).done(function(result){
+                            //console.dir(result)
+                            var result=JSON.parse(result)
+                            var articulos=result.items
+                            console.dir(articulos)
+                            
+                       }).fail(function(e){
+                          console.dir(e.error)
+                       }).always(function(){
+                         
+                       })
+                    })
+               })
+               
+        }
+        */
+        /*
+        var scrollPanelContentReact=function(data,nameDescripcion){
+            return   <div className="list-grp-buttons space-top-1x">
+                     {
+                        data.map(function(value,index){
+                            return (
+                                <a className="list-grp-button box-shadow-3" href="#" key={index} >
+                                  <div className="list-grp-content-top" >
+                                   <span className="list-grp-content-text list-grp-context-text-center" >{value[nameDescripcion]}</span>
+                                  </div>  
+                                </a>
+                               );
+                        })
+                     } 
+                     </div>
+         }
+        */
+        /*
+        var mylistgrpbuttons = new components.container({
+            selector: 'my-list-grp-buttons',
+            ReactDOM:ReactDOM,
+            //data:mesas,
+            nameDescription:"descripcion",
+            templateReact: scrollPanelContentReact,
+            cssUrls:[ 'src/components/list/03List-group-buttons.css']
+            
+        })
+        mylistgrpbuttons.initevent=function(options,id){
+            //console.log("Estoy en list grp buttons")
+            //console.log(id)
+            
+        }
+        mylistgrpbuttons.reloaddata=function(options,id){
+            //console.log("estoy en reload list grp buttons")
+            //console.log(id)
+        }
+        */
+        /************************************************* */
+        /*
+        var weblayout=new components.container({
+          //container:".container .pages",
+          selector:'my-layout',
+          pathTemplate:"src/shared/templ/",
+          nametemplate:$(".container .pages").data("template"),
+          cssUrls:[ 'src/components/layouts/03layout02/03layout02.css',
+                    'src/components/menu-horizontal/03menu-horizontal01.css',
+                    'src/components/menu-vertical/03Menu-vertical01/03Menu-vertical01.css',
+                    'src/components/layouts/03layout02/03transition02.css'          
+          ],
+          importsUrl:[    
+          "bower/mousetrap/mousetrap.min.js",
+          "node_modules/inputmask/dist/inputmask/inputmask.js",
+          "bower/hammerjs/hammer.min.js",
+          "src/shared/js/behaviors03layout02.js"
+          
+          ]  
+        });
+        */
+        //Este ejemplo tiene clearContainer.
 
-            var self = this;
-            if (id == "panelCategorias") {
-                /******************************** */
-                /* le pongo un timerout para que le tiempo */
-                /* a calcular bien la anchura */
-                var mytimer = setTimeout(function () {
-                    DrawPanelReactDetail("categoria", self, _listInMemory.categorias, id);
-                }, 350);
-            }
-        };
         var container = new _component.components.container({
             container: '.container .pages',
             pathTemplate: 'src/shared/templ/',
@@ -956,10 +947,12 @@ $(document).ready(function(){
     }
 });
 
+//import {datos,mesas,categorias,articulos} from 'src/shared/js/listInMemory.js'
+
 //import {Component} from 'src/componentsImports/componentDecorator.js'
 
 
-//import cadenaTabs01 from 'src/shared/templ/Tabs01.html!text'
+//import cadenamenuvertical01 from 'src/components/menu-vertical/tmplverticalmenu01.html!text'
 
 
 //import cadenaform from 'src/shared/templ/myform01.html!text'
@@ -968,11 +961,14 @@ $(document).ready(function(){
 //import cadenabusqueda from 'src/shared/templ/inputbusqueda01.html!text'
 //import cadenacombo from 'src/shared/templ/inputcombo01.html!text'
 //import cadenanav from 'src/shared/templ/nav01.html!text'
+//import cadenaslide from 'src/components/slides/slide01.html!text'
+//import cadenaSlidePerspective from 'src/components/slides/slide04perspective.html!text'
+//import cadenaSlidePanel from 'src/components/slides/slide01.html!text'
+
+//import cadenascroll03 from 'src/shared/templ/scroll03.html!text'
 
 
-//import {keyform} from 'keyform'
-
-//import cadenascroll from 'src/shared/templ/scroll01.html!text'  
+//import {util} from 'util01'
 /// <reference path="./main.d.ts" />
 //importar una libreria polyfill para webcomponentes por si no esta.
 //import React from '../../../node_modules/react/umd/react.production.min.js'

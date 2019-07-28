@@ -4,9 +4,9 @@ import {util} from './util01.js'
 export const Input = function(attrib){
     //console.log('estoy dentro de Input decorators')  
     return function(target,key,descriptor){
-        console.log('estoy dentro de Input decorators')
-        console.dir(target)
-        console.log('key:'+key) 
+        //console.log('estoy dentro de Input decorators')
+        //console.dir(target)
+        //console.log('key:'+key) 
         //console.dir(target.options)
         let value 
         const getter = function() {

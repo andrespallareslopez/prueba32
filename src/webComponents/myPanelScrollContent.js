@@ -44,7 +44,7 @@ export class mypanelscrollcontent{
             
             myPanelMesas.create=function(){
                 //console.log(id)
-                console.log("estoy en panelMesas create")
+                //console.log("estoy en panelMesas create")
                     
                     var panel=new controls.UXPanelScroll({
                         id:id,
@@ -76,11 +76,11 @@ export class mypanelscrollcontent{
                 
             }
             myPanelArticulos.create=function(){
-                console.log("estoy en panelArticulos create")
+                //console.log("estoy en panelArticulos create")
                 
                 var panel=new controls.UXPanelScroll({
-                id:id,
-                item:".list-grp-buttons .list-grp-content-top"
+                  id:id,
+                  item:".list-grp-buttons .list-grp-content-top"
                 })
             }
         }

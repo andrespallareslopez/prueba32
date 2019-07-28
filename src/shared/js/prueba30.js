@@ -11,14 +11,14 @@ import w from 'node_modules/webcomponentsjs/lite.js'
 import $,{jQuery} from 'jquery'
 
 
-import {util} from 'util01'
+//import {util} from 'util01'
 import {components} from 'component'
 
 //import {keyform} from 'keyform'
 
 //import cadenascroll from 'src/shared/templ/scroll01.html!text'  
 import cadenascroll02 from 'src/shared/templ/scroll02.html!text'
-import cadenascroll03 from 'src/shared/templ/scroll03.html!text'
+//import cadenascroll03 from 'src/shared/templ/scroll03.html!text'
 import cadenascroll04 from 'src/shared/templ/scroll04.html!text'
 
 import cadenascroll05 from 'src/shared/templ/scroll05.html!text'
@@ -29,9 +29,9 @@ import cadenascroll05 from 'src/shared/templ/scroll05.html!text'
 //import cadenabusqueda from 'src/shared/templ/inputbusqueda01.html!text'
 //import cadenacombo from 'src/shared/templ/inputcombo01.html!text'
 //import cadenanav from 'src/shared/templ/nav01.html!text'
-import cadenaslide from 'src/components/slides/slide01.html!text'
-import cadenaSlidePerspective from 'src/components/slides/slide04perspective.html!text'
-import cadenaSlidePanel from 'src/components/slides/slide01.html!text'
+//import cadenaslide from 'src/components/slides/slide01.html!text'
+//import cadenaSlidePerspective from 'src/components/slides/slide04perspective.html!text'
+//import cadenaSlidePanel from 'src/components/slides/slide01.html!text'
 import cadenaSlidePanelDetail from 'src/components/slides/slide03.html!text'
 //import cadenaTabs01 from 'src/shared/templ/Tabs01.html!text'
 import cadenadatalist from 'src/shared/templ/datalist02.html!text'
@@ -41,7 +41,7 @@ import cadenatemplatepanel from 'src/components/panel/templatepanelactions.html!
 import cadenatemplatescroll from 'src/components/panel/templatepanelscroll.html!text'
 
 
-import {datos,mesas,categorias,articulos} from 'src/shared/js/listInMemory.js'
+//import {datos,mesas,categorias,articulos} from 'src/shared/js/listInMemory.js'
 
 //import {Component} from 'src/componentsImports/componentDecorator.js'
 
@@ -68,6 +68,13 @@ import {weblayout} from 'src/lib/myWebLayout.js'
 
 import {mypanelscrollcontent} from 'src/lib/myPanelScrollContent.js'
 
+import {mySlidePanel} from 'src/lib/mySlidePanel.js'
+
+import {webscroll} from 'src/lib/myScroll.js'
+
+import {myslide} from 'src/lib/mySlide.js'
+
+import {myslidePerspective} from 'src/lib/mySlidePerspective.js'
 
 //import 'src/components/layouts/03layout02/03layout02.css'
 
@@ -646,9 +653,12 @@ $(()=>{
         const cadenaScroll03React=(
             <my-slide id="slide01"></my-slide>
         )
+        
         const cadenaScroll05React=(
             <my-slide-panel></my-slide-panel>
         )
+        
+        /*
         const cadenaScroll06React=(
             <my-tab></my-tab>
         )
@@ -663,6 +673,8 @@ $(()=>{
             console.log("estoy en webscroll")
            
         }
+        */
+        /*
         const slideReact=(
             <div className="slide-container">
                <button className="slide-button left">
@@ -703,6 +715,7 @@ $(()=>{
             var slide=new controls.slide()
                
         }
+        */ 
         /**************************************************** */
         /*
         var myTabs01=new components.container({
@@ -719,6 +732,7 @@ $(()=>{
          */
          
          /****************************************************** */
+         /*
          var myslidePerspective=new components.container({
             selector:'my-slide-perspective',
             textTemplate:cadenaSlidePerspective,
@@ -729,7 +743,9 @@ $(()=>{
              var slidep=new controls.slidePerspective()
          
          }
+         */
          /*************************************** */
+         /*
          const slidePanelContainerReact=(
             <div className="slide-container">
                <button className="slide-button left">
@@ -744,11 +760,13 @@ $(()=>{
               
             </div>
          )
+         */
          //si no cargarmos el componente
          //el template se dibujara como vacio,
          //ya que esta su propiedad css visibility hide
          //o algo parecido.
-        var mySlidePanel=new components.container({
+         /*
+         var mySlidePanel=new components.container({
             selector:"my-slide-panel",
             ReactDOM:ReactDOM,
             templateReact:slidePanelContainerReact,
@@ -759,20 +777,21 @@ $(()=>{
             importsUrl:['bower/hammerjs/hammer.min.js',
                 {url:'src/componentsImports/componentsslidePanels.js',typemodule:'module'}]  
         })
-        
+        */
+        /*
         mySlidePanel.initevent=function(options,id){
             //console.log("estoy dentro de slidepanel")
             
             var self=this
             if (id=="panelCategorias"){
-                /******************************** */
-                /* le pongo un timerout para que le tiempo */
-                /* a calcular bien la anchura */
+              
               var mytimer=setTimeout(function(){
                 DrawPanelReactDetail("categoria",self,categorias,id);
               },350)
             }   
         }
+        */
+        /*
         function DrawPanelReactDetail(nameDescription,self,datos,id){
             var slidePanelDetailReact=function(self,nameDescripcion){
                 //console.log(nameDescripcion)
@@ -842,6 +861,7 @@ $(()=>{
                })
                
         }
+        */
         /*
         var scrollPanelContentReact=function(data,nameDescripcion){
             return   <div className="list-grp-buttons space-top-1x">
