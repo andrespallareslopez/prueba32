@@ -4,7 +4,7 @@
   border: 1px solid gray; }
   @media (min-width: 768px) {
     .slide-container-perspective {
-      width: calc(100% - 180px); } }
+      width: calc(100% - 0px); } }
   .slide-container-perspective .slide-wrapper {
     position: relative;
     margin: 0 auto;

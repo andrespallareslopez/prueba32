@@ -15,7 +15,7 @@
     @media screen and (min-width:768px){
        height:calc(100vh - #{$headerHeight} - #{$footer} - #{$nav} - 30px);
        min-height:calc(100vh - #{$headerHeight} - #{$footer} - #{$nav} - 30px);
-       width:calc(100% - 200px);
+       width:calc(100% - 0px);
       }
     //margin:0 auto;
     
@@ -62,7 +62,7 @@
        -webkit-transform: translateX(0%);
        transition: all 0.3s ease-in-out;
        -webkit-transition: all 0.3s ease-in-out;
-       visibility: visible; /*para la carga tiene que estar oculto sino efectos indeseados en la carga luego con javascript lo ponemos visible*/
+       visibility: hidden; /*para la carga tiene que estar oculto sino efectos indeseados en la carga luego con javascript lo ponemos visible*/
        
        margin:0 auto;
 

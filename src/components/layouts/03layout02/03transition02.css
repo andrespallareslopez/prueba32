@@ -20,6 +20,9 @@
 .lyt03layout02 .child.animation {
   opacity: 1;
   transform: translateX(0%); }
+  @media (min-width: 768px) {
+    .lyt03layout02 .child.animation {
+      width: calc(100% - 200px); } }
 .lyt03layout02 .child.animation.right, .lyt03layout02 .child-2.animacion.right {
   /*z-index:999;*/
   /*width:100%;*/

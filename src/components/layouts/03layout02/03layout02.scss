@@ -261,6 +261,10 @@ html,body{
         }
         footer {
             width:100%;
+            @media screen and  (min-width:768px){
+               width:calc(100% - 0px);
+            }
+            
             display:block;
             height: $footer;
             @include background01-inv;
@@ -298,6 +302,9 @@ html,body{
         }
         .push-center-3x{
             max-width:240px;
+            @media screen and (min-width:768px){
+                left:0px;
+            }
         }
         @media screen and (min-width:768px){
         html,body{

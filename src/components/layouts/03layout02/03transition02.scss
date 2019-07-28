@@ -33,6 +33,11 @@
 .child.animation{
      opacity:1;
      transform:translateX(0%);
+     @media (min-width:768px){
+   
+        width:calc(100% - 200px);
+    } 
+  
 }
 .child.animation.right,.child-2.animacion.right{
    /*z-index:999;*/

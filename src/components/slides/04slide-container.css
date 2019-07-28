@@ -16,7 +16,7 @@
     .slide-container {
       height: calc(100vh - 15vh - 51px - 51px - 30px);
       min-height: calc(100vh - 15vh - 51px - 51px - 30px);
-      width: calc(100% - 200px); } }
+      width: calc(100% - 0px); } }
   .slide-container .slide-items {
     display: block;
     position: relative;
@@ -47,7 +47,7 @@
     -webkit-transform: translateX(0%);
     transition: all 0.3s ease-in-out;
     -webkit-transition: all 0.3s ease-in-out;
-    visibility: visible;
+    visibility: hidden;
     /*para la carga tiene que estar oculto sino efectos indeseados en la carga luego con javascript lo ponemos visible*/
     margin: 0 auto; }
     @media screen and (min-width: 768px) {

@@ -3,7 +3,7 @@
   width: 100%; }
   @media (min-width: 768px) {
     .list-collection {
-      width: calc(100% - 196px); } }
+      width: calc(100% - 0px); } }
   .list-collection li {
     position: relative;
     height: 65px;
