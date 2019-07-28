@@ -25,10 +25,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
 var scrollPanelContentReact = function scrollPanelContentReact(data, nameDescripcion) {
   return _react2.default.createElement(
     'div',
@@ -59,13 +55,9 @@ var mylistgrpbuttons = exports.mylistgrpbuttons = (_dec = (0, _componentDecorato
   templateReact: scrollPanelContentReact,
   cssUrls: ['src/components/list/03List-group-buttons.css']
 
-}), _dec(_class = function (_Container) {
-  _inherits(mylistgrpbuttons, _Container);
-
+}), _dec(_class = function () {
   function mylistgrpbuttons() {
     _classCallCheck(this, mylistgrpbuttons);
-
-    return _possibleConstructorReturn(this, (mylistgrpbuttons.__proto__ || Object.getPrototypeOf(mylistgrpbuttons)).apply(this, arguments));
   }
 
   _createClass(mylistgrpbuttons, [{
@@ -76,17 +68,12 @@ var mylistgrpbuttons = exports.mylistgrpbuttons = (_dec = (0, _componentDecorato
       //console.log(id)
     }
   }, {
-    key: 'setData',
-    value: function setData(data, id, Template) {
-      console.log('estoy dentro de seData de mylistgrpbuttons');
-    }
-  }, {
     key: 'reloaddata',
     value: function reloaddata(options, id) {
-      //console.log("estoy en reload list grp buttons")
+      console.log("estoy en reload list grp buttons");
       //console.log(id)
     }
   }]);
 
   return mylistgrpbuttons;
-}(_component.Container)) || _class);
+}()) || _class);

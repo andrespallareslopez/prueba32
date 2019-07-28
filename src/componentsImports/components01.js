@@ -573,6 +573,12 @@ var Container
            }
 
         }
+        this.mycustom.setData=function(data, id,Template){
+            self.setData(data,id,Template)
+            
+    
+        }
+
         this.myElement= document.registerElement(self.options.selector,{
             prototype: this.mycustom
         });

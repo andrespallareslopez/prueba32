@@ -31,7 +31,7 @@ const scrollPanelContentReact=function(data,nameDescripcion){
     cssUrls:[ 'src/components/list/03List-group-buttons.css']
     
 })
-export class mylistgrpbuttons extends Container{
+export class mylistgrpbuttons {
   
   initevent(options,id){
     console.log("Estoy en list grp buttons")
@@ -39,12 +39,9 @@ export class mylistgrpbuttons extends Container{
     //console.log(id)
     
   }
-  setData(data, id,Template) {
-    console.log('estoy dentro de seData de mylistgrpbuttons')
 
-  }
   reloaddata(options,id){
-    //console.log("estoy en reload list grp buttons")
+    console.log("estoy en reload list grp buttons")
     //console.log(id)
   }
   

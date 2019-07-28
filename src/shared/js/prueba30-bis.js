@@ -20,29 +20,21 @@ var _util = require('util01');
 
 var _component = require('component');
 
-var _scroll = require('src/shared/templ/scroll01.html!text');
+var _scroll = require('src/shared/templ/scroll02.html!text');
 
 var _scroll2 = _interopRequireDefault(_scroll);
 
-var _scroll3 = require('src/shared/templ/scroll02.html!text');
+var _scroll3 = require('src/shared/templ/scroll03.html!text');
 
 var _scroll4 = _interopRequireDefault(_scroll3);
 
-var _scroll5 = require('src/shared/templ/scroll03.html!text');
+var _scroll5 = require('src/shared/templ/scroll04.html!text');
 
 var _scroll6 = _interopRequireDefault(_scroll5);
 
-var _scroll7 = require('src/shared/templ/scroll04.html!text');
+var _scroll7 = require('src/shared/templ/scroll05.html!text');
 
 var _scroll8 = _interopRequireDefault(_scroll7);
-
-var _scroll9 = require('src/shared/templ/scroll05.html!text');
-
-var _scroll10 = _interopRequireDefault(_scroll9);
-
-var _myform = require('src/shared/templ/myform01.html!text');
-
-var _myform2 = _interopRequireDefault(_myform);
 
 var _slide = require('src/components/slides/slide01.html!text');
 
@@ -55,10 +47,6 @@ var _slide04perspective2 = _interopRequireDefault(_slide04perspective);
 var _slide3 = require('src/components/slides/slide03.html!text');
 
 var _slide4 = _interopRequireDefault(_slide3);
-
-var _Tabs = require('src/shared/templ/Tabs01.html!text');
-
-var _Tabs2 = _interopRequireDefault(_Tabs);
 
 var _datalist = require('src/shared/templ/datalist02.html!text');
 
@@ -87,6 +75,14 @@ var _mySearch = require('src/lib/mySearch.js');
 var _myMenuVertical = require('src/lib/myMenuVertical01.js');
 
 var _myListGrpButtons = require('src/lib/myListGrpButtons.js');
+
+var _myTabs = require('src/lib/myTabs.js');
+
+var _myForm = require('src/lib/myForm.js');
+
+var _myWebLayout = require('src/lib/myWebLayout.js');
+
+var _myPanelScrollContent = require('src/lib/myPanelScrollContent.js');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -117,20 +113,6 @@ $(document).ready(function(){
 
 
 //import cadenamenuvertical01 from 'src/components/menu-vertical/tmplverticalmenu01.html!text'
-
-//import cadenainput from 'src/shared/templ/input01.html!text'
-//import cadenacalendar from 'src/shared/templ/inputcalendar01.html!text'
-//import cadenabusqueda from 'src/shared/templ/inputbusqueda01.html!text'
-//import cadenacombo from 'src/shared/templ/inputcombo01.html!text'
-//import cadenanav from 'src/shared/templ/nav01.html!text'
-
-
-//import {keyform} from 'keyform'
-
-/// <reference path="./main.d.ts" />
-//importar una libreria polyfill para webcomponentes por si no esta.
-//import React from '../../../node_modules/react/umd/react.production.min.js'
-//import ReactDOM from '../../../node_modules/react-dom/umd/react-dom.production.min.js'
 (0, _jquery2.default)(function () {
     //console.log("estoy dentro del ready")
     /*
@@ -352,7 +334,27 @@ $(document).ready(function(){
         }
         */
         /************************************************* */
-
+        /*
+        var weblayout=new components.container({
+          //container:".container .pages",
+          selector:'my-layout',
+          pathTemplate:"src/shared/templ/",
+          nametemplate:$(".container .pages").data("template"),
+          cssUrls:[ 'src/components/layouts/03layout02/03layout02.css',
+                    'src/components/menu-horizontal/03menu-horizontal01.css',
+                    'src/components/menu-vertical/03Menu-vertical01/03Menu-vertical01.css',
+                    'src/components/layouts/03layout02/03transition02.css'          
+          ],
+          importsUrl:[    
+          "bower/mousetrap/mousetrap.min.js",
+          "node_modules/inputmask/dist/inputmask/inputmask.js",
+          "bower/hammerjs/hammer.min.js",
+          "src/shared/js/behaviors03layout02.js"
+          
+          ]  
+        });
+        */
+        //Este ejemplo tiene clearContainer.
 
         /*
             var container = new components.container({
@@ -703,78 +705,92 @@ $(document).ready(function(){
             textTemplate:cadenainput
         })
         */
-
-        var mypanelscrollcontent = new _component.components.container({
-            selector: 'my-panel-scroll-content',
-            textTemplate: _scroll2.default,
-            cssUrls: ['src/components/panel/04PanelScroll02.css'],
-            importsUrl: [{ url: 'src/componentsImports/UXScroll.js', typemodule: 'module' }, { url: 'src/componentsImports/UXPanelScroll.js', typemodule: 'module' }]
-        });
-        mypanelscrollcontent.initevent = function (options, id) {
-
-            //console.log("estoy en mypanelscrollcontent")
-            //console.log("id :"+id)
-            if (id == "panelMesas") {
-                //mylistgrpbuttons.setData(mesas)
-                var panelmesasReact = _react2.default.createElement('my-list-grp-buttons', { id: 'list-panel-mesas' });
-                var myPanelMesas = new _component.components.container({
-                    container: '#tabMesas .panel-scroll-item',
-                    ReactDOM: _reactDom2.default,
-                    templateReact: panelmesasReact
-                });
-                myPanelMesas.initevent = function (options, id) {
-                    //console.log("estoy en Panel mesas")
-                    //console.log("panelMesas Id:"+id)
-                    //mylistgrpbuttons.options.data=mesas
-                    var $list = (0, _jquery2.default)("#list-panel-mesas")[0];
-                    console.dir($list.render);
-                    _myListGrpButtons.mylistgrpbuttons.setData(_listInMemory.mesas, 'list-panel-mesas');
-                    //$('#list-panel-mesas')[0].render(mylistgrpbuttons.options.templateReact,mesas)
-                };
-
-                myPanelMesas.create = function () {
+        /*
+         var mypanelscrollcontent=new components.container({
+             selector:'my-panel-scroll-content',
+             textTemplate:cadenascroll,
+             cssUrls:['src/components/panel/04PanelScroll02.css'],
+             importsUrl:[
+                 {url:'src/componentsImports/UXScroll.js',typemodule:'module'}, 
+                 {url:'src/componentsImports/UXPanelScroll.js',typemodule:'module'}]
+         })
+         mypanelscrollcontent.initevent=function(options,id){
+             
+             //console.log("estoy en mypanelscrollcontent")
+             //console.log("id :"+id)
+             if (id=="panelMesas"){
+                 //mylistgrpbuttons.setData(mesas)
+                var panelmesasReact=(
+                 <my-list-grp-buttons id="list-panel-mesas"></my-list-grp-buttons>
+                )
+                var myPanelMesas = new components.container({
+                  container:'#tabMesas .panel-scroll-item',
+                  ReactDOM:ReactDOM,
+                  templateReact:panelmesasReact  
+                }) 
+                myPanelMesas.initevent=function(options,id){
+                   //console.log("estoy en Panel mesas")
+                   //console.log("panelMesas Id:"+id)
+                   //mylistgrpbuttons.options.data=mesas
+                   var $listMesas=$("#list-panel-mesas")[0]
+                   //console.dir($listMesas.setData)
+                   $listMesas.setData(mesas,'list-panel-mesas')
+                   //mylistgrpbuttons.setData(mesas,'list-panel-mesas')
+                   //$('#list-panel-mesas')[0].render(mylistgrpbuttons.options.templateReact,mesas)
+                }
+                
+                myPanelMesas.create=function(){
                     //console.log(id)
-                    console.log("estoy en panelMesas create");
-
-                    var panel = new controls.UXPanelScroll({
-                        id: id,
-                        item: ".list-grp-buttons .list-grp-content-top"
-                    });
-                };
-            } else if (id == "panelArticulos") {
-                //mylistgrpbuttons.setData(articulos)     
-                var panelArticulosReact = _react2.default.createElement('my-list-grp-buttons', { id: 'list-panel-articulos' });
-                var myPanelArticulos = new _component.components.container({
-                    container: '#tabArticulos .panel-scroll-item',
-                    ReactDOM: _reactDom2.default,
-                    templateReact: panelArticulosReact
-                });
-                myPanelArticulos.initevent = function (options, id) {
-                    //console.log("estoy en panel Articulos")
-                    //console.log("panelArticulos Id:"+id)
-                    //mylistgrpbuttons.options.data=articulos
-                    //console.dir(mylistgrpbuttons)
-                    _myListGrpButtons.mylistgrpbuttons.setData(_listInMemory.articulos, 'list-panel-articulos');
-                    //$('#list-panel-articulos')[0].render(mylistgrpbuttons.options.templateReact,articulos)
-                    //console.dir(mylistgrpbuttons)
-                };
-                myPanelArticulos.create = function () {
-                    console.log("estoy en panelArticulos create");
-
-                    var panel = new controls.UXPanelScroll({
-                        id: id,
-                        item: ".list-grp-buttons .list-grp-content-top"
-                    });
-                };
-            }
-        };
-
+                    console.log("estoy en panelMesas create")
+                      
+                      var panel=new controls.UXPanelScroll({
+                         id:id,
+                         item:".list-grp-buttons .list-grp-content-top"
+                      })
+                    
+                    
+                }
+             } else if (id=="panelArticulos"){
+                 //mylistgrpbuttons.setData(articulos)     
+                 var panelArticulosReact=(
+                     <my-list-grp-buttons id="list-panel-articulos"></my-list-grp-buttons>
+                 )
+                 var myPanelArticulos=new components.container({
+                     container:'#tabArticulos .panel-scroll-item',
+                     ReactDOM:ReactDOM,
+                     templateReact:panelArticulosReact
+                 })
+                 myPanelArticulos.initevent=function(options,id){
+                     //console.log("estoy en panel Articulos")
+                     //console.log("panelArticulos Id:"+id)
+                     //mylistgrpbuttons.options.data=articulos
+                     //console.dir(mylistgrpbuttons)
+                     var $listArticulos=$('#list-panel-articulos')[0]
+                     $listArticulos.setData(articulos,'list-panel-articulos') 
+                     //mylistgrpbuttons.setData(articulos,'list-panel-articulos')                                       
+                     //$('#list-panel-articulos')[0].render(mylistgrpbuttons.options.templateReact,articulos)
+                     //console.dir(mylistgrpbuttons)
+                     
+                 }
+                 myPanelArticulos.create=function(){
+                     console.log("estoy en panelArticulos create")
+                      
+                     var panel=new controls.UXPanelScroll({
+                        id:id,
+                        item:".list-grp-buttons .list-grp-content-top"
+                     })
+                 }
+             }
+         }
+         */
         //console.log(cadenaform);
-        var webform = new _component.components.container({
-            selector: 'my-form',
-            textTemplate: _myform2.default,
-            cssUrls: ['src/components/forms/03form-fix-basic-01.css']
+        /*
+        var webform=new components.container({
+            selector:'my-form',
+            textTemplate:cadenaform,
+            cssUrls:['src/components/forms/03form-fix-basic-01.css']
         });
+        */
         var cadenaScroll03React = _react2.default.createElement('my-slide', { id: 'slide01' });
         var cadenaScroll05React = _react2.default.createElement('my-slide-panel', null);
         var cadenaScroll06React = _react2.default.createElement('my-tab', null);
@@ -849,16 +865,19 @@ $(document).ready(function(){
             var slide = new controls.slide();
         };
         /**************************************************** */
-        var myTabs01 = new _component.components.container({
-            selector: "my-tab",
-            textTemplate: _Tabs2.default,
-            cssUrls: ['src/components/tabs/tabs01.css'],
-            importsUrl: ['src/componentsImports/componentstabcontainer.js']
-        });
-        myTabs01.initevent = function (options, id) {
-            //console.dir(controls) 
-            var tabs = new controls.tab();
-        };
+        /*
+        var myTabs01=new components.container({
+            selector:"my-tab",
+            textTemplate:cadenaTabs01,
+            cssUrls:['src/components/tabs/tabs01.css'],
+            importsUrl:['src/componentsImports/componentstabcontainer.js']
+        })
+        myTabs01.initevent=function(options,id){
+           //console.dir(controls) 
+           var tabs=new controls.tab()
+           
+        }        
+         */
 
         /****************************************************** */
         var myslidePerspective = new _component.components.container({
@@ -912,17 +931,6 @@ $(document).ready(function(){
                 }, 350);
             }
         };
-        var weblayout = new _component.components.container({
-            //container:".container .pages",
-            selector: 'my-layout',
-            pathTemplate: "src/shared/templ/",
-            nametemplate: (0, _jquery2.default)(".container .pages").data("template"),
-            cssUrls: ['src/components/layouts/03layout02/03layout02.css', 'src/components/menu-horizontal/03menu-horizontal01.css', 'src/components/menu-vertical/03Menu-vertical01/03Menu-vertical01.css', 'src/components/layouts/03layout02/03transition02.css'],
-            importsUrl: ["bower/mousetrap/mousetrap.min.js", "node_modules/inputmask/dist/inputmask/inputmask.js", "bower/hammerjs/hammer.min.js", "src/shared/js/behaviors03layout02.js"]
-        });
-
-        //Este ejemplo tiene clearContainer.
-
         var container = new _component.components.container({
             container: '.container .pages',
             pathTemplate: 'src/shared/templ/',
@@ -949,3 +957,23 @@ $(document).ready(function(){
 });
 
 //import {Component} from 'src/componentsImports/componentDecorator.js'
+
+
+//import cadenaTabs01 from 'src/shared/templ/Tabs01.html!text'
+
+
+//import cadenaform from 'src/shared/templ/myform01.html!text'
+//import cadenainput from 'src/shared/templ/input01.html!text'
+//import cadenacalendar from 'src/shared/templ/inputcalendar01.html!text'
+//import cadenabusqueda from 'src/shared/templ/inputbusqueda01.html!text'
+//import cadenacombo from 'src/shared/templ/inputcombo01.html!text'
+//import cadenanav from 'src/shared/templ/nav01.html!text'
+
+
+//import {keyform} from 'keyform'
+
+//import cadenascroll from 'src/shared/templ/scroll01.html!text'  
+/// <reference path="./main.d.ts" />
+//importar una libreria polyfill para webcomponentes por si no esta.
+//import React from '../../../node_modules/react/umd/react.production.min.js'
+//import ReactDOM from '../../../node_modules/react-dom/umd/react-dom.production.min.js'

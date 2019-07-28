@@ -16,14 +16,14 @@ import {components} from 'component'
 
 //import {keyform} from 'keyform'
 
-import cadenascroll from 'src/shared/templ/scroll01.html!text'  
+//import cadenascroll from 'src/shared/templ/scroll01.html!text'  
 import cadenascroll02 from 'src/shared/templ/scroll02.html!text'
 import cadenascroll03 from 'src/shared/templ/scroll03.html!text'
 import cadenascroll04 from 'src/shared/templ/scroll04.html!text'
 
 import cadenascroll05 from 'src/shared/templ/scroll05.html!text'
 
-import cadenaform from 'src/shared/templ/myform01.html!text'
+//import cadenaform from 'src/shared/templ/myform01.html!text'
 //import cadenainput from 'src/shared/templ/input01.html!text'
 //import cadenacalendar from 'src/shared/templ/inputcalendar01.html!text'
 //import cadenabusqueda from 'src/shared/templ/inputbusqueda01.html!text'
@@ -33,7 +33,7 @@ import cadenaslide from 'src/components/slides/slide01.html!text'
 import cadenaSlidePerspective from 'src/components/slides/slide04perspective.html!text'
 import cadenaSlidePanel from 'src/components/slides/slide01.html!text'
 import cadenaSlidePanelDetail from 'src/components/slides/slide03.html!text'
-import cadenaTabs01 from 'src/shared/templ/Tabs01.html!text'
+//import cadenaTabs01 from 'src/shared/templ/Tabs01.html!text'
 import cadenadatalist from 'src/shared/templ/datalist02.html!text'
 
 //import cadenamenuvertical01 from 'src/components/menu-vertical/tmplverticalmenu01.html!text'
@@ -59,6 +59,15 @@ import {mysearch} from 'src/lib/mySearch.js'
 import {mymenuvertical01} from 'src/lib/myMenuVertical01.js'
 
 import {mylistgrpbuttons} from 'src/lib/myListGrpButtons.js'
+
+import {myTabs01} from 'src/lib/myTabs.js'
+
+import {webform} from 'src/lib/myForm.js'
+
+import {weblayout} from 'src/lib/myWebLayout.js'
+
+import {mypanelscrollcontent} from 'src/lib/myPanelScrollContent.js'
+
 
 //import 'src/components/layouts/03layout02/03layout02.css'
 
@@ -548,7 +557,7 @@ $(()=>{
             textTemplate:cadenainput
         })
         */
-       
+       /*
         var mypanelscrollcontent=new components.container({
             selector:'my-panel-scroll-content',
             textTemplate:cadenascroll,
@@ -575,9 +584,10 @@ $(()=>{
                   //console.log("estoy en Panel mesas")
                   //console.log("panelMesas Id:"+id)
                   //mylistgrpbuttons.options.data=mesas
-                  var $list=$("#list-panel-mesas")[0]
-                  console.dir($list.render)
-                  mylistgrpbuttons.setData(mesas,'list-panel-mesas')
+                  var $listMesas=$("#list-panel-mesas")[0]
+                  //console.dir($listMesas.setData)
+                  $listMesas.setData(mesas,'list-panel-mesas')
+                  //mylistgrpbuttons.setData(mesas,'list-panel-mesas')
                   //$('#list-panel-mesas')[0].render(mylistgrpbuttons.options.templateReact,mesas)
                }
                
@@ -607,7 +617,9 @@ $(()=>{
                     //console.log("panelArticulos Id:"+id)
                     //mylistgrpbuttons.options.data=articulos
                     //console.dir(mylistgrpbuttons)
-                    mylistgrpbuttons.setData(articulos,'list-panel-articulos')                                       
+                    var $listArticulos=$('#list-panel-articulos')[0]
+                    $listArticulos.setData(articulos,'list-panel-articulos') 
+                    //mylistgrpbuttons.setData(articulos,'list-panel-articulos')                                       
                     //$('#list-panel-articulos')[0].render(mylistgrpbuttons.options.templateReact,articulos)
                     //console.dir(mylistgrpbuttons)
                     
@@ -622,13 +634,15 @@ $(()=>{
                 }
             }
         }
-        
+        */
         //console.log(cadenaform);
+        /*
         var webform=new components.container({
             selector:'my-form',
             textTemplate:cadenaform,
             cssUrls:['src/components/forms/03form-fix-basic-01.css']
         });
+        */
         const cadenaScroll03React=(
             <my-slide id="slide01"></my-slide>
         )
@@ -690,6 +704,7 @@ $(()=>{
                
         }
         /**************************************************** */
+        /*
         var myTabs01=new components.container({
             selector:"my-tab",
             textTemplate:cadenaTabs01,
@@ -701,7 +716,7 @@ $(()=>{
            var tabs=new controls.tab()
            
         }        
-         
+         */
          
          /****************************************************** */
          var myslidePerspective=new components.container({
@@ -866,6 +881,7 @@ $(()=>{
         }
         */
         /************************************************* */
+        /*
         var weblayout=new components.container({
           //container:".container .pages",
           selector:'my-layout',
@@ -881,10 +897,10 @@ $(()=>{
           "node_modules/inputmask/dist/inputmask/inputmask.js",
           "bower/hammerjs/hammer.min.js",
           "src/shared/js/behaviors03layout02.js"
-       
+          
           ]  
         });
-        
+        */
         //Este ejemplo tiene clearContainer.
       
         var container = new components.container({
