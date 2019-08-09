@@ -76,6 +76,10 @@ var _mySlide = require('src/lib/mySlide.js');
 
 var _mySlidePerspective = require('src/lib/mySlidePerspective.js');
 
+var _myPanelScrollPopUp = require('src/lib/myPanelScrollPopUp.js');
+
+var _myMenuHorizontal = require('src/lib/myMenuHorizontal.js');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //import 'src/components/layouts/03layout02/03layout02.css'

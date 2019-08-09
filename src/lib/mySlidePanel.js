@@ -69,8 +69,8 @@ var mySlidePanel = exports.mySlidePanel = (_dec = (0, _componentDecorator.Compon
     _createClass(mySlidePanel, [{
         key: 'initevent',
         value: function initevent(options, id) {
-            //console.log("estoy dentro de slidepanel")
-
+            console.log("estoy dentro de slidepanel");
+            console.dir(options);
             var self = this;
             if (id == "panelCategorias") {
                 /******************************** */

@@ -2,6 +2,10 @@ import {Component} from 'src/componentsImports/componentDecorator.js'
 
 import cadenaTabs01 from 'src/shared/templ/Tabs01.html!text'
 
+
+
+
+
 @Component({
     selector:"my-tab",
     textTemplate:cadenaTabs01,

@@ -76,6 +76,11 @@ import {myslide} from 'src/lib/mySlide.js'
 
 import {myslidePerspective} from 'src/lib/mySlidePerspective.js'
 
+import {mypanelscrollpopup} from 'src/lib/myPanelScrollPopUp.js'
+
+import {mymenuhorizontal} from 'src/lib/myMenuHorizontal.js'
+
+
 //import 'src/components/layouts/03layout02/03layout02.css'
 
 //import 'src/components/menu-horizontal/03menu-horizontal01.css'

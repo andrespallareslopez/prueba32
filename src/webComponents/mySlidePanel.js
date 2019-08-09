@@ -42,8 +42,8 @@ import {datos,mesas,categorias,articulos} from 'src/shared/js/listInMemory.js'
 export class mySlidePanel{
 
     initevent(options,id){
-        //console.log("estoy dentro de slidepanel")
-        
+        console.log("estoy dentro de slidepanel")
+        console.dir(options)
         var self=this
         if (id=="panelCategorias"){
             /******************************** */

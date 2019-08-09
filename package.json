@@ -4,6 +4,7 @@
   "description": "prueba32 project",
   "main": "prueba29.js",
   "scripts": {
+    "dev": "concurrently --kill-others \"npm run build:babel\" \"npm run build:babelcomponent\" \"npm run devserver\" ",
     "devserver": "live-server --port=8083 --browser=google-chrome",
     "build:babel": "npx babel src/shared/js/prueba30.js -w -o src/shared/js/prueba30-bis.js",
     "build:babelcomponent": "npx babel src/webComponents -w --out-dir src/lib",
