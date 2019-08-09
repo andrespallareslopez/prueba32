@@ -3,12 +3,37 @@ import {Component} from 'src/componentsImports/componentDecorator.js'
 import cadenaTabs01 from 'src/shared/templ/Tabs01.html!text'
 
 
-
-
+const cadenatabsstring= `
+  <div class="tab-container" >
+      <div class="tab-controls">
+            <a href="#" >Mesas</a>
+            <a href="#" >Categorias</a>
+            <a href="#" >Articulos</a>
+            <a href="#" >Comandas</a>
+      </div>  
+      <div class="tab-items" >
+        
+              <ul class="tab-container-items">
+                      <li class="tab-item" id="tabMesas" name-container="Mesas">
+                        <my-panel-scroll-content id="panelMesas"></my-panel-scroll-content>
+                      </li>
+                      <li class="tab-item" id="tabCategorias" name-container="Categorias">
+                          <my-slide-panel id="panelCategorias"></my-slide-panel>
+                      </li>
+                      <li class="tab-item" id="tabArticulos" name-container="Articulos">
+                          <my-panel-scroll-content id="panelArticulos"></my-panel-scroll-content>
+                      </li>
+                      <li class="tab-item" id="tabComandas" name-container="Comandas">
+                            <my-form id="panelComandas" ></my-form>
+                      </li>     
+                    </ul>    
+      
+    </div>
+`
 
 @Component({
     selector:"my-tab",
-    textTemplate:cadenaTabs01,
+    textTemplate:cadenatabsstring,
     cssUrls:['src/components/tabs/tabs01.css'],
     importsUrl:['src/componentsImports/componentstabcontainer.js']
 })
