@@ -512,7 +512,9 @@ var Container
                         //self.options.ReactDOM.render(self.options.templateReact,elementSelector)
                         self.renderReactTemplate(self.options.templateReact,self.options.data,that.id);
                       }else if(self.options.textTemplate || self.options.nametemplate){
+                        
                         that.innerHTML = source;
+                      
                       }
                       
                       
