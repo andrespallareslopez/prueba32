@@ -55,7 +55,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var cadenatemplatescrollbindstring = '\n\n<div id={{id}} class="wrapper page child" >\n    <div class="nav" data-bind-html="content:onLoadContent">\n        <nav  >\n           <button type="button" id="btn-toggle-back-3" class="nav-mobile push-float-left" data-bind-style="display:cadena" data-bind-on="click:onClick" >\n             <span class="fa fa-chevron-left" ></span>\n             <span class="texto-btn" data-bind-to="text:labelback" > Back</span>\n           </button>\n        </nav>\n    </div>  \n    <div class="main" >\n       <main>\n          <div class="box content" data-bind-html=\'include:src/shared/templ/list-collection.html\' >\n                \n          </div>\n       </main>\n    </div>\n    <div class="footer">\n        <footer  data-bind-html=\'property:textTemplate\'>\n            \n        </footer>\n    </div>\n</div>\n';
 
-var cadenamenuverticalstring = '\n\n<div class="menu-vertical01"  >\n <div class="container-menu-scroll" >\n                <ul class="items " >\n                    <li class="parent element pr"><a class="element-link gr" href="#" >Link 1<span class="fa fa-chevron-right push-float-right" ></span></a>\n                         <div class="sub-menu sb" >\n                           <a class="element-link el" href="#/plantilla1" data-panel-id="template01" >SubLink 1</a>\n                           <a class="element-link el" href="#/plantilla2" data-panel-id="template02">SubLink 2</a>\n                           <a class="element-link el" href="#/plantilla3" data-panel-id="template03">SubLink 3</a>\n                           <a class="element-link el" href="#/plantilla4" data-panel-id="template04">SubLink 4</a>\n                           <a class="element-link el" href="#/plantilla5" data-panel-id="template05">SubLink 5</a>\n                         </div>\n                    </li>\n                    <li class="parent element pr" ><a class="element-link gr" href="#">Link 2<span class="fa fa-chevron-right push-float-right" ></span></a>\n                         <div class="sub-menu sb" >\n                           <a class="element-link el" href="#/plantilla7" >SubLink 1</a>\n                           <a class="element-link el" href="#/plantilla8" >SubLink 2</a>\n                           <a class="element-link el" href="#/plantilla9" >SubLink 3</a>\n                           <a class="element-link el" href="#/plantilla10" >SubLink 4</a>\n                           <a class="element-link el" href="#/plantilla11" >SubLink 5</a>\n                         </div>\n                    </li>\n                    <li class="element item itm" ><a class="element-link el" href="#/plantilla6">Link 3\n                        <!--\n                        <span class="fa-fix-chevron-right push-float-right" ></span>\n                        -->\n                    </a>\n                    \n                    </li>\n                    <li class="parent element pr" ><a class="element-link gr" href="#">Link 4<span class="fa fa-chevron-right push-float-right" ></span></a>\n                       <div class="sub-menu sb" >\n                           <a class="element-link el" href="#" >SubLink 1</a>\n                           <a class="element-link el" href="#" >SubLink 2</a>\n                           <a class="element-link el" href="#" >SubLink 3</a>\n                           <a class="element-link el" href="#" >SubLink 4</a>\n                           <a class="element-link el" href="#" >SubLink 5</a>\n                       </div>\n                    </li>\n                     <li class="parent element pr" ><a class="element-link gr" href="#">Link 5<span class="fa fa-chevron-right push-float-right" ></span></a>\n                       <div class="sub-menu sb" >\n                           <a class="element-link el" href="#" >SubLink 1</a>\n                           <a class="element-link el" href="#" >SubLink 2</a>\n                           <a class="element-link el" href="#" >SubLink 3</a>\n                           <a class="element-link el" href="#" >SubLink 4</a>\n                           <a class="element-link el" href="#" >SubLink 5</a>\n                       </div>\n                    </li>\n                </ul>\n              </div>\n              <button id="btn-slide-up" class="slide-button top" ><i class="fa fa-chevron-up fa-2x"></i></button>\n              <button id="btn-slide-down" class="slide-button bottom" ><i class="fa fa-chevron-down fa-2x"></i></button>\n      \n    </div>  \n\n';
+var cadenamenuverticalstring = '\n\n<div class="menu-vertical01"  >\n <div class="container-menu-scroll" >\n                <ul class="items " >\n                    <li class="parent element pr"><a class="element-link gr ripple" href="#" >Link 1<span class="fa fa-chevron-right push-float-right" ></span></a>\n                         <div class="sub-menu sb" >\n                           <a class="element-link el ripple" href="#/plantilla1" data-panel-id="template01" >SubLink 1</a>\n                           <a class="element-link el ripple" href="#/plantilla2" data-panel-id="template02" >SubLink 2</a>\n                           <a class="element-link el ripple" href="#/plantilla3" data-panel-id="template03" >SubLink 3</a>\n                           <a class="element-link el ripple" href="#/plantilla4" data-panel-id="template04" >SubLink 4</a>\n                           <a class="element-link el ripple" href="#/plantilla5" data-panel-id="template05" >SubLink 5</a>\n                         </div>\n                    </li>\n                    <li class="parent element pr" ><a class="element-link gr ripple" href="#">Link 2<span class="fa fa-chevron-right push-float-right" ></span></a>\n                         <div class="sub-menu sb" >\n                           <a class="element-link el ripple" href="#/plantilla6" data-panel-id="template06" >SubLink 1</a>\n                           <a class="element-link el ripple" href="#/plantilla7" data-panel-id="template07" >SubLink 2</a>\n                           <a class="element-link el ripple" href="#/plantilla8" data-panel-id="template08" >SubLink 3</a>\n                           <a class="element-link el ripple" href="#/plantilla9" data-panel-id="template09" >SubLink 4</a>\n                           <a class="element-link el ripple" href="#/plantilla10" data-panel-id="template10" >SubLink 5</a>\n                         </div>\n                    </li>\n                    <li class="element item itm" ><a class="element-link el ripple" href="#/plantilla11">Link 3\n                        <!--\n                        <span class="fa-fix-chevron-right push-float-right" ></span>\n                        -->\n                    </a>\n                    \n                    </li>\n                    <li class="parent element pr" ><a class="element-link gr ripple" href="#">Link 4<span class="fa fa-chevron-right push-float-right" ></span></a>\n                       <div class="sub-menu sb" >\n                           <a class="element-link el ripple" href="#" >SubLink 1</a>\n                           <a class="element-link el ripple" href="#" >SubLink 2</a>\n                           <a class="element-link el ripple" href="#" >SubLink 3</a>\n                           <a class="element-link el ripple" href="#" >SubLink 4</a>\n                           <a class="element-link el ripple" href="#" >SubLink 5</a>\n                       </div>\n                    </li>\n                     <li class="parent element pr" ><a class="element-link gr ripple" href="#">Link 5<span class="fa fa-chevron-right push-float-right" ></span></a>\n                       <div class="sub-menu sb" >\n                           <a class="element-link el ripple" href="#" >SubLink 1</a>\n                           <a class="element-link el ripple" href="#" >SubLink 2</a>\n                           <a class="element-link el ripple" href="#" >SubLink 3</a>\n                           <a class="element-link el ripple" href="#" >SubLink 4</a>\n                           <a class="element-link el ripple" href="#" >SubLink 5</a>\n                       </div>\n                    </li>\n                </ul>\n              </div>\n              <button id="btn-slide-up" class="slide-button top" ><i class="fa fa-chevron-up fa-2x"></i></button>\n              <button id="btn-slide-down" class="slide-button bottom" ><i class="fa fa-chevron-down fa-2x"></i></button>\n    </div>  \n\n';
 
 var mymenuvertical01 = exports.mymenuvertical01 = (_dec = (0, _componentDecorator.Component)({
     selector: 'my-menu-vertical-01',
@@ -95,6 +95,7 @@ var mymenuvertical01 = exports.mymenuvertical01 = (_dec = (0, _componentDecorato
                 id: id,
                 onClickMenu: function onClickMenu(e) {
                     //console.dir(e)
+                    e.preventDefault();
                     console.log($(e.target).data("panel-id"));
                     console.log("estoy dentro de onclickmenu personalizada");
                     var id = $(e.target).data("panel-id");
@@ -117,6 +118,21 @@ var mymenuvertical01 = exports.mymenuvertical01 = (_dec = (0, _componentDecorato
                         case 'template05':
                             template = _templatepanelscrollbind10.default;
                             break;
+                        case 'template06':
+                            template = '<my-page-collection-01 id="template06"></my-page-collection-01>';
+                            break;
+                        case 'template07':
+
+                            break;
+                        case 'template08':
+
+                            break;
+                        case 'template09':
+
+                            break;
+                        case 'template10':
+
+                            break;
 
                     }
                     //template = cadenatemplatescrollbindstring
@@ -137,6 +153,13 @@ var mymenuvertical01 = exports.mymenuvertical01 = (_dec = (0, _componentDecorato
                     //var $containerChild=$(".wrapper.page.child")
                     var containerView = ".main-body";
                     var $template = $('#' + id + '.wrapper.page.child');
+                    /*
+                      puede ser que el id no este al misno nivel que .wrapper.page.child
+                      por tanto tenemos que tratar de buscar por id+' .wrapper.page.....
+                    */
+                    if (!$template[0]) {
+                        $template = $('#' + id + ' .wrapper.page.child');
+                    }
                     var $buttonBack;
 
                     //console.dir($template)
@@ -169,11 +192,17 @@ var mymenuvertical01 = exports.mymenuvertical01 = (_dec = (0, _componentDecorato
                                 console.log("estoy dentro de changeAnimation");
                                 //console.dir($template)
                                 $template = $('#' + id + '.wrapper.page.child');
+                                var reftemplate = '#' + id + '.wrapper.page.child';
+                                if ($template.length == 0) {
+                                    $template = $('#' + id + ' .wrapper.page.child');
+                                    reftemplate = '#' + id + ' .wrapper.page.child';
+                                }
                                 if ($template.hasClass("animation")) {
                                     $template.removeClass("animation");
                                     if (remove) {
                                         var timer = setTimeout(function () {
-                                            (0, _utilContainer.removeContainer)('#' + id + '.wrapper.page.child');
+                                            //removeContainer('#'+id+'.wrapper.page.child')
+                                            (0, _utilContainer.removeContainer)(reftemplate);
                                             clearTimeout(timer);
                                         }, 400);
                                     }

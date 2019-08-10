@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 
 import {Component} from 'src/componentsImports/componentDecorator.js'
 
+
 const cadenaPanelScrollString = `
     <button id="btn-footer-menu01" class="nav-mobile center-v push-float-right ripple" >
     <i class="fa fa-ellipsis-h fa-2x" ></i>
@@ -33,17 +34,23 @@ const cadenaPanelScrollString = `
 @Component({
     selector: 'my-panel-scroll-popup',
     textTemplate: cadenaPanelScrollString,
-    cssUrls:[ 'src/components/panel/04PanelScroll02.css',
+    cssUrls:[ 
               'src/components/footer/03Menu-popup01.css',
               'src/components/footer/04footermenu01.css'],
-    importsUrl:[{url:'src/componentsImports/componentspanel01.js',typemodule:'module'}]
+    importsUrl:[{url:'src/componentsImports/componentspanel01.js',typemodule:'module'},
+                {url:'src/componentsImports/UXScrollPopUp.js',typemodule:'module'}]
     
 })
 export class mypanelscrollpopup {
   
   initevent(options,id){
     console.log("estoy dentro de mypanelscrollpopup")
-    //console.log(id)
+    console.log(id)
+    
+    var scrollpopup= new controls.UXScrollPopUp({
+      id: id  
+    })
+    
     /*
     var scrollPanel=new controls.panelScroll({
         nameid:"#root ",
@@ -61,15 +68,7 @@ export class mypanelscrollpopup {
      });
      scrollPanel.initevent();
      */
-     $("#btn-footer-menu01").click(function(event){
-        console.log("estoy en boton footer");
-        event.preventDefault();
-        if ($(".footer-menu").hasClass("expand-footer")){
-            $(".footer-menu").removeClass("expand-footer");
-        }else{
-            $(".footer-menu").addClass("expand-footer");
-        }
-      });
+    
   }
 
   reloaddata(options,id){

@@ -6,10 +6,10 @@ import cadenaTabs01 from 'src/shared/templ/Tabs01.html!text'
 const cadenatabsstring= `
   <div class="tab-container" >
       <div class="tab-controls">
-            <a href="#" >Mesas</a>
-            <a href="#" >Categorias</a>
-            <a href="#" >Articulos</a>
-            <a href="#" >Comandas</a>
+            <a class="ripple" href="#" >Mesas</a>
+            <a class="ripple" href="#" >Categorias</a>
+            <a class="ripple" href="#" >Articulos</a>
+            <a class="ripple" href="#" >Comandas</a>
       </div>  
       <div class="tab-items" >
         

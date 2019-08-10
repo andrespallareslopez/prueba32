@@ -7,6 +7,19 @@ import cadenascroll from 'src/shared/templ/scroll01.html!text'
 
 import {datos,mesas,categorias,articulos} from 'src/shared/js/listInMemory.js'
 
+const cadenascrollstring=`
+<div  class="panel-scroll-01">
+        <div class="panel-scroll-content fix-panel-scroll-content-tab">
+            <div class="panel-scroll-item" data-template="form-key-01" data-action="formfixbasic01" >
+             
+            </div>
+        </div>
+        <button id="btn-slide-up" class="slide-button-panel top"><i class="fa fa-chevron-up fa-2x"></i></button>
+        <button id="btn-slide-down" class="slide-button-panel bottom"><i class="fa fa-chevron-down fa-2x"></i></button>
+    </div>
+    
+`
+
 @Component({
     selector:'my-panel-scroll-content',
     textTemplate:cadenascroll,

@@ -80,7 +80,7 @@ import {mypanelscrollpopup} from 'src/lib/myPanelScrollPopUp.js'
 
 import {mymenuhorizontal} from 'src/lib/myMenuHorizontal.js'
 
-
+import {mypagecollection01} from 'src/lib/MyPageCollection01.js'
 //import 'src/components/layouts/03layout02/03layout02.css'
 
 //import 'src/components/menu-horizontal/03menu-horizontal01.css'

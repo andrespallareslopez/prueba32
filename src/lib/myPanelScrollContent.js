@@ -29,6 +29,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var cadenascrollstring = '\n<div  class="panel-scroll-01">\n        <div class="panel-scroll-content fix-panel-scroll-content-tab">\n            <div class="panel-scroll-item" data-template="form-key-01" data-action="formfixbasic01" >\n             \n            </div>\n        </div>\n        <button id="btn-slide-up" class="slide-button-panel top"><i class="fa fa-chevron-up fa-2x"></i></button>\n        <button id="btn-slide-down" class="slide-button-panel bottom"><i class="fa fa-chevron-down fa-2x"></i></button>\n    </div>\n    \n';
+
 var mypanelscrollcontent = exports.mypanelscrollcontent = (_dec = (0, _componentDecorator.Component)({
     selector: 'my-panel-scroll-content',
     textTemplate: _scroll2.default,

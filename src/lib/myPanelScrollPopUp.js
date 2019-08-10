@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 exports.mypanelscrollpopup = undefined;
 
@@ -25,55 +25,51 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 var cadenaPanelScrollString = '\n    <button id="btn-footer-menu01" class="nav-mobile center-v push-float-right ripple" >\n    <i class="fa fa-ellipsis-h fa-2x" ></i>\n    </button>\n    <div id="footer01" class="footer-menu" >\n    <div class="panel-scroll" >\n    <div class="panel-scroll-content" >\n    <div class="panel-scroll-item" >\n    <ul id="menupopup01" class="menu-popup01" >\n    <li class="element item itm"><a class="element-link el ripple" href="#/template1">Link 1</a></li>\n    <li class="element item itm"><a class="element-link el ripple" href="#/template2">Link 2</a></li> \n    <li class="element item itm"><a class="element-link el ripple" href="#/template3">Link 3</a></li> \n    <li class="element item itm"><a class="element-link el ripple" href="#/template4">Link 4</a></li> \n    <li class="element item itm"><a class="element-link el ripple" href="#/template5">Link 5</a></li>  \n    <li class="element item itm"><a class="element-link el ripple" href="#/template6">Link 6</a></li> \n    <li class="element item itm"><a class="element-link el ripple" href="#/template7">Link 7</a></li> \n    <li class="element item itm"><a class="element-link el ripple" href="#/template8">Link 8</a></li> \n    <li class="element item itm"><a class="element-link el ripple" href="#/template9">Link 9</a></li> \n    <li class="element item itm"><a class="element-link el ripple" href="#/template10">Link 10</a></li> \n    </ul>\n    </div>\n    </div>\n    <button id="btn-slide-up" class="slide-button-panel top" ><i class="fa fa-chevron-up fa-2x"></i></button>\n    <button id="btn-slide-down" class="slide-button-panel bottom" ><i class="fa fa-chevron-down fa-2x"></i></button>\n    </div>\n    </div>\n';
 var mypanelscrollpopup = exports.mypanelscrollpopup = (_dec = (0, _componentDecorator.Component)({
-    selector: 'my-panel-scroll-popup',
-    textTemplate: cadenaPanelScrollString,
-    cssUrls: ['src/components/panel/04PanelScroll02.css', 'src/components/footer/03Menu-popup01.css', 'src/components/footer/04footermenu01.css'],
-    importsUrl: [{ url: 'src/componentsImports/componentspanel01.js', typemodule: 'module' }]
+  selector: 'my-panel-scroll-popup',
+  textTemplate: cadenaPanelScrollString,
+  cssUrls: ['src/components/footer/03Menu-popup01.css', 'src/components/footer/04footermenu01.css'],
+  importsUrl: [{ url: 'src/componentsImports/componentspanel01.js', typemodule: 'module' }, { url: 'src/componentsImports/UXScrollPopUp.js', typemodule: 'module' }]
 
 }), _dec(_class = function () {
-    function mypanelscrollpopup() {
-        _classCallCheck(this, mypanelscrollpopup);
+  function mypanelscrollpopup() {
+    _classCallCheck(this, mypanelscrollpopup);
+  }
+
+  _createClass(mypanelscrollpopup, [{
+    key: 'initevent',
+    value: function initevent(options, id) {
+      console.log("estoy dentro de mypanelscrollpopup");
+      console.log(id);
+
+      var scrollpopup = new controls.UXScrollPopUp({
+        id: id
+      });
+
+      /*
+      var scrollPanel=new controls.panelScroll({
+          nameid:"#root ",
+          container:".main .content",
+          containerComponent:".panel-scroll-01",
+          endScroll:function(){
+            console.log("estoy al final del scroll");
+          },
+          //scroll:".panel-scroll-content",
+          //items:".panel-scroll-item",
+          item:".list-collection li"
+          //btnup:"#btn-slide-up",
+          //btndown:"#btn-slide-down",
+          //fnClickElement:clickElementAccordion
+       });
+       scrollPanel.initevent();
+       */
     }
+  }, {
+    key: 'reloaddata',
+    value: function reloaddata(options, id) {
+      //console.log("estoy en reload")
+      //console.log(id)
+    }
+  }]);
 
-    _createClass(mypanelscrollpopup, [{
-        key: 'initevent',
-        value: function initevent(options, id) {
-            console.log("estoy dentro de mypanelscrollpopup");
-            //console.log(id)
-            /*
-            var scrollPanel=new controls.panelScroll({
-                nameid:"#root ",
-                container:".main .content",
-                containerComponent:".panel-scroll-01",
-                endScroll:function(){
-                  console.log("estoy al final del scroll");
-                },
-                //scroll:".panel-scroll-content",
-                //items:".panel-scroll-item",
-                item:".list-collection li"
-                //btnup:"#btn-slide-up",
-                //btndown:"#btn-slide-down",
-                //fnClickElement:clickElementAccordion
-             });
-             scrollPanel.initevent();
-             */
-            $("#btn-footer-menu01").click(function (event) {
-                console.log("estoy en boton footer");
-                event.preventDefault();
-                if ($(".footer-menu").hasClass("expand-footer")) {
-                    $(".footer-menu").removeClass("expand-footer");
-                } else {
-                    $(".footer-menu").addClass("expand-footer");
-                }
-            });
-        }
-    }, {
-        key: 'reloaddata',
-        value: function reloaddata(options, id) {
-            //console.log("estoy en reload")
-            //console.log(id)
-        }
-    }]);
-
-    return mypanelscrollpopup;
+  return mypanelscrollpopup;
 }()) || _class);
