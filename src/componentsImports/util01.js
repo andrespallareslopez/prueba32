@@ -603,13 +603,20 @@ var util
          
     };
     ns.addNameSpace=function addNameSpace (ns, newclass) {
+      if (!ns){
+        ns={}
+      }
+      if (newclass){
         for (var name in newclass) {
           //console.log(name)
           //console.log(!(name in ns))
-          if (!(name in ns))
-          //console.log("estoy dentro de "+name)
-            ns[name] = newclass[name]
+          if (name && name!=undefined){
+            if (!(name in ns))
+              ns[name] = newclass[name]
+          }
+        
         }
+      }
     }  
   })(util={},jQuery,window.Handlebars);
     

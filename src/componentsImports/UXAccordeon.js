@@ -100,5 +100,7 @@ var controls;
 })(controls=controls||{},components,jQuery)
 
 export {controls}
-
+if (!window.controls)
+   window.controls={}
+   
 util.addNameSpace(window.controls,controls);

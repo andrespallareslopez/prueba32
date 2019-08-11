@@ -54,7 +54,9 @@ var controls
 })(controls=controls||{},UXScroll,jQuery)
      
 export {controls}
-     
+if (!window.controls)
+   window.controls={}
+        
 util.addNameSpace(window.controls,controls);
      
     

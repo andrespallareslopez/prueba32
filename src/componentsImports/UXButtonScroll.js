@@ -336,6 +336,8 @@ var clickElementAccordion=function(){
 })(controls=controls||{},jQuery)
 
 export {controls}
-
+if (!window.controls)
+   window.controls={}
+   
 util.addNameSpace(window.controls,controls);
 

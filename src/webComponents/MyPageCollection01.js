@@ -2,10 +2,14 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import {Component} from 'src/componentsImports/componentDecorator.js'
+import {UXScroll} from 'src/componentsImports/UXScroll.js'
+import {UXPanelScroll} from 'src/componentsImports/UXPanelScroll.js'
+
 import { appendToContainer,recreateNode,removeContainer } from "src/componentsImports/utilContainer.js";
 
+
 var pageindex=0;
-var pagerow=5;
+var pagerow=29;
 const datos={
     grupos:[{codgrupo:1,description:"Bebida"},
             {codgrupo:2,description:"Pan"},
@@ -62,9 +66,9 @@ const cadenapagestring = `
     </div>
     <div class="footer">
         <footer  data-bind-html='property:textTemplate'>
-            <!--
+            
             <my-panel-scroll-popup id='popup01'></my-panel-scroll-popup>
-            -->
+            
 
         </footer>
     </div>
@@ -117,14 +121,35 @@ export class mypagecollection01{
         console.log("estoy en mypagecollection01")
         console.log(id)
         $template=$('#'+id+'.wrapper.page.child');
+        var reftemplate= '#'+id+'.wrapper.page.child'
+        if ($template.length==0){
+            $template=$('#'+id+' .wrapper.page.child');
+            reftemplate='#'+id+' .wrapper.page.child'
+        }
         $buttonBack=$('#'+id+' '+'#btn-toggle-back-3')
                 //console.dir($buttonBack)
                 $buttonBack.on("click",function(e){
                   console.log("estoy dentro de click en mybuttoncollection01")
                   self.changeAnimation(true,id)          
         })
-        
-        
+        var panel=new components.container({
+            container:'#'+id+' .wrapper.page.child .box.content',
+            textTemplate: cadenapanelscroll01
+          });
+          panel.create(function(options){
+            var list=new components.container({
+                container:'#'+id+' .wrapper.page.child .box.content .panel-scroll-item',
+                data:datosindexpagina,
+                textTemplate: cadenalistcollection01
+              });
+            list.initevent=function(options){
+                console.log("estoy dentro de colledion list")
+                var scroll=new controls.UXPanelScroll({
+                    id:id,
+                    item:".list-collection li"
+                })
+            }        
+          })
     }
     changeAnimation(remove,id){
         console.log("estoy dentro de changeAnimation en mypagecollection01")
