@@ -46,10 +46,10 @@ var controls;
          $(self.options.id+" #btn-footer-menu01").click(function(event){
             console.log("estoy en boton footer");
             event.preventDefault();
-            if ($(".footer-menu").hasClass("expand-footer")){
-                $(".footer-menu").removeClass("expand-footer");
+            if ($(self.options.id+" .footer-menu").hasClass("expand-footer")){
+                $(self.options.id+" .footer-menu").removeClass("expand-footer");
             }else{
-                $(".footer-menu").addClass("expand-footer");
+                $(self.options.id+" .footer-menu").addClass("expand-footer");
             }
          });         
         

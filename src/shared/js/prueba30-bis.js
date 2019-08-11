@@ -82,6 +82,8 @@ var _myMenuHorizontal = require('src/lib/myMenuHorizontal.js');
 
 var _MyPageCollection = require('src/lib/MyPageCollection01.js');
 
+var _MyPageForm = require('src/lib/MyPageForm01.js');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //import 'src/components/layouts/03layout02/03layout02.css'
@@ -109,33 +111,12 @@ $(document).ready(function(){
  * 
  */
 
-
-//import {datos,mesas,categorias,articulos} from 'src/shared/js/listInMemory.js'
-
-//import {Component} from 'src/componentsImports/componentDecorator.js'
+//import cadenaTabs01 from 'src/shared/templ/Tabs01.html!text'
 
 
-//import cadenamenuvertical01 from 'src/components/menu-vertical/tmplverticalmenu01.html!text'
+//import {keyform} from 'keyform'
 
-
-//import cadenaform from 'src/shared/templ/myform01.html!text'
-//import cadenainput from 'src/shared/templ/input01.html!text'
-//import cadenacalendar from 'src/shared/templ/inputcalendar01.html!text'
-//import cadenabusqueda from 'src/shared/templ/inputbusqueda01.html!text'
-//import cadenacombo from 'src/shared/templ/inputcombo01.html!text'
-//import cadenanav from 'src/shared/templ/nav01.html!text'
-//import cadenaslide from 'src/components/slides/slide01.html!text'
-//import cadenaSlidePerspective from 'src/components/slides/slide04perspective.html!text'
-//import cadenaSlidePanel from 'src/components/slides/slide01.html!text'
-
-//import cadenascroll03 from 'src/shared/templ/scroll03.html!text'
-
-
-//import {util} from 'util01'
-/// <reference path="./main.d.ts" />
-//importar una libreria polyfill para webcomponentes por si no esta.
-//import React from '../../../node_modules/react/umd/react.production.min.js'
-//import ReactDOM from '../../../node_modules/react-dom/umd/react-dom.production.min.js'
+//import cadenascroll from 'src/shared/templ/scroll01.html!text'  
 (0, _jquery2.default)(function () {
     //console.log("estoy dentro del ready")
     /*
@@ -973,9 +954,30 @@ $(document).ready(function(){
         ;
     }
 });
-//import cadenaTabs01 from 'src/shared/templ/Tabs01.html!text'
+
+//import {datos,mesas,categorias,articulos} from 'src/shared/js/listInMemory.js'
+
+//import {Component} from 'src/componentsImports/componentDecorator.js'
 
 
-//import {keyform} from 'keyform'
+//import cadenamenuvertical01 from 'src/components/menu-vertical/tmplverticalmenu01.html!text'
 
-//import cadenascroll from 'src/shared/templ/scroll01.html!text'
+
+//import cadenaform from 'src/shared/templ/myform01.html!text'
+//import cadenainput from 'src/shared/templ/input01.html!text'
+//import cadenacalendar from 'src/shared/templ/inputcalendar01.html!text'
+//import cadenabusqueda from 'src/shared/templ/inputbusqueda01.html!text'
+//import cadenacombo from 'src/shared/templ/inputcombo01.html!text'
+//import cadenanav from 'src/shared/templ/nav01.html!text'
+//import cadenaslide from 'src/components/slides/slide01.html!text'
+//import cadenaSlidePerspective from 'src/components/slides/slide04perspective.html!text'
+//import cadenaSlidePanel from 'src/components/slides/slide01.html!text'
+
+//import cadenascroll03 from 'src/shared/templ/scroll03.html!text'
+
+
+//import {util} from 'util01'
+/// <reference path="./main.d.ts" />
+//importar una libreria polyfill para webcomponentes por si no esta.
+//import React from '../../../node_modules/react/umd/react.production.min.js'
+//import ReactDOM from '../../../node_modules/react-dom/umd/react-dom.production.min.js'

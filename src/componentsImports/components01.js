@@ -514,7 +514,7 @@ var Container
                       }else if(self.options.textTemplate || self.options.nametemplate){
                         
                         that.innerHTML = source;
-                      
+                        
                       }
                       
                       

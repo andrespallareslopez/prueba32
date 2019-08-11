@@ -178,7 +178,7 @@ export class mymenuvertical01{
              template = '<my-page-collection-01 id="template06"></my-page-collection-01>'
           break;
           case 'template07':
-
+             template = '<my-page-form-01 id="template07" ></my-page-form-01>'
           break;
           case 'template08':
 
