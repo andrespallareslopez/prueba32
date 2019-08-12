@@ -1,13 +1,22 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 exports.mycombo = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _dec, _class;
+//import {UXDataList} from 'src/componentsImports/UXDataList.js'
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = require('react-dom');
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
 
 var _componentDecorator = require('src/componentsImports/componentDecorator.js');
 
@@ -29,61 +38,63 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var cadenacombostring = '\n<div id="datalist01" class="datalist" >\n  <button id="btn-slide-close01" class="slide-button-panel button-close top-off" >\n    <i class="fa fa-close fa-1x"></i>\n  </button>\n  <div class="panel-datalist" >\n    \n  </div>\n</div>\n<div class="group group-block">\n  <div class="label-help">\n    <span class="logo fa fa-question-circle fa-2x"></span>\n    <span class="text">Introduce grupo </span>\n  </div>\n  <div class="label-input">\n    <span class="logo fa fa-tag fa-2x"></span>\n    <input id="combotxt" type="text" placeholder="" class="input medium">\n    <button id="search" class="list-button"><span class="fa fa-sort-desc"></span></button>\n  </div>\n</div>\n';
+
 var mycombo = exports.mycombo = (_dec = (0, _componentDecorator.Component)({
-    selector: 'my-combo',
-    textTemplate: _inputcombo2.default,
-    cssUrls: ['bower/tether/dist/css/tether.css', 'src/components/panel/04PanelScroll01.css', 'src/components/list/03datalist01.css'],
-    importsUrl: ['bower/tether/dist/js/tether.js', { url: 'src/componentsImports/UXDataList.js', typemodule: 'module' }, { url: 'src/componentsImports/UXButtonScroll.js', typemodule: 'module' }]
+  selector: 'my-combo',
+  textTemplate: cadenacombostring,
+  cssUrls: ['bower/tether/dist/css/tether.css', 'src/components/panel/04PanelScroll01.css', 'src/components/list/03datalist01.css'],
+  importsUrl: ['bower/tether/dist/js/tether.js', { url: 'src/componentsImports/UXDataList.js', typemodule: 'module' }, { url: 'src/componentsImports/UXButtonScroll.js', typemodule: 'module' }]
 }), _dec(_class = function () {
-    function mycombo() {
-        _classCallCheck(this, mycombo);
-    }
+  function mycombo() {
+    _classCallCheck(this, mycombo);
+  }
 
-    _createClass(mycombo, [{
-        key: 'initevent',
-        value: function initevent(options, id) {
-            var scroll;
-            var datalist;
-            //console.log(id);
-            datalist = new controls.UXDataList({
-                id: id,
-                clearContainer: true,
-                /*
-                data:(function(id){
-                 if (id=="combo01")    
-                  return   {articulos:articulos}
-                 else if(id=="combo02")
-                   return {mesas:mesas}
-                })(id),
-                */
-                /*
-                textTemplate:(function(id){
-                   if (id=="combo01")
-                     return cadenadataarticulos
-                   else if (id=="combo02")
-                     return cadenadatamesas
-                })(id),
-                */
-                onButtonClick: function onButtonClick(options) {
-                    if (id == "combo01") datalist.setData({ articulos: _listInMemory.articulos }, id, _datalistarticulos2.default);else if (id == "combo02") datalist.setData({ mesas: _listInMemory.mesas }, id, _datalistmesas2.default);
+  _createClass(mycombo, [{
+    key: 'initevent',
+    value: function initevent(options, id) {
+      var scroll;
+      var datalist;
+      //console.log(id);
+      datalist = new controls.UXDataList({
+        id: id,
+        clearContainer: true,
+        /*
+        data:(function(id){
+         if (id=="combo01")    
+          return   {articulos:articulos}
+         else if(id=="combo02")
+           return {mesas:mesas}
+        })(id),
+        */
+        /*
+        textTemplate:(function(id){
+           if (id=="combo01")
+             return cadenadataarticulos
+           else if (id=="combo02")
+             return cadenadatamesas
+        })(id),
+        */
+        onButtonClick: function onButtonClick(options) {
+          if (id == "combo01") datalist.setData({ articulos: _listInMemory.articulos }, id, _datalistarticulos2.default);else if (id == "combo02") datalist.setData({ mesas: _listInMemory.mesas }, id, _datalistmesas2.default);
 
-                    scroll = new controls.UXButtonScroll({
-                        id: id + 'datalist',
-                        onItemClick: function onItemClick(value, target) {
-                            console.dir(target);
-                            //console.log("estoy dentro de onItemClick")
-                            datalist.$inputText.val(value);
-                            datalist.toggle();
-                            scroll.destroy();
-                        }
-                    });
-                },
-                onClose: function onClose() {
-                    scroll.destroy();
-                }
-            });
+          scroll = new controls.UXButtonScroll({
+            id: id + 'datalist',
+            onItemClick: function onItemClick(value, target) {
+              console.dir(target);
+              //console.log("estoy dentro de onItemClick")
+              datalist.$inputText.val(value);
+              datalist.toggle();
+              scroll.destroy();
+            }
+          });
+        },
+        onClose: function onClose() {
+          scroll.destroy();
         }
-    }]);
+      });
+    }
+  }]);
 
-    return mycombo;
+  return mycombo;
 }()) || _class);

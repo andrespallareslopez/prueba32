@@ -15,7 +15,7 @@
     "uglify-js": "uglifyjs bundle-brify.js -o dist/minify/bundle-brify.min.js --compress",
     "copy-bundle": "gulp copy-bundle",
     "bundle-parcelify": "npm run build:browserify2",
-    "sass-watch": "sass -w src/shared/js/node_modules/**",
+    "sass-watch": "sass -w src/components/**",
     "bundle-sass": "onchange --no-exclude \"./src/shared/js/node_modules/**/*.css\" -v -- npm run bundle-parcelify",
     "copy-brify": "onchange ./bundle-brify.js -v -- npm run copy-bundle",
     "minify-brify": "onchange ./bundle-brify.js -v -- npm run uglify-js",

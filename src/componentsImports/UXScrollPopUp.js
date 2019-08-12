@@ -31,6 +31,7 @@ var controls;
       ns.UXScrollPopUp.prototype=new UXScroll();
       
       ns.UXScrollPopUp.prototype.initevent=function(){
+        console.log('Estoy dentro de scrollpopup')
         var self=this
         $(self.options.id+" "+self.options.containerComponent+" "+self.options.item).on("click",function(e){
             console.log("estoy en item click en componente con id:"+self.options.id)

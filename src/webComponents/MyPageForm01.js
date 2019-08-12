@@ -26,8 +26,19 @@ const cadenapagestring = `
     </div>
     <div class="footer">
         <footer  >
-            
-            <my-panel-scroll-popup id='popup02'></my-panel-scroll-popup>
+        <div class="push-center-inner push-center-inline-3x">
+            <button id="btn-ok" class="nav-mobile nav-2x push-float-left ripple">
+            <span class="fa fa-check-circle fa-2x" ></span>
+            <span class="title" >Aceptar</span>
+            </button>
+        
+            <button id="btn-cancel" class="nav-mobile nav-2x push-float-right ripple">
+            <span class="fa fa-times-circle fa-2x" ></span>
+            <span class="title" >Cancelar</span>
+            </button>
+          
+    </div>
+    <my-panel-scroll-popup id='popup02'></my-panel-scroll-popup>       
             
 
         </footer>
@@ -46,7 +57,7 @@ const cadenapanelscroll01 = `
 `
 const cadenaformfix01 = `
 <form id="form01" class="form-fix-basic-01 ">
-<div class="datalist" ></div>
+
 <fieldset>
     <legend>Login</legend>
     <div class="group group-block">

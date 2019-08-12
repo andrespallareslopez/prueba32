@@ -238,6 +238,10 @@ html, body {
   @media screen and (min-width: 768px) {
     .lyt03layout02 .push-center-3x {
       left: 0px; } }
+.lyt03layout02 .push-center-inline-3x {
+  display: inline-block;
+  max-width: 240px;
+  left: calc(50% - 100px); }
 @media screen and (min-width: 768px) {
   .lyt03layout02 html, .lyt03layout02 body {
     background: white; }

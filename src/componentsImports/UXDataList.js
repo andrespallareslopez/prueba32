@@ -10,6 +10,28 @@ var controls;
     ns.UXDataList=(function(){
        return function(options){
                       
+       
+        //Si no estubiera definida la propiedad textTemplate entonces
+        //no va a iniciar el initevent desde components01.js, por tanto
+        //tenemos que lanzarlo nosotros manualmente.
+        var params=[].slice.call(arguments);
+        if (params.length>0){
+           
+            this.initControl.apply(this,params);
+        }
+        
+       }
+    })();
+    ns.UXDataList.prototype=new components.container();
+    
+    /*
+    ns.UXDataList.prototype.init=function(){
+    }
+    */
+   
+    ns.UXDataList.prototype.initControl=function(options){
+        
+        
         (function(options){
             options.id=options.id||undefined
             options.containerComponent=options.containerComponent||".panel-datalist"
@@ -33,24 +55,17 @@ var controls;
         this.$inputText=undefined
 
         this.init(options)
-        //Si no estubiera definida la propiedad textTemplate entonces
-        //no va a iniciar el initevent desde components01.js, por tanto
-        //tenemos que lanzarlo nosotros manualmente.
-        if (!this.options.textTemplate){
-           
-            this.initevent()
-        }
-       }
-    })();
-    ns.UXDataList.prototype=new components.container();
-    
-    /*
-    ns.UXDataList.prototype.init=function(){
+        
+        this.eventbuttons()
+
+        if (!this.options.textTemplate && this.initevent){
+            this.initevent(options)
+         }   
     }
-    */
-    ns.UXDataList.prototype.initevent=function(){
-        //console.log("estoy dentro de initevent de uxdatalist"+this.options.id)
+    ns.UXDataList.prototype.eventbuttons=function(){
         var self=this
+
+
         var id=self.options.id;
         var namedatalist=id+"datalist";
         //console.log("UXDataList "+id)
@@ -118,7 +133,6 @@ var controls;
         self.$inputText=$("#"+id+" "+self.options.inputText);
         //console.dir(self.$inputText)
     }
-    
     ns.UXDataList.prototype.toggle=function(){
        var self=this
        var id=self.options.id;
@@ -130,7 +144,9 @@ var controls;
 
 })(controls=controls||{},components,jQuery)
 
-export {controls}
+var UXDataList=controls.UXDataList
+export {UXDataList}
+
 if (!window.controls)
    window.controls={}
    

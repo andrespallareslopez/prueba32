@@ -306,6 +306,11 @@ html,body{
                 left:0px;
             }
         }
+        .push-center-inline-3x{
+            display:inline-block;
+            max-width:240px;
+            left:calc(50% - 100px);
+        }
         @media screen and (min-width:768px){
         html,body{
 

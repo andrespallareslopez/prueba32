@@ -70,7 +70,7 @@ var controls;
          initScroll.apply(self,[]);
          
          if (!this.options.textTemplate && this.initevent){
-            this.initevent()
+            this.initevent(options)
          }   
     }
     
@@ -341,6 +341,7 @@ var controls;
 
 var UXScroll=controls.UXScroll;
 export {UXScroll}
+
 if (!window.controls)
    window.controls={}
       
