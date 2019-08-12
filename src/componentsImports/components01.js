@@ -401,7 +401,7 @@ var Container
         }.bind(this))     
      }
     ns.container.prototype.setData = function (data, id,Template) {
-        //console.log("estoy en setData "+id)
+        console.log("estoy en setData "+id)
         //console.dir(data)
         //console.log(id)
         var self = this;

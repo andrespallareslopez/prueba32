@@ -12,6 +12,38 @@ import cadenadataarticulos from 'src/shared/templ/datalistarticulos.html!text'
 
 import {datos,mesas,categorias,articulos} from 'src/shared/js/listInMemory.js'
 
+const cadenadatamesasstring = `
+<div class="panel-scroll" >
+    <div class="panel-scroll-content" >
+      <div class="panel-scroll-item" >
+        <div class="datalist-container" >
+          {{#each mesas}}
+          <div class="element-link el ripple" >{{descripcion}}</div>
+          {{/each}}
+        </div>
+      </div>
+
+     </div>
+     <button id="btn-slide-up" class="slide-button-panel small-button top" ><i class="fa fa-chevron-up fa-1x"></i></button>
+     <button id="btn-slide-down" class="slide-button-panel small-button bottom" ><i class="fa fa-chevron-down fa-1x"></i></button>
+ </div>
+`
+const cadenadataarticulosstring= `
+<div class="panel-scroll" >
+    <div class="panel-scroll-content" >
+      <div class="panel-scroll-item" >
+        <div class="datalist-container" >
+          {{#each articulos}}
+          <div class="element-link el ripple" >{{descripcion}}</div>
+          {{/each}}
+        </div>
+      </div>
+
+     </div>
+     <button id="btn-slide-up" class="slide-button-panel small-button top" ><i class="fa fa-chevron-up fa-1x"></i></button>
+     <button id="btn-slide-down" class="slide-button-panel small-button bottom" ><i class="fa fa-chevron-down fa-1x"></i></button>
+ </div>
+`
 const cadenacombostring= `
 <div id="datalist01" class="datalist" >
   <button id="btn-slide-close01" class="slide-button-panel button-close top-off" >

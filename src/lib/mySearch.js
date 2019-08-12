@@ -29,13 +29,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var cadenabusquedastring = '\n<div class="group group-block">\n    <div class="label-input">\n    <span class="logo fa fa-tag fa-2x"></span>\n    <input type="text" autocomplete="off" id="busquedatxt" placeholder="Busqueda" class="input medium">\n    <button type="button" id="search" class="list-button"><span class="fa fa-search"></span></button>\n    </div>\n</div>\n';
+var datos = {
+    grupos: [{ codgrupo: 1, description: "Bebida" }, { codgrupo: 2, description: "Pan" }, { codgrupo: 3, description: "Carne" }, { codgrupo: 4, description: "Pescado" }, { codgrupo: 5, description: "Botes" }, { codgrupo: 6, description: "Vinos" }, { codgrupo: 7, description: "Refrescos" }, { codgrupo: 8, description: "Bolleria" }, { codgrupo: 9, description: "Dulces" }, { codgrupo: 10, description: "Frutas" }, { codgrupo: 11, description: "Bizcochos" }, { codgrupo: 12, description: "Pucheros" }, { codgrupo: 13, description: "Tortas" }, { codgrupo: 14, description: "Grano" }, { codgrupo: 15, description: "Pastas" }, { codgrupo: 16, description: "Ensaladas" }, { codgrupo: 17, description: "Pizzas" }, { codgrupo: 18, description: "Horno" }, { codgrupo: 19, description: "Cervezas" }, { codgrupo: 20, description: "Rebozados" }, { codgrupo: 21, description: "Frituras" }, { codgrupo: 22, description: "Yogures" }, { codgrupo: 23, description: "Helados" }, { codgrupo: 24, description: "Licores" }, { codgrupo: 25, description: "Copas" }, { codgrupo: 26, description: "Cafes" }, { codgrupo: 27, description: "Poleos" }, { codgrupo: 28, description: "Hamburguesas" }, { codgrupo: 29, description: "Chips" }]
+};
+
+var cadenadatagruposstring = '\n<div class="panel-scroll" >\n    <div class="panel-scroll-content" >\n      <div class="panel-scroll-item" >\n        <div class="datalist-container" >\n          {{#each grupos}}\n          <div class="element-link el ripple" >{{description}}</div>\n          {{/each}}\n        </div>\n      </div>\n\n     </div>\n     <button id="btn-slide-up" class="slide-button-panel small-button top" ><i class="fa fa-chevron-up fa-1x"></i></button>\n     <button id="btn-slide-down" class="slide-button-panel small-button bottom" ><i class="fa fa-chevron-down fa-1x"></i></button>\n </div>\n';
+
+var cadenabusquedastring = '\n<div id="datalist01" class="datalist" >\n  <button id="btn-slide-close01" class="slide-button-panel button-close top-off" >\n    <i class="fa fa-close fa-1x"></i>\n  </button>\n  <div class="panel-datalist" >\n    \n  </div>\n</div>\n<div class="group group-block">\n    <div class="label-input">\n    <span class="logo fa fa-tag fa-2x"></span>\n    <input type="text" autocomplete="off" id="busquedatxt" placeholder="Busqueda" class="input medium">\n    <button  id="search" class="list-button"><span class="fa fa-search" ></span></button>\n    </div>\n</div>\n';
 
 var mysearch = exports.mysearch = (_dec = (0, _componentDecorator.Component)({
     selector: 'my-search',
     textTemplate: cadenabusquedastring,
     cssUrls: ['bower/tether/dist/css/tether.css', 'src/components/panel/04PanelScroll01.css', 'src/components/list/03datalist01.css'],
-    importsUrl: ['bower/tether/dist/js/tether.js', { url: 'src/componentsImports/UXDataList.js', typemodule: 'module' }, { url: 'src/componentsImports/UXButtonScroll.js', typemodule: 'module' }, 'bower/linqjs/linq.js']
+    importsUrl: ['bower/tether/dist/js/tether.js', { url: 'src/componentsImports/UXDataList.js', typemodule: 'module' }, { url: 'src/componentsImports/UXButtonScroll.js', typemodule: 'module' }, { url: 'src/componentsImports/UXSearchList.js', typemodule: 'module' }, 'bower/linqjs/linq.js']
 }), _dec(_class = function () {
     function mysearch() {
         _classCallCheck(this, mysearch);
@@ -46,7 +52,49 @@ var mysearch = exports.mysearch = (_dec = (0, _componentDecorator.Component)({
         value: function initevent(options, id) {
             console.log('estoy en mysearch con id:' + id);
             //console.dir(Enumerable)
+            var scroll;
+            var datalist;
+            datalist = new controls.UXSearchList({
+                id: id,
+                clearContainer: true,
+                /*
+                data:(function(id){
+                 if (id=="combo01")    
+                  return   {articulos:articulos}
+                 else if(id=="combo02")
+                   return {mesas:mesas}
+                })(id),
+                */
+                /*
+                textTemplate:(function(id){
+                   if (id=="combo01")
+                     return cadenadataarticulos
+                   else if (id=="combo02")
+                     return cadenadatamesas
+                })(id),
+                */
+                onButtonClick: function onButtonClick(options) {
+                    console.log('estoy en onbuttonclick search01');
+                    if (id == "search01") {
+                        console.log('estoy en onbuttonclick search01');
+                        datalist.setData(datos, id, cadenadatagruposstring);
+                    } else if (id == "search02") datalist.setData({ mesas: _listInMemory.mesas }, id, cadenadatamesas);
 
+                    scroll = new controls.UXButtonScroll({
+                        id: id + 'datalist',
+                        onItemClick: function onItemClick(value, target) {
+                            console.dir(target);
+                            //console.log("estoy dentro de onItemClick")
+                            datalist.$inputText.val(value);
+                            datalist.toggle();
+                            scroll.destroy();
+                        }
+                    });
+                },
+                onClose: function onClose() {
+                    scroll.destroy();
+                }
+            });
         }
     }]);
 

@@ -32,7 +32,7 @@ var controls;
     ns.UXDataList.prototype.initControl=function(options){
         
         
-        (function(options){
+        ;(function(options){
             options.id=options.id||undefined
             options.containerComponent=options.containerComponent||".panel-datalist"
             options.data=options.data||undefined
@@ -64,7 +64,7 @@ var controls;
     }
     ns.UXDataList.prototype.eventbuttons=function(){
         var self=this
-
+        console.log('estoy en UXDATAlist event buttons con id:'+self.options.id)
 
         var id=self.options.id;
         var namedatalist=id+"datalist";
@@ -73,7 +73,7 @@ var controls;
         $("#"+id+" "+self.options.namedatalist).get(0).id=namedatalist;
         //console.dir($("#"+namedatalist))
         $("#"+id+" "+self.options.namebutton).on("click", function (e) {
-            
+            console.log('estoy dentro de:'+"#"+id+" "+self.options.namebutton)
             e.preventDefault();
             //console.log("estoy dentro")
             //console.dir(e)
@@ -89,6 +89,7 @@ var controls;
                 self.options.fncreate()
             }
         });
+
         $("#"+namedatalist+" "+self.options.namebuttonclose).on("click",function(e){
            e.preventDefault()
            
@@ -103,10 +104,10 @@ var controls;
         })
         
         $("#"+id+" "+self.options.nameblock).on("click",function(e){
-            //console.log("estoy dentro")
+            console.log("estoy dentro"+"#"+id+" "+self.options.nameblock)
             //console.dir(e)
             e.preventDefault()
-            if ($("#"+namedatalist).hasClass("tether-open") && (e.target.className!='fa fa-sort-desc' && e.target.id!=self.options.namebutton.replace('#',''))){
+            if ($("#"+namedatalist).hasClass("tether-open") && ((e.target.className!='fa fa-sort-desc' && e.target.className!='fa fa-search' ) && e.target.id!=self.options.namebutton.replace('#',''))){
                //cerramos el panel del combo si pinchamos en cualquier lugar del control
                $("#"+namedatalist).toggleClass("tether-open");
                telist.position();
