@@ -8,7 +8,7 @@ var controls;
    "use strict";
     ns.UXButtonScroll=(function(){
       return function(options){
-         (function(options){
+         ;(function(options){
             options.id=options.id||undefined
             options.containerComponent=options.containerComponent||".panel-scroll"
             options.scroll=options.scroll||".panel-scroll-content"
@@ -63,9 +63,13 @@ var controls;
     }
     
     var initScroll=function(){
+     
         var self=this
+        console.log("Estoy en initscroll en id:"+self.options.id)
+
         self.$holder=$(self.options.id+" "+self.options.containerComponent+" "+self.options.scroll);
         
+        console.dir(self.$holder)
         //console.dir(self.$holder)
         
         calcularAltura.apply(self,[]);
@@ -335,7 +339,9 @@ var clickElementAccordion=function(){
 }
 })(controls=controls||{},jQuery)
 
-export {controls}
+
+var UXButtonScroll=controls.UXButtonScroll
+export {UXButtonScroll}
 if (!window.controls)
    window.controls={}
    

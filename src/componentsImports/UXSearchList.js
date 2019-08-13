@@ -2,6 +2,7 @@
 import {util} from './util01.js';
 import {components} from './components01.js';
 import {UXDataList} from './UXDataList.js'
+import {UXButtonScroll} from './UXButtonScroll.js'
 
 var controls;
 
@@ -47,21 +48,69 @@ var controls;
         options.container="#"+namedatalist+" "+options.containerComponent;
         //********************************* */
         this.$inputText=undefined
-
+        
         this.init(options)
         this.initEventInputSearch(options)
-
+         
         if (!this.options.textTemplate && this.initevent){
             this.initevent(options)
-         }   
-       
+        }   
+        
      }
      ns.UXSearchList.prototype.initEventInputSearch=function(options){
         var self=this
         console.log('estoy dentro de UXSearchList initeventinputsearch')
         
         self.eventbuttons()
+        let id=self.options.id
+        let $inputText="#"+id+" "+self.options.inputText
+        /*
+        let scroll=new UXButtonScroll({
+            id:id+'datalist',
+            onItemClick:function(value,target){
+                console.dir(target)
+                //console.log("estoy dentro de onItemClick")
+                //self.$inputText.val(value);
+                //self.toggle();
+                //scroll.destroy();
+            }
+        }) 
+        */
+        console.dir( self.options.data)
+        /*
+        const datospagina=Enumerable.from(datos.grupos)
+                        //.take(index*pagerow)
+                        .skip(pageindex*pagerow)
+                        .take(pagerow)
+                        .select("$").toArray();
+        */
+        
+        $($inputText).on("keydown",function(e){
+                      
+        })
+        $($inputText).on("keyup", debounce(function (e) {
+            console.dir( self.options.data[id])
+            console.log($($inputText).val())
+            self.open()
+            self.setData(self.options.data,self.options.id,self.options.textTemplate)
+            
+        },300))   
+        
      }
+     function debounce(func, wait, immediate) {
+        var timeout;
+        return function () {
+            var context = this, args = arguments;
+            var later = function () {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+    };
 })(controls=controls||{},UXDataList,jQuery)
 
 export {controls}

@@ -94,25 +94,26 @@ export class mysearch{
         //console.dir(Enumerable)
         var scroll;
         var datalist;
+         
         datalist=new controls.UXSearchList({
             id:id,
             clearContainer:true,
-            /*
+            
             data:(function(id){
-             if (id=="combo01")    
-              return   {articulos:articulos}
-             else if(id=="combo02")
+             if (id=="search01")    
+              return   datos
+             else if(id=="search02")
                return {mesas:mesas}
             })(id),
-            */
-            /*
+            
+            
             textTemplate:(function(id){
-               if (id=="combo01")
-                 return cadenadataarticulos
-               else if (id=="combo02")
+               if (id=="search01")
+                 return cadenadatagruposstring
+               else if (id=="search02")
                  return cadenadatamesas
             })(id),
-            */
+            
             onButtonClick:function(options){
                 console.log('estoy en onbuttonclick search01')
                 if (id=="search01"){
@@ -121,8 +122,8 @@ export class mysearch{
                 }
                 else if(id=="search02")
                   datalist.setData({mesas:mesas},id,cadenadatamesas)
-                   
-                scroll=new controls.UXButtonScroll({
+                  
+                  scroll=new controls.UXButtonScroll({
                     id:id+'datalist',
                     onItemClick:function(value,target){
                         console.dir(target)
@@ -131,7 +132,8 @@ export class mysearch{
                         datalist.toggle();
                         scroll.destroy();
                     }
-                })
+                  }) 
+             
             },
             onClose:function(){
                scroll.destroy();
@@ -140,20 +142,7 @@ export class mysearch{
 
     }
 }
-function debounce(func, wait, immediate) {
-    var timeout;
-    return function () {
-        var context = this, args = arguments;
-        var later = function () {
-            timeout = null;
-            if (!immediate) func.apply(context, args);
-        };
-        var callNow = immediate && !timeout;
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-        if (callNow) func.apply(context, args);
-    };
-};
+
 /*
  $("#input-search").on("keydown",function(e){
           if ( !$(".form-search").hasClass("open-progress")){

@@ -11,12 +11,9 @@ var controls;
        return function(options){
                       
        
-        //Si no estubiera definida la propiedad textTemplate entonces
-        //no va a iniciar el initevent desde components01.js, por tanto
-        //tenemos que lanzarlo nosotros manualmente.
         var params=[].slice.call(arguments);
         if (params.length>0){
-           
+            
             this.initControl.apply(this,params);
         }
         
@@ -58,6 +55,9 @@ var controls;
         
         this.eventbuttons()
 
+        //Si no estubiera definida la propiedad textTemplate entonces
+        //no va a iniciar el initevent desde components01.js, por tanto
+        //tenemos que lanzarlo nosotros manualmente.
         if (!this.options.textTemplate && this.initevent){
             this.initevent(options)
          }   
@@ -140,9 +140,22 @@ var controls;
        var namedatalist=id+"datalist";
        $("#"+namedatalist).toggleClass("tether-open");
        self.$telist.position();
-
+       
     }
-
+    ns.UXDataList.prototype.open=function(){
+        var self=this
+        var id=self.options.id;
+        var namedatalist=id+"datalist";
+        if  (  !$("#"+namedatalist).hasClass("tether-open")){
+            $("#"+namedatalist).toggleClass("tether-open");
+            self.$telist.position();
+            self.openit=true;
+        }
+     }
+     ns.UXDataList.prototype.opened=function(){
+           return this.openit
+     }
+    
 })(controls=controls||{},components,jQuery)
 
 var UXDataList=controls.UXDataList

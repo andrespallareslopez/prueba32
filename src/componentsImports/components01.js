@@ -27,7 +27,7 @@ var Container
             //porque si no cuando instanciamos el objeto container en
             //en el prototype de menuvertical,panel,etc..., con el constructor vacio nos interesa que no
             //haga nada
-
+            
             var params=[].slice.call(arguments);
             if (params.length>0){
                
@@ -412,7 +412,7 @@ var Container
             }
             self.options.data[id.replace(/-/g, "")] = data
         } else {
-            this.options.data = data
+            self.options.data = data
         }
         
         if (self.options.templateReact) {
@@ -420,6 +420,11 @@ var Container
         }else if (self.options.element){
            //********************** */
            //self.render(data);
+           console.log("estoy dentro de setdata en options.element")
+           if (!Template && self.options.textTemplate){
+               Template = self.options.textTemplate
+           }
+
            if (Template)
              util.renderTemplateHtml.apply(self,[data,Template])
            else if (self.options.textTemplate)
