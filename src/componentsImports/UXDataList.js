@@ -155,6 +155,16 @@ var controls;
      ns.UXDataList.prototype.opened=function(){
            return this.openit
      }
+     ns.UXDataList.prototype.close=function(){
+        var self=this
+        var id=self.options.id;
+        var namedatalist=id+"datalist";
+        if  (  $("#"+namedatalist).hasClass("tether-open")){
+            $("#"+namedatalist).toggleClass("tether-open");
+            self.$telist.position();
+            self.openit=false;
+        }
+     }
     
 })(controls=controls||{},components,jQuery)
 

@@ -91,7 +91,10 @@ var controls;
         $($inputText).on("keyup", debounce(function (e) {
             console.dir( self.options.data[id])
             console.log($($inputText).val())
-            self.open()
+            if ($($inputText).val().length>0)
+              self.open()
+            else
+              self.close()  
             self.setData(self.options.data,self.options.id,self.options.textTemplate)
             
         },300))   
