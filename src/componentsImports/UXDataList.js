@@ -146,7 +146,9 @@ var controls;
         var self=this
         var id=self.options.id;
         var namedatalist=id+"datalist";
+        
         if  (  !$("#"+namedatalist).hasClass("tether-open")){
+            //toggleclass.apply(self,[true])
             $("#"+namedatalist).toggleClass("tether-open");
             self.$telist.position();
             self.openit=true;
@@ -159,13 +161,29 @@ var controls;
         var self=this
         var id=self.options.id;
         var namedatalist=id+"datalist";
+        
         if  (  $("#"+namedatalist).hasClass("tether-open")){
+             //toggleclass.apply(self,[false])
             $("#"+namedatalist).toggleClass("tether-open");
             self.$telist.position();
             self.openit=false;
         }
      }
-    
+    var toggleclass = function(openit){
+        var self=this
+        var id=self.options.id;
+        var namedatalist=id+"datalist";
+        
+            $("#"+namedatalist).toggleClass("tether-open");
+            self.$telist.position();
+            self.openit=openit;
+    }
+    var getnamedatalist = function(){
+        var self=this
+        var id=self.options.id;
+        return id+"datalist";
+    }
+
 })(controls=controls||{},components,jQuery)
 
 var UXDataList=controls.UXDataList
