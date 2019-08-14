@@ -70,8 +70,13 @@ var mysearch = exports.mysearch = (_dec = (0, _componentDecorator.Component)({
         onButtonClick: function onButtonClick(options) {
           console.log('estoy en onbuttonclick search01');
           if (id == "search01") {
-            console.log('estoy en onbuttonclick search01');
-            datalist.setData(datos, id, cadenadatagruposstring);
+            //console.log('estoy en onbuttonclick search01')
+            /* no es necesario poner cadenadatagruposstring
+            se podria llamar de la siguiente manera:
+            datalist.setData(datos,id)
+            */
+            //datalist.setData(datos,id,cadenadatagruposstring)
+            datalist.setData(datos, id);
           } else if (id == "search02") datalist.setData({ mesas: _listInMemory.mesas }, id, cadenadatamesas);
 
           scroll = new controls.UXButtonScroll({
@@ -85,8 +90,15 @@ var mysearch = exports.mysearch = (_dec = (0, _componentDecorator.Component)({
             }
           });
         },
+        onSearch: function onSearch(datos, value) {
+          var datoscombo = Enumerable.from(datos.grupos).where(function (grupo) {
+            return grupo.description.includes(value) == true;
+          }).select("$").toArray();
+          console.dir(datoscombo);
+          return { grupos: datoscombo };
+        },
         onClose: function onClose() {
-          scroll.destroy();
+          if (scroll) scroll.destroy();
         }
       });
     }

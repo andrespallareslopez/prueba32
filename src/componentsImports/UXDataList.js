@@ -21,10 +21,7 @@ var controls;
     })();
     ns.UXDataList.prototype=new components.container();
     
-    /*
-    ns.UXDataList.prototype.init=function(){
-    }
-    */
+   
    
     ns.UXDataList.prototype.initControl=function(options){
         
@@ -77,7 +74,7 @@ var controls;
             e.preventDefault();
             //console.log("estoy dentro")
             //console.dir(e)
-            $("#"+namedatalist).toggleClass("tether-open");
+            $(getnamedatalist.apply(self,[])).toggleClass("tether-open");
             telist.position();
             
              
@@ -94,7 +91,7 @@ var controls;
            e.preventDefault()
            
            //console.log("estoy dentro")
-           $("#"+namedatalist).toggleClass("tether-open");
+           $(getnamedatalist.apply(self,[])).toggleClass("tether-open");
            telist.position();
            
            if (self.options.onClose){
@@ -107,9 +104,9 @@ var controls;
             console.log("estoy dentro"+"#"+id+" "+self.options.nameblock)
             //console.dir(e)
             e.preventDefault()
-            if ($("#"+namedatalist).hasClass("tether-open") && ((e.target.className!='fa fa-sort-desc' && e.target.className!='fa fa-search' ) && e.target.id!=self.options.namebutton.replace('#',''))){
+            if ($(getnamedatalist.apply(self,[])).hasClass("tether-open") && ((e.target.className!='fa fa-sort-desc' && e.target.className!='fa fa-search' ) && e.target.id!=self.options.namebutton.replace('#',''))){
                //cerramos el panel del combo si pinchamos en cualquier lugar del control
-               $("#"+namedatalist).toggleClass("tether-open");
+               $(getnamedatalist.apply(self,[])).toggleClass("tether-open");
                telist.position();
                if (self.options.onClose){
                 self.options.onClose()
@@ -136,54 +133,49 @@ var controls;
     }
     ns.UXDataList.prototype.toggle=function(){
        var self=this
-       var id=self.options.id;
-       var namedatalist=id+"datalist";
-       $("#"+namedatalist).toggleClass("tether-open");
+       
+       $(getnamedatalist.apply(self,[])).toggleClass("tether-open");
        self.$telist.position();
        
     }
     ns.UXDataList.prototype.open=function(){
         var self=this
-        var id=self.options.id;
-        var namedatalist=id+"datalist";
         
-        if  (  !$("#"+namedatalist).hasClass("tether-open")){
-            //toggleclass.apply(self,[true])
-            $("#"+namedatalist).toggleClass("tether-open");
-            self.$telist.position();
-            self.openit=true;
+        if  (!$(getnamedatalist.apply(self,[])).hasClass("tether-open")){
+            toggleclass.apply(self,[true])
+            //$("#"+namedatalist).toggleClass("tether-open");
+            //self.$telist.position();
+            //self.openit=true;
         }
+        
      }
      ns.UXDataList.prototype.opened=function(){
-           return this.openit
+        return this.openit
      }
      ns.UXDataList.prototype.close=function(){
         var self=this
-        var id=self.options.id;
-        var namedatalist=id+"datalist";
         
-        if  (  $("#"+namedatalist).hasClass("tether-open")){
-             //toggleclass.apply(self,[false])
-            $("#"+namedatalist).toggleClass("tether-open");
-            self.$telist.position();
-            self.openit=false;
+        if  (  $(getnamedatalist.apply(self,[])).hasClass("tether-open")){
+             
+            toggleclass.apply(self,[false])
+            //$("#"+namedatalist).toggleClass("tether-open");
+            //self.$telist.position();
+            //self.openit=false;
         }
      }
-    var toggleclass = function(openit){
+     var toggleclass = function(openit){
         var self=this
-        var id=self.options.id;
-        var namedatalist=id+"datalist";
-        
-            $("#"+namedatalist).toggleClass("tether-open");
+            
+            $(getnamedatalist.apply(self,[])).toggleClass("tether-open");
             self.$telist.position();
             self.openit=openit;
-    }
-    var getnamedatalist = function(){
+     }
+     var getnamedatalist = function(){
         var self=this
         var id=self.options.id;
-        return id+"datalist";
-    }
-
+        return "#"+id+"datalist";
+     }
+    
 })(controls=controls||{},components,jQuery)
 
 var UXDataList=controls.UXDataList

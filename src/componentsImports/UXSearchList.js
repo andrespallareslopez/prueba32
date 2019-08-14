@@ -8,21 +8,18 @@ var controls;
 
 ;(function(ns,UXDataList,$){
     "use strict";
-    ns.UXSearchList=(function(){
+     ns.UXSearchList=(function(){
         return function(options){
-                       
-         
          //Si no estubiera definida la propiedad textTemplate entonces
          //no va a iniciar el initevent desde components01.js, por tanto
          //tenemos que lanzarlo nosotros manualmente.
-         var params=[].slice.call(arguments);
-         if (params.length>0){
-            
+           var params=[].slice.call(arguments);
+           if (params.length>0){ 
              this.initControl.apply(this,params);
-         }
-         
+           }
         }
      })();
+
      ns.UXSearchList.prototype=new UXDataList();
      
      ns.UXSearchList.prototype.initControl=function(options){
@@ -39,6 +36,7 @@ var controls;
             options.inputText=options.inputText||'#busquedatxt' 
             options.onButtonClick=options.onButtonClick||undefined
             options.onClose=options.onClose||undefined
+            options.onSearch=options.onSearch||undefined
         })(options)
         //renombramos el datalist
         var id=options.id;
@@ -55,28 +53,19 @@ var controls;
         if (!this.options.textTemplate && this.initevent){
             this.initevent(options)
         }   
-        
      }
      ns.UXSearchList.prototype.initEventInputSearch=function(options){
         var self=this
         console.log('estoy dentro de UXSearchList initeventinputsearch')
         
         self.eventbuttons()
+        var scroll
         let id=self.options.id
         let $inputText="#"+id+" "+self.options.inputText
-        /*
-        let scroll=new UXButtonScroll({
-            id:id+'datalist',
-            onItemClick:function(value,target){
-                console.dir(target)
-                //console.log("estoy dentro de onItemClick")
-                //self.$inputText.val(value);
-                //self.toggle();
-                //scroll.destroy();
-            }
-        }) 
-        */
+        
         console.dir( self.options.data)
+        const datos=self.options.data
+
         /*
         const datospagina=Enumerable.from(datos.grupos)
                         //.take(index*pagerow)
@@ -89,16 +78,54 @@ var controls;
                       
         })
         $($inputText).on("keyup", debounce(function (e) {
+            let datoscombo
             console.dir( self.options.data[id])
-            console.log($($inputText).val())
-            if ($($inputText).val().length>0)
-              self.open()
+            console.log(self.$inputText.val())
+            if ($($inputText).val().length>0){
+                if (self.options.onSearch){
+                    datoscombo=self.options.onSearch(datos,self.$inputText.val())
+                }
+                self.open()
+                /*
+                datospagina=Enumerable.from(datos.grupos)
+                   .where(
+                       (grupo)=>{
+                           return grupo.description.includes($($inputText).val())==true
+                        })
+                    .select("$").toArray()
+
+                   console.dir(datospagina)
+                 
+                */
+            }
+            else{
+                datoscombo= datos
+                self.close()
+            }
+              if (self.opened()){
+                  
+                 console.log("estoy dentro de opened")
+                 let timer1=setTimeout(() => {
+                    scroll=new UXButtonScroll({
+                        id:id+'datalist',
+                        onItemClick:function(value,target){
+                            console.dir(target)
+                            //console.log("estoy dentro de onItemClick")
+                            self.$inputText.val(value);
+                            self.toggle();
+                            scroll.destroy();
+                        }
+                      })
+                      clearTimeout(timer1) 
+                 }, 50);   
+              }
             else
-              self.close()  
-            self.setData(self.options.data,self.options.id,self.options.textTemplate)
+              scroll.destroy()
+             
+
+            self.setData(datoscombo,self.options.id,self.options.textTemplate)
             
-        },300))   
-        
+        },300))       
      }
      function debounce(func, wait, immediate) {
         var timeout;

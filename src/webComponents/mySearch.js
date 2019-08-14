@@ -117,9 +117,14 @@ export class mysearch{
             onButtonClick:function(options){
                 console.log('estoy en onbuttonclick search01')
                 if (id=="search01"){
-                    console.log('estoy en onbuttonclick search01')
-                    datalist.setData(datos,id,cadenadatagruposstring)
-                }
+                    //console.log('estoy en onbuttonclick search01')
+                    /* no es necesario poner cadenadatagruposstring
+                    se podria llamar de la siguiente manera:
+                    datalist.setData(datos,id)
+                    */ 
+                    //datalist.setData(datos,id,cadenadatagruposstring)
+                    datalist.setData(datos,id)
+                  }
                 else if(id=="search02")
                   datalist.setData({mesas:mesas},id,cadenadatamesas)
                   
@@ -135,8 +140,19 @@ export class mysearch{
                   }) 
              
             },
+            onSearch:(datos,value)=>{
+                var datoscombo=Enumerable.from(datos.grupos)
+                .where(
+                    (grupo)=>{
+                        return grupo.description.includes(value)==true
+                     })
+                 .select("$").toArray()
+                 console.dir(datoscombo)
+                 return {grupos:datoscombo}
+            },
             onClose:function(){
-               scroll.destroy();
+              if (scroll)
+                scroll.destroy();
             }
         })
 
