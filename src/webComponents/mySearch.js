@@ -140,7 +140,7 @@ export class mysearch{
                   }) 
              
             },
-            onSearch:(datos,value)=>{
+            onSearch:(datos,value,id)=>{
                 var datoscombo=Enumerable.from(datos.grupos)
                 .where(
                     (grupo)=>{

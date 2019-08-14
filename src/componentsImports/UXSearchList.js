@@ -83,7 +83,7 @@ var controls;
             console.log(self.$inputText.val())
             if ($($inputText).val().length>0){
                 if (self.options.onSearch){
-                    datoscombo=self.options.onSearch(datos,self.$inputText.val())
+                    datoscombo=self.options.onSearch(datos,self.$inputText.val(),id)
                 }
                 self.open()
                 /*
