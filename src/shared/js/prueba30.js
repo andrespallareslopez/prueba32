@@ -83,6 +83,13 @@ import {mymenuhorizontal} from 'src/lib/myMenuHorizontal.js'
 import {mypagecollection01} from 'src/lib/MyPageCollection01.js'
 
 import {mypageform01} from 'src/lib/MyPageForm01.js'
+
+import {mybuttonsearch} from 'src/lib/MyButtonSearch.js'
+
+import {mypagesearch01} from 'src/lib/MyPageSearch01.js'
+
+
+
 //import 'src/components/layouts/03layout02/03layout02.css'
 
 //import 'src/components/menu-horizontal/03menu-horizontal01.css'

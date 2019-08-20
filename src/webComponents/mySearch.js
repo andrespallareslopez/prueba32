@@ -141,6 +141,7 @@ export class mysearch{
              
             },
             onSearch:(datos,value,id)=>{
+              if (id=="search01"){
                 var datoscombo=Enumerable.from(datos.grupos)
                 .where(
                     (grupo)=>{
@@ -149,6 +150,7 @@ export class mysearch{
                  .select("$").toArray()
                  console.dir(datoscombo)
                  return {grupos:datoscombo}
+              }
             },
             onClose:function(){
               if (scroll)

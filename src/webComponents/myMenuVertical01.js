@@ -181,7 +181,7 @@ export class mymenuvertical01{
              template = '<my-page-form-01 id="template07" ></my-page-form-01>'
           break;
           case 'template08':
-
+             template  = '<my-page-search-01 id="template08" ></my-page-search-01>'
           break;
           case 'template09':
 

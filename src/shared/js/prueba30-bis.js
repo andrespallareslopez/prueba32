@@ -84,6 +84,10 @@ var _MyPageCollection = require('src/lib/MyPageCollection01.js');
 
 var _MyPageForm = require('src/lib/MyPageForm01.js');
 
+var _MyButtonSearch = require('src/lib/MyButtonSearch.js');
+
+var _MyPageSearch = require('src/lib/MyPageSearch01.js');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 //import 'src/components/layouts/03layout02/03layout02.css'

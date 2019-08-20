@@ -91,11 +91,13 @@ var mysearch = exports.mysearch = (_dec = (0, _componentDecorator.Component)({
           });
         },
         onSearch: function onSearch(datos, value, id) {
-          var datoscombo = Enumerable.from(datos.grupos).where(function (grupo) {
-            return grupo.description.includes(value) == true;
-          }).select("$").toArray();
-          console.dir(datoscombo);
-          return { grupos: datoscombo };
+          if (id == "search01") {
+            var datoscombo = Enumerable.from(datos.grupos).where(function (grupo) {
+              return grupo.description.includes(value) == true;
+            }).select("$").toArray();
+            console.dir(datoscombo);
+            return { grupos: datoscombo };
+          }
         },
         onClose: function onClose() {
           if (scroll) scroll.destroy();
