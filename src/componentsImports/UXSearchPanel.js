@@ -1,0 +1,86 @@
+
+import {util} from './util01.js';
+import {components} from './components01.js';
+
+var controls;
+
+;(function(ns,components,$){
+    "use strict";
+     ns.UXSearchPanel=(function(){
+        return function(options){
+                       
+        
+         var params=[].slice.call(arguments);
+         if (params.length>0){
+             
+             this.initControl.apply(this,params);
+         }
+         
+        }
+     })();
+     
+     ns.UXSearchPanel.prototype=new components.container();
+     
+     ns.UXSearchPanel.prototype.initControl=function(options){
+        ;(function(options){
+            options.id=options.id||undefined
+            options.containerComponent=options.containerComponent||".form-search"
+            options.data=options.data||undefined
+           
+            options.inputText=options.inputText||'#input-search' 
+            options.onButtonClick=options.onButtonClick||undefined
+            options.onClose=options.onClose||undefined
+            options.onSearch=options.onSearch||undefined
+        })(options)
+        
+        var id=options.id;
+        
+        this.$inputText=undefined
+        
+        this.init(options)
+        this.initEventInputSearch(options)
+         
+         
+        if (!this.options.textTemplate && this.initevent){
+            this.initevent(options)
+        }   
+        
+     }
+     ns.UXSearchPanel.prototype.initEventInputSearch=function(options){
+        var self=this
+        console.log("estoy dentro de UXSearchPanel initEventInputSearch");
+        self.$inputText=$("#"+options.id+" "+options.containerComponent+" "+options.inputText)
+        console.dir(self.$inputText);
+        
+        self.$inputText.on("keydown",function(e){
+                       
+        })
+        self.$inputText.on("keyup", debounce(function (e) {
+            
+            if (options.onSearch){
+                options.onSearch(options.data,self.$inputText.val(),options.id)
+            }
+            
+        },300))
+     }
+     function debounce(func, wait, immediate) {
+        var timeout;
+        return function () {
+            var context = this, args = arguments;
+            var later = function () {
+                timeout = null;
+                if (!immediate) func.apply(context, args);
+            };
+            var callNow = immediate && !timeout;
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+            if (callNow) func.apply(context, args);
+        };
+     }
+})(controls=controls||{},components,jQuery)
+
+export {controls}
+if (!window.controls)
+   window.controls={}
+   
+util.addNameSpace(window.controls,controls);

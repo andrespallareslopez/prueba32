@@ -49,8 +49,9 @@ var mypagesearch01 = exports.mypagesearch01 = (_dec = (0, _componentDecorator.Co
         key: 'initevent',
         value: function initevent(options, id) {
             var self = this;
-            console.log("estoy en mypageform01");
+            console.log("estoy en mypagesearch01");
             console.log(id);
+
             $template = $('#' + id + '.wrapper.page.child');
             var reftemplate = '#' + id + '.wrapper.page.child';
             if ($template.length == 0) {

@@ -19,7 +19,7 @@ var controls;
            }
         }
      })();
-
+      
      ns.UXSearchList.prototype=new UXDataList();
      
      ns.UXSearchList.prototype.initControl=function(options){
@@ -49,7 +49,9 @@ var controls;
         
         this.init(options)
         this.initEventInputSearch(options)
-         
+         //Si no estubiera definida la propiedad textTemplate entonces
+        //no va a iniciar el initevent desde components01.js, por tanto
+        //tenemos que lanzarlo nosotros manualmente. 
         if (!this.options.textTemplate && this.initevent){
             this.initevent(options)
         }   
@@ -64,8 +66,8 @@ var controls;
         let $inputText="#"+id+" "+self.options.inputText
         
         console.dir( self.options.data)
-        const datos=self.options.data
-
+        const datos = self.options.data
+         
         /*
         const datospagina=Enumerable.from(datos.grupos)
                         //.take(index*pagerow)
@@ -86,23 +88,14 @@ var controls;
                     datoscombo=self.options.onSearch(datos,self.$inputText.val(),id)
                 }
                 self.open()
-                /*
-                datospagina=Enumerable.from(datos.grupos)
-                   .where(
-                       (grupo)=>{
-                           return grupo.description.includes($($inputText).val())==true
-                        })
-                    .select("$").toArray()
-
-                   console.dir(datospagina)
-                 
-                */
+               
             }
             else{
                 datoscombo= datos
                 self.close()
             }
-              if (self.opened()){
+            
+            if (self.opened()){
                   
                  console.log("estoy dentro de opened")
                  let timer1=setTimeout(() => {
@@ -118,11 +111,11 @@ var controls;
                       })
                       clearTimeout(timer1) 
                  }, 50);   
-              }
+            }
             else
               scroll.destroy()
              
-
+            
             self.setData(datoscombo,self.options.id,self.options.textTemplate)
             
         },300))       

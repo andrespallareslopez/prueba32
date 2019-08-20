@@ -110,8 +110,12 @@ let $buttonBack
 export class mypagesearch01{
     initevent(options,id){
         let self=this
-        console.log("estoy en mypageform01")
+        console.log("estoy en mypagesearch01")
         console.log(id)
+
+
+
+        
         $template=$('#'+id+'.wrapper.page.child');
         let reftemplate= '#'+id+'.wrapper.page.child'
         if ($template.length==0){
