@@ -135,7 +135,8 @@ $(document).ready(function(){
        }
        return descriptor
     };
-        class Controller {
+    
+    class Controller {
        constructor(){
          console.log("estoy en constructor")
        }
@@ -151,7 +152,8 @@ $(document).ready(function(){
     }; 
        
     const controller=new Controller();
-        controller.action01();
+    
+    controller.action01();
     coneotroller.action02();
     */
     window.controls = {};
@@ -176,7 +178,7 @@ $(document).ready(function(){
                 //console.log("estoy dentro de target initevent")
                 //container.prototype.initevent=targetInstance.initevent
             }
-            
+             
             //console.dir(targetInstance)
             //targetInstance.prototype=new components.container()
             //var component=new targetInstance(options)
@@ -228,7 +230,7 @@ $(document).ready(function(){
         //limpiar el area antes de inyectar el codigo html
         $(containerview).empty();
         $(containerview).remove();
-         
+          
     };
     */
     if ((0, _jquery2.default)(".container .pages").data("template")) {
@@ -869,7 +871,7 @@ $(document).ready(function(){
                        }).always(function(){
                          
                        })
-                    })
+                     })
                })
                
         }
@@ -889,7 +891,7 @@ $(document).ready(function(){
                         })
                      } 
                      </div>
-         }
+          }
         */
         /*
         var mylistgrpbuttons = new components.container({

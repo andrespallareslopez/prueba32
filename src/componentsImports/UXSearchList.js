@@ -99,7 +99,7 @@ var controls;
                   
                  console.log("estoy dentro de opened")
                  let timer1=setTimeout(() => {
-                    scroll=new UXButtonScroll({
+                    scroll = new UXButtonScroll({
                         id:id+'datalist',
                         onItemClick:function(value,target){
                             console.dir(target)
@@ -114,8 +114,8 @@ var controls;
             }
             else
               scroll.destroy()
-             
-            
+              
+              
             self.setData(datoscombo,self.options.id,self.options.textTemplate)
             
         },300))       

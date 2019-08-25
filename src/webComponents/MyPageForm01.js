@@ -193,18 +193,10 @@ export class mypageform01{
         let self=this
         console.log("estoy en mypageform01")
         console.log(id)
-        $template=$('#'+id+'.wrapper.page.child');
-        let reftemplate= '#'+id+'.wrapper.page.child'
-        if ($template.length==0){
-            $template=$('#'+id+' .wrapper.page.child');
-            reftemplate='#'+id+' .wrapper.page.child'
-        }
-        $buttonBack=$('#'+id+' '+'#btn-toggle-back-3')
-                //console.dir($buttonBack)
-                $buttonBack.on("click",function(e){
-                  console.log("estoy dentro de click en mybuttoncollection01")
-                  self.changeAnimation(true,id)          
+        var buttonBackAnimation = new controls.UXButtonPanelChangeAnimation({
+            id:id
         })
+    
         const panel=new components.container({
             container:'#'+id+' .wrapper.page.child .box.content',
             textTemplate: cadenapanelscroll01
@@ -224,29 +216,5 @@ export class mypageform01{
           })
         
     }    
-     changeAnimation(remove,id){
-        console.log("estoy dentro de changeAnimation en mypagecollection01")
-        //console.dir($template)
-        $template=$('#'+id+'.wrapper.page.child');
-        let reftemplate= '#'+id+'.wrapper.page.child'
-        if ($template.length==0){
-          $template=$('#'+id+' .wrapper.page.child');
-          reftemplate='#'+id+' .wrapper.page.child'
-        }
-        if ($template.hasClass("animation")){
-         $template.removeClass("animation")
-         if (remove){
-             var timer=setTimeout(function(){
-                  //removeContainer('#'+id+'.wrapper.page.child')
-                  removeContainer(reftemplate)
-                 
-                 clearTimeout(timer)
-             },400)
-             
-             
-         }
-        }else{
-         $template.addClass("animation")
-        }
-    }    
+ 
 }

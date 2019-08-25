@@ -28,7 +28,8 @@ export const removeContainer=function(containerview){
     console.log(containerview)
        //Tratar de borrar elementos de esta manera y sus eventos
     console.dir(document.querySelector(containerview))
-    recreateNode(document.querySelector(containerview),true);     
+    if (document.querySelector(containerview))
+       recreateNode(document.querySelector(containerview),true);     
     
     //limpiar el area antes de inyectar el codigo html
     $(containerview).empty();

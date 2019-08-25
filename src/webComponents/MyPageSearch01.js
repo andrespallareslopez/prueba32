@@ -2,11 +2,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import {Component} from 'src/componentsImports/componentDecorator.js'
-import { appendToContainer,recreateNode,removeContainer } from "src/componentsImports/utilContainer.js";
+import { appendToContainer,recreateNode,removeContainer } from "src/componentsImports/utilContainer.js"
+import {UXScroll} from 'src/componentsImports/UXScroll.js'
+import {UXPanelScroll} from 'src/componentsImports/UXPanelScroll.js'
 
+//import {controls} from 'src/componentsImports/UXButtonPanelChangeAnimation.js'
 
 import {mesas,categorias,articulos} from 'src/shared/js/listInMemory.js'
 
+var pageindex=0;
+var pagerow=29;
 const datos={
     grupos:[{codgrupo:1,description:"Bebida"},
             {codgrupo:2,description:"Pan"},
@@ -101,60 +106,53 @@ const cadenalistcollection01=`
 {{/each}}
 </ul>
 `
+const datospagina=Enumerable.from(datos.grupos)
+                        //.take(index*pagerow)
+                        .skip(pageindex*pagerow)
+                        .take(pagerow)
+                        .select("$").toArray();
+
+let datosindexpagina={grupos:datospagina};
 let $template
 let $buttonBack
 @Component({
     selector: 'my-page-search-01',
-    textTemplate: cadenapagestring
+    textTemplate: cadenapagestring,
+    importsUrl:[ 
+        {url:'src/componentsImports/UXButtonPanelChangeAnimation.js',typemodule:'module'}
+    ]
 })
 export class mypagesearch01{
     initevent(options,id){
         let self=this
         console.log("estoy en mypagesearch01")
         console.log(id)
+        console.dir(controls.UXButtonPanelChangeAnimation)
 
-
-
-        
-        $template=$('#'+id+'.wrapper.page.child');
-        let reftemplate= '#'+id+'.wrapper.page.child'
-        if ($template.length==0){
-            $template=$('#'+id+' .wrapper.page.child');
-            reftemplate='#'+id+' .wrapper.page.child'
-        }
-        $buttonBack=$('#'+id+' '+'#btn-toggle-back-3')
-                //console.dir($buttonBack)
-                $buttonBack.on("click",function(e){
-                  console.log("estoy dentro de click en mybuttoncollection01")
-                  self.changeAnimation(true,id)          
+        var buttonBackAnimation = new controls.UXButtonPanelChangeAnimation({
+            id:id
+        })
+      
+        var panel=new components.container({
+            container:'#'+id+' .wrapper.page.child .box.content',
+            textTemplate: cadenapanelscroll01
+        });
+        panel.create(function(options){
+            var list=new components.container({
+                container:'#'+id+' .wrapper.page.child .box.content .panel-scroll-item',
+                data:datosindexpagina,
+                textTemplate: cadenalistcollection01
+              });
+            list.initevent=function(options){
+                console.log("estoy dentro de colledion list")
+                var scroll=new controls.UXPanelScroll({
+                    id:id,
+                    item:".list-collection li"
+                })
+            }        
         })
         
-        
     }
-    changeAnimation(remove,id){
-        console.log("estoy dentro de changeAnimation en mypagecollection01")
-        //console.dir($template)
-        $template=$('#'+id+'.wrapper.page.child');
-        let reftemplate= '#'+id+'.wrapper.page.child'
-        if ($template.length==0){
-          $template=$('#'+id+' .wrapper.page.child');
-          reftemplate='#'+id+' .wrapper.page.child'
-        }
-        if ($template.hasClass("animation")){
-         $template.removeClass("animation")
-         if (remove){
-             var timer=setTimeout(function(){
-                  //removeContainer('#'+id+'.wrapper.page.child')
-                  removeContainer(reftemplate)
-                 
-                 clearTimeout(timer)
-             },400)
-             
-             
-         }
-        }else{
-         $template.addClass("animation")
-        }
-    }    
+ 
 }
 

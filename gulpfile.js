@@ -12,6 +12,7 @@ var stripCssComments=require("gulp-strip-css-comments");
 var minify=require("gulp-minify-css");
 var flatten=require("gulp-flatten");
 var useref=require("gulp-useref");
+var rename=require("gulp-rename");
 
 var path=require("path");
 
@@ -167,5 +168,12 @@ gulp.task("useref",function(){
    .pipe(gulp.dest("./"));
 
 });
+
+gulp.task("copycss",function(){
+   gulp.src('src/components/**/*.css')
+   .pipe(flatten())
+   .pipe(gulp.dest("dist/css"))
+   
+})
 
 

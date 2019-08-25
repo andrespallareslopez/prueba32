@@ -124,7 +124,7 @@ export class mysearch{
                     */ 
                     //datalist.setData(datos,id,cadenadatagruposstring)
                     datalist.setData(datos,id)
-                  }
+                }
                 else if(id=="search02")
                   datalist.setData({mesas:mesas},id,cadenadatamesas)
                   
