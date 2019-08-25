@@ -9,8 +9,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _dec, _class;
 
-//import {controls} from 'src/componentsImports/UXButtonPanelChangeAnimation.js'
-
 var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);

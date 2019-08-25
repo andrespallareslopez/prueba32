@@ -6,7 +6,7 @@ import { appendToContainer,recreateNode,removeContainer } from "src/componentsIm
 import {UXScroll} from 'src/componentsImports/UXScroll.js'
 import {UXPanelScroll} from 'src/componentsImports/UXPanelScroll.js'
 
-//import {controls} from 'src/componentsImports/UXButtonPanelChangeAnimation.js'
+
 
 import {mesas,categorias,articulos} from 'src/shared/js/listInMemory.js'
 
