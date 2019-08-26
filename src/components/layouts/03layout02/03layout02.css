@@ -32,6 +32,9 @@ button:active {
 html, body {
   height: 100%; }
 
+input:focus {
+  outline: none; }
+
 .container, .lyt03layout02 {
   display: block;
   position: relative;

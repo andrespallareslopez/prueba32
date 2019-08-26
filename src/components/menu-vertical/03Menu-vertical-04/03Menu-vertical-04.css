@@ -1,7 +1,7 @@
 .menu-vertical-04 {
   width: 200px;
   top: 0;
-  position: relative;
+  position: absolute;
   -webkit-box-shadow: 3px 5px 10px 1px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 3px 5px 10px 1px rgba(0, 0, 0, 0.75);
   box-shadow: 3px 5px 10px 1px rgba(0, 0, 0, 0.75);
@@ -11,8 +11,16 @@
   height: 100%;
   touch-action: none;
   /*margin-left: -230px;*/
-  margin-left: -230px;
+  /*margin-left: -230px;*/
+  margin-left: 0px;
   transition: all 0.3s ease-in-out; }
+  .menu-vertical-04 li {
+    display: block;
+    position: relative; }
+  .menu-vertical-04.open-panel li.pr.expand .sub-menu {
+    transform: translate3D(0%, 0, 0); }
+  .menu-vertical-04.open-panel li.pr:not(.expand), .menu-vertical-04.open-panel .element.no-pr {
+    display: none; }
   .menu-vertical-04 .element-link {
     padding: 10px;
     border-top: 1px solid #C5CAE9;
@@ -37,8 +45,6 @@
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3F51B5', endColorstr='#3949AB',GradientType=0 );
     /* IE6-9 */
     height: 100%; }
-    .menu-vertical-04 .element-link.expand + .sub-menu {
-      transform: translate3D(0%, 0, 0); }
     .menu-vertical-04 .element-link.current-menu {
       /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#512da8+0,311b92+100 */
       background: #3F51B5;
@@ -122,7 +128,6 @@
     /* IE6-9 */ }
   .menu-vertical-04 .sub-menu {
     position: absolute;
-    overflow: hidden;
     width: 100%;
     list-style: none;
     display: block;
@@ -139,9 +144,12 @@
     /* IE6-9 */
     top: 0;
     height: 100%;
-    z-index: 20;
+    z-index: 0;
     transform: translate3d(-100%, 0, 0);
     transition: all 0.2s ease-in-out; }
+    .menu-vertical-04 .sub-menu li {
+      display: block;
+      position: relative; }
     .menu-vertical-04 .sub-menu .element-link {
       background: #7986CB;
       /* Old browsers */

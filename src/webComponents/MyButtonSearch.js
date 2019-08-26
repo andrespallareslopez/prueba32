@@ -42,7 +42,9 @@ const cadenabuttonsearchstring = `
     <span class="fa fa-search fa-2x" ></span>
   </button>
   <input id="input-search" placeholder="Search..." class="input-search" type="text" />
+  <span class="btn-spin-progress fa fa-circle-o-notch fa-spin fa-18x fa-fw"></span>
   <button id="btn-form-close" class="nav-mobile nav-mobile-search btn-search btn-search-close" >
+ 
     <span class="fa fa-times fa-2x" ></span>
   </button>
 </form>
@@ -106,12 +108,15 @@ const cadenalistcollection01=`
          var searchinput=new controls.UXSearchPanel({
           id:id,
           onSearchBefore:function(data,value,id){
-              
+            if (id=="buttonsearch02"){
+              $("#"+id).addClass("open-progress")
+            }
           },
           onSearch:function(data,value,id){
               console.log(value)
               
               if (id=="buttonsearch02"){
+                $("#"+id).removeClass("open-progress")
                 let idtemp='template08'
                 //var $buttonsearch02 = $("#template08 .box.content .panel-scroll-item")
                 //console.dir($buttonsearch02)
@@ -153,15 +158,4 @@ const cadenalistcollection01=`
      }
      
  }
- /*
-  $(document).on("click","#btn-form-search",function(evt){
-            evt.preventDefault();  
-            $(".form-search").toggleClass("open-search");        
-              
-          });
-          $(document).on("click","#btn-form-close",function(evt){
-         
-            $(".form-search").toggleClass("open-search");
-            evt.preventDefault();
-          });
- */
+ 

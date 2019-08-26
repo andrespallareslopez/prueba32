@@ -58,6 +58,8 @@ import {mysearch} from 'src/lib/mySearch.js'
 
 import {mymenuvertical01} from 'src/lib/myMenuVertical01.js'
 
+import {mymenuvertical04} from 'src/lib/myMenuVertical04.js'
+
 import {mylistgrpbuttons} from 'src/lib/myListGrpButtons.js'
 
 import {myTabs01} from 'src/lib/myTabs.js'

@@ -7,8 +7,6 @@
   height: 45px;
   top: 0px;
   left: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
   overflow: hidden;
   padding: 0px;
   margin: 0px;
@@ -24,8 +22,6 @@
   visibility: hidden;
   top: 0px;
   left: 0px;
-  padding-bottom: 0px;
-  padding-left: 0px;
   overflow: hidden;
   padding: 0px;
   margin: 0px;
@@ -46,6 +42,26 @@
   bottom: 0px;
   left: 0px;
   transition: all 0s ease-in-out; }
+
+.btn-spin-progress {
+  display: inline-block;
+  visibility: hidden;
+  box-sizing: border-box;
+  position: relative;
+  background: transparent;
+  cursor: pointer;
+  color: #E8EAF6;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  margin-left: -35px; }
+
+.open-progress .btn-spin-progress {
+  visibility: visible; }
 
 .input-search {
   display: inline-block;
@@ -68,13 +84,13 @@
   transition: all .3s ease-in-out,width 0.2s ease-in-out; }
 
 .btn-search-close {
-  margin-left: -46px;
+  margin-left: -10px;
   opacity: 0; }
 
 .form-search.open-search {
   /*right:67px;*/
   width: 100%;
-  max-width: 205px; }
+  max-width: 285px; }
 
 .open-search .input-search {
   transform: translateX(0%);
@@ -82,16 +98,13 @@
   max-width: 135px;
   border-bottom: 2px solid #E8EAF6; }
 
+.fa-18x {
+  font-size: 1.7em; }
+
 .open-search .btn-search {
   left: 0px; }
 
 .open-search .btn-search-close {
   opacity: 1; }
-
-.open-progress .btn-search {
-  visibility: hidden; }
-
-.open-progress .btn-progress {
-  visibility: visible; }
 
 /*# sourceMappingURL=03search.css.map */

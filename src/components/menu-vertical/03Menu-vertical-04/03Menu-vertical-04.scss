@@ -4,19 +4,30 @@
 
     width: #{$asidew};
     top:0;
-    position:relative;
+    position:absolute;
     @include shadow01;
     @include menu-vertical-container-01;
-     margin-left: -#{$asidewdesplaz};
+     /*margin-left: -#{$asidewdesplaz};*/ 
+    margin-left: 0px;
     transition: all 0.3s ease-in-out;
-    
+    & li{
+        display:block;
+        position:relative;
+    }
+    &.open-panel{
+      & li.pr.expand  .sub-menu {
+        transform:translate3D(0%,0,0);
+      }
+    }
+    &.open-panel li.pr:not(.expand),&.open-panel .element.no-pr{
+        display:none;
+    }
     & .element-link{
        @include menu-vertical-principal-structure-element-01;
        @include background-menu-vertical-01;
        height: 100%;
-       &.expand + .sub-menu{
-            transform:translate3D(0%,0,0);
-       }
+     
+       
        &.current-menu{
           @include background-menu-vertical-parent-hover-01;  
        }
@@ -55,7 +66,7 @@
     }
     & .sub-menu{
         position:absolute;
-        overflow: hidden;    
+           
         width:100%;
         list-style: none;
         display:block;
@@ -66,10 +77,14 @@
         top:0;
         
         height: 100%;
-        z-index:20; 
+        z-index:0; 
         
         transform: translate3d(-100%,0,0);
         transition: all 0.2s ease-in-out;
+        li {
+            display:block;
+            position:relative;
+        }
         .element-link{
             @include background-menu-vertical-item-01;
             &:hover{
