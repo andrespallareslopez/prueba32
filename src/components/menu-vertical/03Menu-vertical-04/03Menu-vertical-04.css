@@ -13,7 +13,9 @@
   /*margin-left: -230px;*/
   /*margin-left: -230px;*/
   margin-left: 0px;
-  transition: all 0.3s ease-in-out; }
+  /*transition: all 0s ease-in-out;*/ }
+  .menu-vertical-04 .text-back {
+    margin-left: 10px; }
   .menu-vertical-04 li {
     display: block;
     position: relative; }

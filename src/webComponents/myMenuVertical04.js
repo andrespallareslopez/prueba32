@@ -7,42 +7,42 @@ import { appendToContainer,recreateNode,removeContainer } from "src/componentsIm
 
 const cadenamenuverticalstring=`
 <ul class="menu-vertical-04">
-                <li class="parent element pr"><a class="element-link gr menu text" href="#" >Link 1<span class="fa-fix-chevron-right push-float-right" ></span></a>
+                <li class="parent element pr"><a class="element-link gr menu text ripple" href="#" >Link 1<span class="fa fa-chevron-right push-float-right" ></span></a>
                     <ul class="sub-menu sb" >
-                        <li class="animation-delay-01" ><a class="back-element" href="#" ><span class="fa-fix-back push-float-left" ></span>Back</a></li>
-                        <li class="animation-delay-02" ><a class="element-link el" href="#/controller/action1" >SubLink 1</a></li>
-                        <li class="animation-delay-03" ><a class="element-link el" href="#/controller/action2" >SubLink 2</a></li>
-                        <li class="animation-delay-04" ><a class="element-link el" href="#/controller/action3" >SubLink 3</a></li>
-                        <li class="animation-delay-05"><a class="element-link el" href="#/controller/action4" >SubLink 4</a></li>
-                        <li class="animation-delay-06"><a class="element-link el" href="#/controller/action5" >SubLink 5</a></li>     
+                        <li class="" ><a class="back-element" href="#" ><span class="fa fa-chevron-left push-float-left" ></span><span class="text-back" > Back</span></a></li>
+                        <li class="" ><a class="element-link el ripple" href="#/controller/action1" >SubLink 1</a></li>
+                        <li class="" ><a class="element-link el ripple" href="#/controller/action2" >SubLink 2</a></li>
+                        <li class="" ><a class="element-link el ripple" href="#/controller/action3" >SubLink 3</a></li>
+                        <li class=""><a class="element-link el ripple" href="#/controller/action4" >SubLink 4</a></li>
+                        <li class=""><a class="element-link el ripple" href="#/controller/action5" >SubLink 5</a></li>     
                     </ul>  
                     
                 </li>
-                <li class="parent element pr" ><a class="element-link gr menu text" href="#">Link 2<span class="fa-fix-chevron-right push-float-right" ></span></a>
+                <li class="parent element pr" ><a class="element-link gr menu text ripple" href="#">Link 2<span class="fa fa-chevron-right push-float-right" ></span></a>
                     <ul class="sub-menu sb" >
-                       <li class="animation-delay-01"><a class="back-element" href="#" ><span class="fa-fix-back push-float-left" ></span>Back</a></li>
-                       <li class="animation-delay-02"><a class="element-link el" href="#/controller2/action1" >SubLink 11</a></li>
-                       <li class="animation-delay-03"><a class="element-link el" href="#/controller2/action2" >SubLink 22</a></li>
-                       <li class="animation-delay-04"><a class="element-link el" href="#/controller2/action3" >SubLink 33</a></li>
-                       <li class="animation-delay-05"><a class="element-link el" href="#/controller2/action4" >SubLink 44</a></li>
-                       <li class="animation-delay-06"><a class="element-link el" href="#/controller2/action5" >SubLink 55</a></li>
+                       <li class=""><a class="back-element" href="#" ><span class="fa fa-chevron-left push-float-left" ></span><span class="text-back" > Back</span></a></li>
+                       <li class=""><a class="element-link el ripple" href="#/controller2/action1" >SubLink 11</a></li>
+                       <li class=""><a class="element-link el ripple" href="#/controller2/action2" >SubLink 22</a></li>
+                       <li class=""><a class="element-link el ripple" href="#/controller2/action3" >SubLink 33</a></li>
+                       <li class=""><a class="element-link el ripple" href="#/controller2/action4" >SubLink 44</a></li>
+                       <li class=""><a class="element-link el ripple" href="#/controller2/action5" >SubLink 55</a></li>
                     </ul>
                     
                 </li>
-                <li class="element no-pr" ><a class="element-link gr menu text" href="#/controller/action3">Link 3
+                <li class="element no-pr" ><a class="element-link gr menu text ripple" href="#/controller/action3">Link 3
                     <!--
                     <span class="fa-fix-chevron-right push-float-right" ></span>
                     -->
                 </a>
                 </li>
-                <li class="parent element pr" ><a class="element-link gr menu text" href="#">Link 4<span class="fa-fix-chevron-right push-float-right" ></span></a>
+                <li class="parent element pr" ><a class="element-link gr menu text ripple" href="#">Link 4<span class="fa fa-chevron-right push-float-right" ></span></a>
                     <ul class="sub-menu sb" >
-                       <li class="animation-delay-01"><a class="back-element" href="#" ><span class="fa-fix-back push-float-left" ></span>Back</a></li>
-                       <li class="animation-delay-02"><a class="element-link el" href="#" >SubLinkd 1</a></li>
-                       <li class="animation-delay-03"><a class="element-link el" href="#" >SubLinkd 2</a></li>
-                       <li class="animation-delay-04"><a class="element-link el" href="#" >SubLinkd 3</a></li>
-                       <li class="animation-delay-05"><a class="element-link el" href="#" >SubLinkd 4</a></li>
-                       <li class="animation-delay-06"><a class="element-link el" href="#" >SubLinkd 5</a></li>
+                       <li class=""><a class="back-element" href="#" ><span class="fa fa-chevron-left push-float-left" ></span><span class="text-back" > Back</span></a></li>
+                       <li class=""><a class="element-link el ripple" href="#" >SubLinkd 1</a></li>
+                       <li class=""><a class="element-link el ripple" href="#" >SubLinkd 2</a></li>
+                       <li class=""><a class="element-link el ripple" href="#" >SubLinkd 3</a></li>
+                       <li class=""><a class="element-link el ripple" href="#" >SubLinkd 4</a></li>
+                       <li class=""><a class="element-link el ripple" href="#" >SubLinkd 5</a></li>
                     </ul> 
                     
                 </li>
@@ -59,7 +59,6 @@ const cadenamenuverticalstring=`
     importsUrl:[ 
         {url:'src/componentsImports/UXScroll.js',typemodule:'module'},
         {url:'src/componentsImports/UXScrollV.js',typemodule:'module'},
-        {url:'src/componentsImports/UXAccordeon.js',typemodule:'module'},
         {url:'src/componentsImports/bindOn.js',typemodule:'module'},
         {url:'src/componentsImports/bindElement.js',typemodule:'module'},
         {url:'src/componentsImports/bindComponent.js',typemodule:'module'}]
@@ -112,14 +111,20 @@ export class mymenuvertical04{
                                $(event.target.parentNode).addClass("expand");
                              
                                clearTimeout(mytimer);
-                           },200);
+                           },50);
                        }
        })
        $(containerMenu).on("click",".sub-menu .back-element",function(e){
            console.log("estoy en back")
-           $(containerMenu).removeClass('open-panel')
+         
            $(containerMenu+" .pr").removeClass("expand");
            $(containerMenu+" .pr .gr").removeClass("current-menu");
+          
+           var mytimer=setTimeout(function() {
+            
+            $(containerMenu).removeClass('open-panel')
+             clearTimeout(mytimer);
+           },50);
        })
     }
 }

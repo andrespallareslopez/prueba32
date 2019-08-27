@@ -9,7 +9,10 @@
     @include menu-vertical-container-01;
      /*margin-left: -#{$asidewdesplaz};*/ 
     margin-left: 0px;
-    transition: all 0.3s ease-in-out;
+    /*transition: all 0s ease-in-out;*/
+    & .text-back{
+        margin-left:10px;
+    }
     & li{
         display:block;
         position:relative;
