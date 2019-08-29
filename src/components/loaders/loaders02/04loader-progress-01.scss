@@ -27,6 +27,12 @@
    &.splash{
        height:100vh;
    }
+   &.splash-panel{
+     height: calc(100vh - #{$footer} - #{$nav} - 20px) ;
+     @media (min-width:768px){ 
+      height:calc(100vh - #{$headerHeight} - #{$footer} - #{$nav} - 20px);  
+     }
+   }
    .icon-loader{
        position:absolute;
        padding:0;

@@ -127,7 +127,7 @@ export class mypagecollection01{
         var panel=new components.container({
             container:'#'+id+' .wrapper.page.child .box.content',
             textTemplate: cadenapanelscroll01
-          });
+        });
           panel.create(function(options){
             var list=new components.container({
                 container:'#'+id+' .wrapper.page.child .box.content .panel-scroll-item',

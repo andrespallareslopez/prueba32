@@ -191,6 +191,13 @@ export class mymenuvertical01{
           break;
 
        }
+       new controls.UXLoadPanel({
+         id:id,
+         textTemplate:(function(template){
+           return template
+         })(template)
+       })
+
        //template = cadenatemplatescrollbindstring
        /*
        var html=util.buildtemplate({
@@ -206,118 +213,10 @@ export class mymenuvertical01{
        removeContainer(self.options.containerView); 
        */
        
-       //var $containerChild=$(".wrapper.page.child")
-       var containerView=".main-body"
-       var $template=$('#'+id+'.wrapper.page.child');
-       /*
-         puede ser que el id no este al misno nivel que .wrapper.page.child
-         por tanto tenemos que tratar de buscar por id+' .wrapper.page.....
-       */
-      if (!$template[0]){
-        $template=$('#'+id+' .wrapper.page.child');
-      }
-       var $buttonBack
-       
-       //console.dir($template)
-       if ($template.length==0 && id){
-          
-         var panelControl=new components.container({
-            container:containerView,
-            textTemplate:template,
-            data:{id:id}
-         })
-         panelControl.initevent=function(options){
-             console.log('estoy dentro de initeent de panelControl')
-             var timer=setTimeout(function(){
-                changeAnimation()
-                clearTimeout(timer)
-             },350)
-              
-               
-             onClick()  
-             
-             
-             function onClick(){
-                console.log("estoy en onClick")
-                $buttonBack=$('#'+id+' '+'#btn-toggle-back-3')
-                //console.dir($buttonBack)
-                $buttonBack.on("click",function(e){
-                  console.log("estoy dentro de click")
-                  changeAnimation(true) 
-                  
-                  
-                })
-            }
-            function changeAnimation(remove){
-                console.log("estoy dentro de changeAnimation")
-                //console.dir($template)
-                $template=$('#'+id+'.wrapper.page.child');
-                var reftemplate= '#'+id+'.wrapper.page.child'
-                if ($template.length==0){
-                  $template=$('#'+id+' .wrapper.page.child');
-                  reftemplate='#'+id+' .wrapper.page.child'
-                }
-                if ($template.hasClass("animation")){
-                 $template.removeClass("animation")
-                 if (remove){
-                     var timer=setTimeout(function(){
-                         //removeContainer('#'+id+'.wrapper.page.child')
-                         removeContainer(reftemplate)
-                         clearTimeout(timer)
-                     },400)
-                     
-                     
-                 }
-                }else{
-                 $template.addClass("animation")
-                }
-            }
-            
-            function onDestroy(){
-             
-            }
-         }
-         
-         panelControl.bind=function(options){
-             var self=this;
-             console.log("estoy en function bind")
-             console.dir(self)
-             
-             var bind=new controls.BindComponent({
-                 containerView:'#'+id,
-                 target:self
-             })
-             
-         }
-         panelControl.onClick=function(e){
-            console.log("estoy dentro de panelControl Click")
-         }
-          /*
-          var templateChild=new components.container({
-             container:containerView
-          })
-          templateChild.promise.then(function(){
-              console.dir("estoy dentro de template child")
-              var timer=setTimeout(function(){
-                changeAnimation.apply(self,[])
-                clearTimeout(timer)
-              },350)
-              
-               
-              onClick()  
-          });
-          
-          appendToContainer.apply(self,[html,containerView]);
-          */
        }
-       /*else{
-        changeAnimation.apply(self,[])
-        
-       }
-       */
+      
     
      
-    }
    })
   }
 }

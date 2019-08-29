@@ -54,7 +54,7 @@ import {mycombo} from 'src/lib/myCombo.js'
 
 import {myinput} from 'src/lib/myInput.js'
 
-import {mysearch} from 'src/lib/mySearch.js'
+import {mysearch} from 'src/lib/myComboSearch.js'
 
 import {mymenuvertical01} from 'src/lib/myMenuVertical01.js'
 
@@ -89,6 +89,8 @@ import {mypageform01} from 'src/lib/MyPageForm01.js'
 import {mybuttonsearch} from 'src/lib/MyButtonSearch.js'
 
 import {mypagesearch01} from 'src/lib/MyPageSearch01.js'
+
+import { mypageloadspinner} from 'src/lib/MyPageLoadSpinner01.js'
 
 
 
