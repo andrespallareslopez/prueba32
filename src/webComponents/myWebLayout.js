@@ -18,7 +18,7 @@ const cadenaweblatoutsstring = `
 
 <div class="main-body">
     <aside id="menuvertical" class="menu-area">
-        <my-menu-vertical-04 id="menu-vertical02"></my-menu-vertical-01>
+        <my-menu-vertical-01 id="menu-vertical02"></my-menu-vertical-01>
     </aside>
     <div id="root" class="wrapper page root">
 

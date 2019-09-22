@@ -89,7 +89,7 @@ function DrawPanelReactDetail(nameDescription,self,datos,id){
            </ul>);
        }
        
-       var myslidePanelDetail=new controls.slidePanels({
+       var myslidePanelDetail=new new components.container({
            container:".slide-container .slide-items",
            ReactDOM:ReactDOM,
            nameDescription:nameDescription,
