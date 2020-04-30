@@ -108,7 +108,7 @@
     "handlebars": "^4.2.0",
     "handlebars-commonjs": "^1.0.13",
     "inputmask": "^3.3.11",
-    "jquery": "^2.2.4",
+    "jquery": "^3.5.0",
     "jquery-mousewheel": "^3.1.13",
     "linq.js": "^1.0.5",
     "moment": "^2.18.1",
