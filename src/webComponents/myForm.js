@@ -3,7 +3,7 @@ import {Component} from 'src/componentsImports/componentDecorator.js'
 import cadenaform from 'src/shared/templ/myform01.html!text'
 
 const cadenaformstring= `
-  <form id="form01" class="form-fix-basic-01 " >
+  <form id="form01" class="form-fix-basic-01 " autocomplete="off" >
     <my-calendar id="cal1"></my-calendar>
     <my-input></my-input>
     <my-search id="search01"></my-search>

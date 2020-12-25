@@ -127,14 +127,14 @@ function DrawPanelReactDetail(nameDescription, self, datos, id) {
         );
     };
 
-    var myslidePanelDetail = new controls.slidePanels({
+    var myslidePanelDetail = new new components.container({
         container: ".slide-container .slide-items",
         ReactDOM: _reactDom2.default,
         nameDescription: nameDescription,
         data: datos,
         templateReact: slidePanelDetailReact
         //textTemplate:cadenaSlidePanelDetail
-    });
+    })();
     //no podemos utilizar en el slidePaneld el initevent, ya 
     //se utiliza internamente, si lo ponemos sobreescribiremos
     //el que hay y el componente dejara de funcionar

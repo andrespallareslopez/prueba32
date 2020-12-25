@@ -60,7 +60,7 @@ const cadenacombostring= `
   </div>
   <div class="label-input">
     <span class="logo fa fa-tag fa-2x"></span>
-    <input id="combotxt" type="text" placeholder="" class="input medium">
+    <input id="combotxt" type="text" placeholder="" class="input medium" autocomplete="off">
     <button id="search" class="list-button"><span class="fa fa-sort-desc"></span></button>
   </div>
 </div>
