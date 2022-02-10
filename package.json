@@ -83,7 +83,7 @@
     "gulp-usemin": "^0.3.28",
     "gulp-useref": "^3.1.2",
     "gulp-util": "^3.0.8",
-    "node-sass": "^4.5.3",
+    "node-sass": "^7.0.0",
     "onchange": "^3.2.1",
     "parcelify": "^2.2.0",
     "partialify": "^3.1.6",
