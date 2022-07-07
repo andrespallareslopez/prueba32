@@ -111,7 +111,7 @@
     "jquery": "^2.2.4",
     "jquery-mousewheel": "^3.1.13",
     "linq.js": "^1.0.5",
-    "moment": "^2.18.1",
+    "moment": "^2.29.4",
     "mousetrap": "^1.6.1",
     "pikaday": "^1.5.1",
     "react": "^16.5.0",
