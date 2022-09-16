@@ -51,7 +51,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-runtime": "^6.20.0",
     "babelify": "^7.3.0",
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "browser-sync": "^2.18.8",
     "browserify-css": "^0.10.1",
     "browserify-data": "^0.2.0",
